@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "idiom" : "watch",
+      "filename" : "Minus.png"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "auto-scaling" : "auto"
+  }
+}
