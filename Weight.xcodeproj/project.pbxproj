@@ -98,6 +98,10 @@
 		7A330F9A216B777A00137F78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A330F9C216B777A00137F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessInterfaceController.swift; sourceTree = "<group>"; };
+		7AA7CD7B2175E4CF00169EFD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7AA7CD7D2175E5C000169EFD /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
+		7AA7CD7E2175E5C000169EFD /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
+		7AA7CD7F2175E5C100169EFD /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 		7A330F67216B777800137F78 = {
 			isa = PBXGroup;
 			children = (
+				7AA7CD7C2175E5AF00169EFD /* Screenshots */,
+				7AA7CD7B2175E4CF00169EFD /* README.md */,
 				7A0C7894217431730031BB06 /* Universal */,
 				7A330F72216B777800137F78 /* Weight */,
 				7A330F86216B777900137F78 /* Weight WatchKit App */,
@@ -197,6 +203,16 @@
 				7A330F9C216B777A00137F78 /* Info.plist */,
 			);
 			path = "Weight WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		7AA7CD7C2175E5AF00169EFD /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				7AA7CD7E2175E5C000169EFD /* a.png */,
+				7AA7CD7F2175E5C100169EFD /* b.png */,
+				7AA7CD7D2175E5C000169EFD /* c.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
