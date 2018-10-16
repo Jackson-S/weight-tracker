@@ -12,6 +12,7 @@ import HealthKit
 class WeightLogic {
     private var weight: Double
     private var bmi: Double
+    var lastWeight: Double
     let totalSteps = 2
     var completedSteps = 0
     var completedLoad: Bool
@@ -26,6 +27,7 @@ class WeightLogic {
         completedLoad = false
         weight = 70000
         bmi = (70000 / 1000) / (height * height)
+        lastWeight = 70000
         
         if HKHealthStore.isHealthDataAvailable() {
             healthStore = HKHealthStore()
@@ -49,7 +51,14 @@ class WeightLogic {
     }
     
     func getBMI() -> Double {
-        return (weight.rounded() / 1000) / (height * height)
+        let weightRounded = (weight / 100).rounded() / 10
+        
+        // Avoid dividing by zero
+        guard height != 0 else {
+            return 0
+        }
+        
+        return (weightRounded) / (height * height)
     }
     
     func getBMIClassification() -> String {
@@ -60,28 +69,35 @@ class WeightLogic {
             return "Normal Weight"
         case 25..<30:
             return "Overweight"
-        default:
+        case 30...Double.infinity:
             return "Obese"
+        default:
+            return "How?"
         }
     }
     
-    func getRecentWeight() {
+    private func getRecentWeight() {
         let startDate = healthStore!.earliestPermittedSampleDate()
         let endDate = Date(timeIntervalSinceNow: 0)
         let sampleType = HKSampleType.quantityType(forIdentifier: .bodyMass)!
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
-        
-        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: 1, sortDescriptors: []) {
+        let sortDescriptor = NSSortDescriptor(key: "endDate", ascending: false)
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: 1, sortDescriptors: [sortDescriptor]) {
             (query, results, error) in
             
             guard let samples = results as? [HKQuantitySample] else {
                 fatalError("\(String(describing: error?.localizedDescription))");
             }
             
+            for sample in samples {
+                print(sample.endDate)
+            }
+            
             if !samples.isEmpty {
                 let sample = samples.first!
                 let weight = sample.quantity.doubleValue(for: HKUnit.gram())
                 self.weight = weight
+                self.lastWeight = weight
                 self.completedSteps += 1
                 if (self.completedSteps == self.totalSteps) {
                     self.completedLoad = true
@@ -95,13 +111,13 @@ class WeightLogic {
         healthStore?.execute(query)
     }
     
-    func getRecentHeight() {
+    private func getRecentHeight() {
         let startDate = healthStore!.earliestPermittedSampleDate()
         let endDate = Date(timeIntervalSinceNow: 0)
         let sampleType = HKSampleType.quantityType(forIdentifier: .height)!
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
-        
-        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: 1, sortDescriptors: []) {
+        let sortDescriptor = NSSortDescriptor(key: "endDate", ascending: false)
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: 1, sortDescriptors: [sortDescriptor]) {
             (query, results, error) in
             
             guard let samples = results as? [HKQuantitySample] else {
@@ -131,7 +147,7 @@ class WeightLogic {
         healthStore?.execute(query)
     }
     
-    func authorizationHandler(for types: Set<HKSampleType>) {
+    private func authorizationHandler(for types: Set<HKSampleType>) {
         healthStore!.requestAuthorization(toShare: types, read: types) { (success, error) in
             if success {
                 // Recheck the auth statuses
@@ -146,9 +162,12 @@ class WeightLogic {
     }
     
     func addNewWeightSample() {
+        lastWeight = weight
+
         guard let healthStore = healthStore else { return }
         let quantityType = HKObjectType.quantityType(forIdentifier: .bodyMass)!
-        let weightRounded = weight.rounded()
+        // Round weight to two decimal places
+        let weightRounded = (weight / 100).rounded() * 100
         let quantity = HKQuantity(unit: HKUnit.gram(), doubleValue: weightRounded)
         let date = Date(timeIntervalSinceNow: 0)
         let sample = HKQuantitySample(type: quantityType, quantity: quantity, start: date, end: date)
@@ -197,5 +216,5 @@ class WeightLogic {
     
     func getWeight() -> Double{
         return weight
-    }    
+    }
 }

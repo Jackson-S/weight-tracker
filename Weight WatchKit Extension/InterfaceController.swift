@@ -53,25 +53,44 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     
     @IBAction func incButtonClick() {
         weightLogic.incrementBy(100)
+        WKInterfaceDevice.current().play(.click)
         updateWeightLabel()
     }
     
     @IBAction func decButtonClick() {
         weightLogic.incrementBy(-100)
+        WKInterfaceDevice.current().play(.click)
         updateWeightLabel()
     }
     
     @IBAction func updateButtonClick() {
+        let contextForSuccess: [String: Double] = [
+            "weight": weightLogic.getWeight(),
+            "previousWeight": weightLogic.lastWeight,
+            "bmi": weightLogic.getBMI(),
+        ]
+        
         weightLogic.addNewWeightSample()
+        
         if options["addBMI"]! {
             weightLogic.addNewBMISample()
         }
+        
         WKInterfaceDevice.current().play(.success)
+        
+        presentController(withName: "successInterface", context: contextForSuccess)
     }
     
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
         let incrementValue = (crownSequencer?.rotationsPerSecond)! * 15
+        
+        let oldWeight = (weightLogic.getWeight() / 100).rounded() / 10
         weightLogic.incrementBy(incrementValue)
+        let newWeight = (weightLogic.getWeight() / 100).rounded() / 10
+        
+        if newWeight != oldWeight {
+            WKInterfaceDevice.current().play(.click)
+        }
         updateWeightLabel()
     }
 

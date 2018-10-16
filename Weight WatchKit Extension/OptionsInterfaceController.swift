@@ -33,6 +33,6 @@ class OptionsInterfaceController: WKInterfaceController {
     }
     
     func generateHeightText() -> String {
-        return String(format: "%.2f CM", height)
+        return String(format: "%.2f M", height)
     }
 }

@@ -23,6 +23,7 @@
                                     </connections>
                                 </button>
                                 <label alignment="center" verticalAlignment="center" text="87.9 KG" textAlignment="center" baselineAdjustment="alignCenters" minimumScaleFactor="0.80000000000000004" id="zSO-BU-G9J">
+                                    <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
                                     <fontDescription key="font" type="system" pointSize="22"/>
                                 </label>
                                 <button width="25" height="25" alignment="right" verticalAlignment="center" backgroundImage="Plus" id="UTq-C3-OYW">
@@ -44,11 +45,11 @@
                                 </label>
                             </items>
                         </group>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="Update" backgroundImage="rectangularButton" id="v0e-Sp-vdp">
+                        <button width="1" alignment="center" verticalAlignment="bottom" semanticContentAttribute="playback" title="Update" backgroundImage="rectangularButton" id="v0e-Sp-vdp">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="system" pointSize="17"/>
                             <connections>
-                                <action selector="updateButtonClick" destination="AgC-eL-Hgc" id="NfC-eG-YzK"/>
+                                <action selector="updateButtonClick" destination="AgC-eL-Hgc" id="neh-1l-ptt"/>
                             </connections>
                         </button>
                     </items>
@@ -61,27 +62,83 @@
                 </controller>
             </objects>
         </scene>
+        <!--Return-->
+        <scene sceneID="ng2-i6-mih">
+            <objects>
+                <controller identifier="successInterface" title="Return" id="Fd9-ib-SiQ" customClass="SuccessInterfaceController" customModule="Weight_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="97Q-gi-B4M">
+                            <items>
+                                <label alignment="center" text="Logged" id="a9U-5e-jMI">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <separator alignment="left" id="bi3-nZ-I0r">
+                                    <color key="color" red="0.55443567039999997" green="0.90775567290000003" blue="0.27809911970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </separator>
+                                <group width="1" alignment="left" id="Fuj-at-MZX">
+                                    <items>
+                                        <label alignment="left" text="Weight:" textAlignment="left" id="waq-ye-MvB"/>
+                                        <label alignment="right" text="10.0 KG" textAlignment="right" id="vYb-zN-yMC"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="qLV-bD-vVc">
+                                    <items>
+                                        <label alignment="left" text="Difference:" textAlignment="left" id="aAt-t8-e41"/>
+                                        <label alignment="right" text="-1.0" textAlignment="right" id="njI-hl-PG8"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="wkD-yC-IeU">
+                                    <items>
+                                        <label alignment="left" text="BMI:" textAlignment="left" id="biV-0p-4qS"/>
+                                        <label alignment="right" text="10.0" textAlignment="right" id="SUV-JR-nqo"/>
+                                    </items>
+                                </group>
+                                <separator alignment="left" id="Awu-FH-JFX">
+                                    <color key="color" red="0.55443567039999997" green="0.90775567290000003" blue="0.27809911970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </separator>
+                                <label alignment="center" verticalAlignment="bottom" text="Keep it up!" id="iMa-Zj-f8y">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="bmiLabel" destination="SUV-JR-nqo" id="RSd-xi-ZjA"/>
+                        <outlet property="differenceLabel" destination="njI-hl-PG8" id="ZGb-0I-ecQ"/>
+                        <outlet property="motivationLabel" destination="iMa-Zj-f8y" id="5Vk-Ck-aaq"/>
+                        <outlet property="weightLabel" destination="vYb-zN-yMC" id="fdV-HJ-fNB"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="382"/>
+        </scene>
         <!--optionsInterface-->
         <scene sceneID="m7H-Hh-K6c">
             <objects>
                 <controller identifier="optionsInterface" id="n2g-qu-2xE" customClass="OptionsInterfaceController" customModule="Weight_WatchKit_App" customModuleProvider="target">
                     <items>
+                        <group width="1" alignment="left" layout="vertical" id="Ytq-IV-JdW">
+                            <items>
+                                <group width="1" alignment="center" id="FKd-gn-EF6">
+                                    <items>
+                                        <label alignment="left" verticalAlignment="center" text="Height:" id="FkG-2y-ESv"/>
+                                        <label alignment="right" verticalAlignment="center" text="1.72 M" textAlignment="right" id="jrj-MH-zxg">
+                                            <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="center" verticalAlignment="center" continuous="YES" value="172" minimum="70" maximum="280" steps="210" id="Def-mf-pbg">
+                                    <connections>
+                                        <action selector="heightSelectorUpdate:" destination="n2g-qu-2xE" id="Oee-tg-p0b"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
                         <switch width="1" alignment="left" value="YES" title="Add BMI" id="T10-eN-EdB">
                             <connections>
                                 <action selector="bmiToggle:" destination="AgC-eL-Hgc" id="CAk-MN-TjV"/>
                             </connections>
                         </switch>
-                        <group width="1" alignment="left" id="FKd-gn-EF6">
-                            <items>
-                                <label alignment="left" verticalAlignment="center" text="Height:" id="FkG-2y-ESv"/>
-                                <label alignment="right" verticalAlignment="center" text="172 CM" textAlignment="right" id="jrj-MH-zxg"/>
-                            </items>
-                        </group>
-                        <slider width="1" alignment="left" continuous="YES" value="172" minimum="70" maximum="280" steps="210" id="Def-mf-pbg">
-                            <connections>
-                                <action selector="heightSelectorUpdate:" destination="n2g-qu-2xE" id="Oee-tg-p0b"/>
-                            </connections>
-                        </slider>
                     </items>
                     <connections>
                         <outlet property="heightLabel" destination="jrj-MH-zxg" id="GTj-Bz-jr4"/>
@@ -89,7 +146,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="347" y="292"/>
+            <point key="canvasLocation" x="393" y="31"/>
         </scene>
     </scenes>
 </document>

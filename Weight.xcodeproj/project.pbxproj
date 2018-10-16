@@ -27,6 +27,7 @@
 		7A330F97216B777900137F78 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F96216B777900137F78 /* InterfaceController.swift */; };
 		7A330F99216B777900137F78 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F98216B777900137F78 /* ExtensionDelegate.swift */; };
 		7A330F9B216B777A00137F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F9A216B777A00137F78 /* Assets.xcassets */; };
+		7A602FBD2175D1EB006F22F5 /* SuccessInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		7A330F98216B777900137F78 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		7A330F9A216B777A00137F78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A330F9C216B777A00137F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				7A12179821735E8A00F3AE27 /* Weight WatchKit Extension.entitlements */,
 				7A330F96216B777900137F78 /* InterfaceController.swift */,
+				7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */,
 				7A0C7896217453090031BB06 /* OptionsInterfaceController.swift */,
 				7A330F98216B777900137F78 /* ExtensionDelegate.swift */,
 				7A330F9A216B777A00137F78 /* Assets.xcassets */,
@@ -352,6 +355,7 @@
 			files = (
 				7A0C7897217453090031BB06 /* OptionsInterfaceController.swift in Sources */,
 				7A0C788F217401F80031BB06 /* WeightLogic.swift in Sources */,
+				7A602FBD2175D1EB006F22F5 /* SuccessInterfaceController.swift in Sources */,
 				7A330F99216B777900137F78 /* ExtensionDelegate.swift in Sources */,
 				7A0C7899217459C10031BB06 /* Globals.swift in Sources */,
 				7A330F97216B777900137F78 /* InterfaceController.swift in Sources */,
