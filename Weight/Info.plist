@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Nothing is done</string>
+	<string>Retrieves height to calculate BMI, as well as to present previous weight to provide a starting value for the app.</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Adds weight values to HealthKit.</string>
+	<string>Adds weight and BMI values to HealthKit.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

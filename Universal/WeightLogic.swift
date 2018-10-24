@@ -10,9 +10,9 @@ import Foundation
 import HealthKit
 
 class WeightLogic {
-    private var weight: Double
-    private var bmi: Double
-    var lastWeight: Double
+    private var weight: Double?
+    private var bmi: Double?
+    var lastWeight: Double?
     let totalSteps = 2
     var completedSteps = 0
     var completedLoad: Bool
@@ -50,30 +50,54 @@ class WeightLogic {
         bmi = getBMI()
     }
     
-    func getBMI() -> Double {
-        let weightRounded = (weight / 100).rounded() / 10
-        
-        // Avoid dividing by zero
-        guard height != 0 else {
-            return 0
+    func getBMI() -> Double? {
+        if let weightUnwrapped = weight {
+            let weightRounded = (weightUnwrapped / 100).rounded() / 10
+            if height == 0 {
+                return nil
+            } else {
+                return weightRounded / pow(height, 2)
+            }
+        } else {
+            return nil
         }
-        
-        return (weightRounded) / (height * height)
     }
     
     func getBMIClassification() -> String {
-        switch bmi {
-        case 0..<18.5:
-            return "Underweight"
-        case 18.5..<25:
-            return "Normal Weight"
-        case 25..<30:
-            return "Overweight"
-        case 30...Double.infinity:
-            return "Obese"
-        default:
-            return "How?"
+        if let bmiUnwrapped = bmi {
+            switch bmiUnwrapped {
+            case 0..<18.5:
+                return "Underweight"
+            case 18.5..<25:
+                return "Normal Weight"
+            case 25..<30:
+                return "Overweight"
+            case 30...Double.infinity:
+                return "Obese"
+            default:
+                return "How?"
+            }
+        } else {
+            return "Invalid BMI."
         }
+    }
+    
+    private func addCompletedStep() {
+        self.completedSteps += 1
+        
+        if (self.completedSteps == self.totalSteps) {
+            self.completedLoad = true
+            self.bmi = self.getBMI()
+        }
+    }
+    
+    private func setDefaultWeight(reason: String) {
+        self.weight = 75000
+        self.lastWeight = self.weight!
+        
+        addCompletedStep()
+        
+        print("\(reason) Setting weight to 75 KG.")
     }
     
     private func getRecentWeight() {
@@ -82,15 +106,13 @@ class WeightLogic {
         let sampleType = HKSampleType.quantityType(forIdentifier: .bodyMass)!
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         let sortDescriptor = NSSortDescriptor(key: "endDate", ascending: false)
+        
         let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: 1, sortDescriptors: [sortDescriptor]) {
             (query, results, error) in
             
             guard let samples = results as? [HKQuantitySample] else {
-                fatalError("\(String(describing: error?.localizedDescription))");
-            }
-            
-            for sample in samples {
-                print(sample.endDate)
+                self.setDefaultWeight(reason: error?.localizedDescription ?? "Unknown error.")
+                return
             }
             
             if !samples.isEmpty {
@@ -98,17 +120,21 @@ class WeightLogic {
                 let weight = sample.quantity.doubleValue(for: HKUnit.gram())
                 self.weight = weight
                 self.lastWeight = weight
-                self.completedSteps += 1
-                if (self.completedSteps == self.totalSteps) {
-                    self.completedLoad = true
-                    self.bmi = self.getBMI()
-                }
+                self.addCompletedStep()
             } else {
-                fatalError("Error: No weight values found!")
+                self.setDefaultWeight(reason: "No previous weight found.")
             }
         }
         
         healthStore?.execute(query)
+    }
+    
+    func setDefaultHeight(reason: String) {
+        height = 1.72
+        
+        addCompletedStep()
+        
+        print("\(reason) Setting height to 1.72 M")
     }
     
     private func getRecentHeight() {
@@ -117,30 +143,22 @@ class WeightLogic {
         let sampleType = HKSampleType.quantityType(forIdentifier: .height)!
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         let sortDescriptor = NSSortDescriptor(key: "endDate", ascending: false)
+        
         let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: 1, sortDescriptors: [sortDescriptor]) {
             (query, results, error) in
             
             guard let samples = results as? [HKQuantitySample] else {
-                fatalError("\(String(describing: error?.localizedDescription))");
+                self.setDefaultHeight(reason: error?.localizedDescription ?? "Unknown error.")
+                return
             }
             
             if !samples.isEmpty {
                 let sample = samples.first!
                 let sampleHeight = sample.quantity.doubleValue(for: HKUnit.meter())
                 height = sampleHeight
-                self.completedSteps += 1
-                if (self.completedSteps == self.totalSteps) {
-                    self.completedLoad = true
-                    self.bmi = self.getBMI()
-                }
+                self.addCompletedStep()
             } else {
-                print("Error: No height values found! Assuming the height of the developer.")
-                height = 1.72
-                self.completedSteps += 1
-                if (self.completedSteps == self.totalSteps) {
-                    self.completedLoad = true
-                    self.bmi = self.getBMI()
-                }
+                self.setDefaultHeight(reason: "No previous height found.")
             }
         }
         
@@ -161,50 +179,66 @@ class WeightLogic {
         }
     }
     
-    func addNewWeightSample() {
+    func addNewWeightSample() -> Bool {
         lastWeight = weight
-
-        guard let healthStore = healthStore else { return }
+        
+        guard let healthStore = healthStore else { return false }
+        
         let quantityType = HKObjectType.quantityType(forIdentifier: .bodyMass)!
-        // Round weight to two decimal places
-        let weightRounded = (weight / 100).rounded() * 100
-        let quantity = HKQuantity(unit: HKUnit.gram(), doubleValue: weightRounded)
         let date = Date(timeIntervalSinceNow: 0)
-        let sample = HKQuantitySample(type: quantityType, quantity: quantity, start: date, end: date)
-        healthStore.save(sample) { (success, error) in
-            if !success {
-                print("Error handling save request!")
+        
+        if let weightUnwrapped = weight {
+            let quantity = HKQuantity(unit: HKUnit.gram(), doubleValue: weightUnwrapped)
+            let sample = HKQuantitySample(type: quantityType, quantity: quantity, start: date, end: date)
+            healthStore.save(sample) { (success, error) in
+                if !success {
+                    print("Error handling save request!")
+                }
             }
         }
+        
+        return true
     }
     
-    func addNewBMISample() {
-        guard let healthStore = healthStore else { return }
+    func addNewBMISample() -> Bool {
+        guard let healthStore = healthStore else { return false }
+        
         let quantityType = HKObjectType.quantityType(forIdentifier: .bodyMassIndex)!
-        // BMI = weight in KG / height^2
-        let quantity = HKQuantity(unit: HKUnit.count(), doubleValue: bmi)
         let date = Date(timeIntervalSinceNow: 0)
-        let sample = HKQuantitySample(type: quantityType, quantity: quantity, start: date, end: date)
-        healthStore.save(sample) { (success, error) in
-            if !success {
-                print("Error handling save request!")
+        
+        if let bmiUnwrapped = bmi {
+            let quantity = HKQuantity(unit: HKUnit.count(), doubleValue: bmiUnwrapped)
+            let sample = HKQuantitySample(type: quantityType, quantity: quantity, start: date, end: date)
+            healthStore.save(sample) { (success, error) in
+                if !success {
+                    print("Error handling save request!")
+                }
             }
         }
+        
+        return true
     }
     
     func incrementBy(_ value: Double) {
-        if weight + value > 0 && weight + value < 999000 {
-            weight += value
-        } else if weight + value < 0 {
+        guard weight != nil else { return }
+        
+        let newWeight = weight! + value
+        
+        if  (1..<999000).contains(newWeight) {
+            weight! += value
+        } else if newWeight < 0 {
             weight = 1
         } else {
             weight = 999000
         }
-        bmi = getBMI()
+        
+        if let bmiResult = getBMI() {
+            bmi = bmiResult
+        }
     }
     
     func setWeight(_ value: Double) {
-        if  value > 0 && value < 999000 {
+        if  (1..<999000).contains(value) {
             weight = value
         } else if  value < 0 {
             weight = 1
@@ -214,7 +248,7 @@ class WeightLogic {
         bmi = getBMI()
     }
     
-    func getWeight() -> Double{
+    func getWeight() -> Double? {
         return weight
     }
 }

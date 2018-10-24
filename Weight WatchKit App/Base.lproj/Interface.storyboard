@@ -61,6 +61,7 @@
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="34" y="31"/>
         </scene>
         <!--Return-->
         <scene sceneID="ng2-i6-mih">
@@ -110,7 +111,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="34" y="382"/>
+            <point key="canvasLocation" x="550" y="31"/>
         </scene>
         <!--optionsInterface-->
         <scene sceneID="m7H-Hh-K6c">
@@ -146,7 +147,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="393" y="31"/>
+            <point key="canvasLocation" x="304" y="31"/>
         </scene>
     </scenes>
 </document>

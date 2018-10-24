@@ -17,10 +17,19 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     let weightLogic = WeightLogic()
     
     func updateWeightLabel() {
-        let weightLabelText = String(format: "%.1f KG", arguments: [weightLogic.getWeight().rounded() / 1000])
-        let bmiLabelText = String(format: "%.1f", arguments: [weightLogic.getBMI()])
-        weightLabel.setText(weightLabelText)
-        bmiLabel.setText(bmiLabelText)
+        if let weight = weightLogic.getWeight() {
+            let weightLabelText = String(format: "%.1f KG", arguments: [weight.rounded() / 1000])
+            weightLabel.setText(weightLabelText)
+        } else {
+            weightLabel.setText("Error")
+        }
+        
+        if let bmi = weightLogic.getBMI() {
+            let bmiLabelText = String(format: "%.1f", arguments: [bmi])
+            bmiLabel.setText(bmiLabelText)
+        } else {
+            bmiLabel.setText("Error")
+        }
     }
     
     override func awake(withContext context: Any?) {
@@ -64,7 +73,7 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     }
     
     @IBAction func updateButtonClick() {
-        let contextForSuccess: [String: Double] = [
+        let contextForSuccess: [String: Double?] = [
             "weight": weightLogic.getWeight(),
             "previousWeight": weightLogic.lastWeight,
             "bmi": weightLogic.getBMI(),
@@ -84,13 +93,25 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
         let incrementValue = (crownSequencer?.rotationsPerSecond)! * 15
         
-        let oldWeight = (weightLogic.getWeight() / 100).rounded() / 10
-        weightLogic.incrementBy(incrementValue)
-        let newWeight = (weightLogic.getWeight() / 100).rounded() / 10
+        var oldWeight: Double? = nil
+        var newWeight: Double? = nil
         
-        if newWeight != oldWeight {
-            WKInterfaceDevice.current().play(.click)
+        if let weight = weightLogic.getWeight() {
+            oldWeight = (weight / 100).rounded() / 10
         }
+        
+        weightLogic.incrementBy(incrementValue)
+        
+        if let weight = weightLogic.getWeight() {
+            newWeight = (weight / 100).rounded() / 10
+        }
+        
+        if let newWeightUnwrapped = newWeight, let oldWeightUnwrapped = oldWeight {
+            if newWeightUnwrapped != oldWeightUnwrapped {
+                WKInterfaceDevice.current().play(.click)
+            }
+        }
+
         updateWeightLabel()
     }
 
