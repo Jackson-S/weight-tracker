@@ -188,7 +188,8 @@ class WeightLogic {
         let date = Date(timeIntervalSinceNow: 0)
         
         if let weightUnwrapped = weight {
-            let quantity = HKQuantity(unit: HKUnit.gram(), doubleValue: weightUnwrapped)
+            let weightRounded = (weightUnwrapped / 100).rounded() * 100
+            let quantity = HKQuantity(unit: HKUnit.gram(), doubleValue: weightRounded)
             let sample = HKQuantitySample(type: quantityType, quantity: quantity, start: date, end: date)
             healthStore.save(sample) { (success, error) in
                 if !success {
