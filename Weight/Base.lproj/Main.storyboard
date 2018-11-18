@@ -25,24 +25,24 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="142.66666666666666"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1xt-OA-MTF">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="114.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="1000" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Test" placeholder="Weight" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZTT-NY-9Vr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="114.33333333333333"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Test" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5u6-Ge-HYD">
-                                                        <rect key="frame" x="187" y="0.0" width="187" height="114.33333333333333"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Am7-bX-HB4" userLabel="Weight Label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDD-5i-XgI" userLabel="BMI Label">
+                                                        <rect key="frame" x="187" y="0.0" width="187" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI Classification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u93-hG-ql9">
-                                                <rect key="frame" x="0.0" y="122.33333333333333" width="374" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="38.000000000000007" width="374" height="104.66666666666669"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -82,9 +82,9 @@
                     <navigationItem key="navigationItem" title="Weight" id="oUe-td-wGA"/>
                     <connections>
                         <outlet property="bmiClassificationLabel" destination="u93-hG-ql9" id="u7s-Sa-nse"/>
-                        <outlet property="bmiLabel" destination="5u6-Ge-HYD" id="cLn-On-HNI"/>
+                        <outlet property="bmiLabel" destination="yDD-5i-XgI" id="XKd-Ti-leu"/>
                         <outlet property="sliderImage" destination="CY4-dc-YiS" id="uiY-Sq-77d"/>
-                        <outlet property="weightEntry" destination="ZTT-NY-9Vr" id="SaD-Vl-kRa"/>
+                        <outlet property="weightLabel" destination="Am7-bX-HB4" id="2hf-qN-yVz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

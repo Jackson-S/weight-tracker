@@ -34,13 +34,22 @@ class WeightLogic {
         }
     }
     
+    public var weightKG: Double? {
+        get {
+            if let weightUnwrapped = weight {
+                return (weightUnwrapped / 100).rounded() / 10
+            } else {
+                return nil
+            }
+        }
+    }
+    
     public var bmi: Double? {
         get {
             // Compute BMI when requested
             if let height = self.height, let weight = self.weight {
                 return (weight / 1000) / pow(height, 2)
             } else {
-                print("Error setting bmi")
                 return nil
             }
         }

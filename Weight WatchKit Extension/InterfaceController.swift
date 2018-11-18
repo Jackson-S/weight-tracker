@@ -61,6 +61,7 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
         WKInterfaceDevice.current().play(.success)
         
         let parameters = SuccessParameters(weight: weightLogic.weight,
+                                           weightKG: weightLogic.weightKG,
                                            oldWeight: weightLogic.lastWeight,
                                            bmi: weightLogic.bmi)
         
@@ -70,27 +71,22 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
         let incrementValue = (crownSequencer?.rotationsPerSecond)! * 15
         
-        let startWeight = roundedWeightInKG()
+        let startWeight = weightLogic.weightKG
         
         weightLogic.incrementBy(incrementValue)
         
         // Check to see if the output display has changed
-        if startWeight != roundedWeightInKG() {
+        if startWeight != weightLogic.weightKG {
             WKInterfaceDevice.current().play(.click)
         }
 
         updateWeightLabel()
     }
     
-    func roundedWeightInKG() -> Double {
-        let weight = weightLogic.weight ?? 0
-        return (weight / 100).rounded() / 10
-    }
-    
     func updateWeightLabel() {
         let bmi = weightLogic.bmi ?? 0
         
-        let weightLabelText = String(format: "%.1f KG", roundedWeightInKG())
+        let weightLabelText = String(format: "%.1f KG", weightLogic.weightKG ?? 0)
         
         let bmiLabelText = String(format: "%.1f", bmi)
         

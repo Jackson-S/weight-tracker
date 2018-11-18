@@ -11,10 +11,11 @@ import HealthKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var weightEntry: UITextField!
-    @IBOutlet weak var bmiLabel: UITextField!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var bmiClassificationLabel: UILabel!
     @IBOutlet weak var sliderImage: UIImageView!
+    
     
     let weightLogic = WeightLogic()
     
@@ -31,20 +32,18 @@ class ViewController: UIViewController {
     @IBAction func panGesture(_ sender: UIPanGestureRecognizer) {
         let verticalVelocity = Double(sender.velocity(in: sliderImage).y)
         weightLogic.incrementBy(Double(-verticalVelocity / 4))
-        updateWeightLabel()
+        updateLabels()
     }
     
-    func updateWeightLabel() {
-        let weight = weightLogic.weight ?? 0
+    func updateLabels() {
+        let weightKG = weightLogic.weightKG ?? 0
         let bmi = weightLogic.bmi ?? 0
         let classification = weightLogic.bmiCategory
         
-        let weightKG = weight.rounded() / 1000
         let weightLabelText = String(format: "%.1f KG", weightKG)
-        
         let bmiLabelText = String(format: "%.1f BMI", bmi)
         
-        weightEntry.text = weightLabelText
+        weightLabel.text = weightLabelText
         bmiLabel.text = bmiLabelText
         bmiClassificationLabel.text = classification
     }
@@ -52,12 +51,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateWeightLabel()
+        // Super hacky way to get the labels to update properly. TODO: Find good fix
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.2, execute: updateLabels)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let newView = segue.destination as! ResultsViewController
         let parameters = SuccessParameters(weight: weightLogic.weight,
+                                           weightKG: weightLogic.weightKG,
                                            oldWeight: weightLogic.lastWeight,
                                            bmi: weightLogic.bmi)
         newView.parameters = parameters

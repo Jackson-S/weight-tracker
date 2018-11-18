@@ -10,11 +10,13 @@ import Foundation
 
 class SuccessParameters {
     let weight: Double
+    let weightKG: Double
     let oldWeight: Double
     let bmi: Double
     
-    init(weight: Double?, oldWeight: Double?, bmi: Double?) {
+    init(weight: Double?, weightKG: Double?, oldWeight: Double?, bmi: Double?) {
         self.weight = weight ?? 0
+        self.weightKG = weightKG ?? 0
         self.oldWeight = oldWeight ?? 0
         self.bmi = bmi ?? 0
     }
