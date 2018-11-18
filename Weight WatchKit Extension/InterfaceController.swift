@@ -13,6 +13,7 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     
     @IBOutlet weak var weightLabel: WKInterfaceLabel!
     @IBOutlet weak var bmiLabel: WKInterfaceLabel!
+    @IBOutlet weak var bmiCategoryLabel: WKInterfaceLabel!
     
     let weightLogic = WeightLogic()
     
@@ -40,10 +41,6 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
         crownSequencer.resignFocus()
     }
     
-    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-        return weightLogic
-    }
-    
     @IBAction func incButtonClick() {
         weightLogic.incrementBy(100)
         WKInterfaceDevice.current().play(.click)
@@ -57,6 +54,9 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     }
     
     @IBAction func updateButtonClick() {
+        // Capture this now because adding a new sample will overwrite it
+        let previousWeight = weightLogic.lastWeight
+        
         let weightResult = weightLogic.addNewWeightSample()
         let bmiResult = weightLogic.addNewBMISample()
         
@@ -68,10 +68,10 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
         
         let parameters = SuccessParameters(weight: weightLogic.weight,
                                            weightKG: weightLogic.weightKG,
-                                           oldWeight: weightLogic.lastWeight,
+                                           oldWeight: previousWeight,
                                            bmi: weightLogic.bmi)
         
-        presentController(withName: "successInterface", context: parameters)
+        pushController(withName: "successInterface", context: parameters)
     }
     
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
@@ -98,6 +98,7 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
         
         weightLabel.setText(weightLabelText)
         bmiLabel.setText(bmiLabelText)
+        bmiCategoryLabel.setText(weightLogic.bmiCategory)
     }
 
 }

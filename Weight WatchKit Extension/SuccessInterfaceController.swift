@@ -15,23 +15,17 @@ class SuccessInterfaceController: WKInterfaceController {
     @IBOutlet weak var bmiLabel: WKInterfaceLabel!
     @IBOutlet weak var motivationLabel: WKInterfaceLabel!
     
-    func differenceLabelText(_ oldWeight: Double?, _ newWeight: Double?) -> String {
-        let difference = ((newWeight ?? 0) - (oldWeight ?? 0)) / 1000
-        
-        if difference > 0 {
-            motivationLabel.setHidden(true)
-        }
-        
-        return String(format: "%+.1f KG", difference)
-    }
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         if let parameters = context as? SuccessParameters {
+            
+            print("\(parameters.weight), \(parameters.oldWeight)")
             weightLabel.setText(String(format: "%.1f KG", parameters.weightKG))
             bmiLabel.setText(String(format: "%.1f", parameters.bmi))
-            differenceLabel.setText(differenceLabelText(parameters.weight, parameters.oldWeight))
+            let difference = (parameters.weight - parameters.oldWeight) / 1000
+            differenceLabel.setText(String(format: "%+.1f KG", difference))
+            motivationLabel.setHidden(difference > 0)
         } else {
             print("Error recieving parameters")
         }

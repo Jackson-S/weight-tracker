@@ -91,14 +91,8 @@ class WeightLogic {
     private func getRecentWeight() {
         healthLogic?.getMeasurement(sampleType: HKSampleType.quantityType(forIdentifier: .bodyMass)!) {
             value in
-            
-            if self.lastWeight == nil {
-                self.lastWeight = value ?? 72 * 1000
-            } else {
-                self.lastWeight = self.weight
-            }
-            
             self.weight = value ?? 72 * 1000
+            self.lastWeight = self.weight
         }
     }
     
@@ -111,7 +105,6 @@ class WeightLogic {
     
     func addNewWeightSample() -> Bool {
         lastWeight = weight
-        
         let sampleType = HKSampleType.quantityType(forIdentifier: .bodyMass)!
         let sampleDate = Date(timeIntervalSinceNow: 0)
         

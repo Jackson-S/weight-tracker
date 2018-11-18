@@ -35,14 +35,19 @@
                                 </button>
                             </items>
                         </group>
-                        <group width="1" height="0.34999999999999998" alignment="center" verticalAlignment="center" contentMode="scaleAspectFit" id="dKC-L4-GLE">
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="50t-Gs-3c4">
                             <items>
-                                <label height="1" alignment="left" verticalAlignment="center" text="BMI:" textAlignment="left" baselineAdjustment="alignCenters" id="12z-PS-MJh">
-                                    <fontDescription key="font" type="system" pointSize="22"/>
-                                </label>
-                                <label height="1" alignment="right" verticalAlignment="center" text="10.0" textAlignment="right" id="HWI-tF-iH3">
-                                    <fontDescription key="font" type="system" pointSize="22"/>
-                                </label>
+                                <group width="1" alignment="center" contentMode="scaleAspectFit" id="dKC-L4-GLE">
+                                    <items>
+                                        <label alignment="left" verticalAlignment="center" text="BMI:" textAlignment="left" baselineAdjustment="alignCenters" id="12z-PS-MJh">
+                                            <fontDescription key="font" type="system" pointSize="22"/>
+                                        </label>
+                                        <label alignment="right" verticalAlignment="center" text="10.0" textAlignment="right" id="HWI-tF-iH3">
+                                            <fontDescription key="font" type="system" pointSize="22"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <label alignment="center" verticalAlignment="bottom" text="BMI Category" textAlignment="center" id="Cmf-Iv-KpN" userLabel="BMI Category"/>
                             </items>
                         </group>
                         <button width="1" alignment="center" verticalAlignment="bottom" semanticContentAttribute="playback" title="Update" backgroundImage="rectangularButton" id="v0e-Sp-vdp">
@@ -54,13 +59,13 @@
                         </button>
                     </items>
                     <connections>
+                        <outlet property="bmiCategoryLabel" destination="Cmf-Iv-KpN" id="78P-18-Lb7"/>
                         <outlet property="bmiLabel" destination="HWI-tF-iH3" id="ICE-Cy-JNR"/>
                         <outlet property="weightLabel" destination="zSO-BU-G9J" id="HiH-H1-oq9"/>
-                        <segue destination="n2g-qu-2xE" kind="relationship" relationship="nextPage" id="Vbq-xz-sKv"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="34" y="31"/>
+            <point key="canvasLocation" x="34" y="30.948717948717952"/>
         </scene>
         <!--Return-->
         <scene sceneID="ng2-i6-mih">
@@ -110,38 +115,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="550" y="31"/>
-        </scene>
-        <!--optionsInterface-->
-        <scene sceneID="m7H-Hh-K6c">
-            <objects>
-                <controller identifier="optionsInterface" id="n2g-qu-2xE" customClass="OptionsInterfaceController" customModule="Weight_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <group width="1" alignment="left" layout="vertical" id="Ytq-IV-JdW">
-                            <items>
-                                <group width="1" alignment="center" id="FKd-gn-EF6">
-                                    <items>
-                                        <label alignment="left" verticalAlignment="center" text="Height:" id="FkG-2y-ESv"/>
-                                        <label alignment="right" verticalAlignment="center" text="1.72 M" textAlignment="right" id="jrj-MH-zxg">
-                                            <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
-                                        </label>
-                                    </items>
-                                </group>
-                                <slider width="1" alignment="center" verticalAlignment="center" continuous="YES" value="172" minimum="70" maximum="280" steps="210" id="Def-mf-pbg">
-                                    <connections>
-                                        <action selector="heightSelectorUpdate:" destination="n2g-qu-2xE" id="Oee-tg-p0b"/>
-                                    </connections>
-                                </slider>
-                            </items>
-                        </group>
-                    </items>
-                    <connections>
-                        <outlet property="heightLabel" destination="jrj-MH-zxg" id="GTj-Bz-jr4"/>
-                        <outlet property="heightSelector" destination="Def-mf-pbg" id="y4B-Ut-mER"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="304" y="31"/>
+            <point key="canvasLocation" x="269" y="31"/>
         </scene>
     </scenes>
 </document>
