@@ -23,6 +23,12 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
         updateWeightLabel()
     }
     
+    override func willActivate() {
+        updateWeightLabel()
+        crownSequencer.focus()
+        super.willActivate()
+    }
+    
     override func didAppear() {
         updateWeightLabel()
         crownSequencer.focus()
