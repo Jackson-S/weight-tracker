@@ -12,8 +12,6 @@
 		7A0C7893217415DC0031BB06 /* HealthKitAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C7892217415DC0031BB06 /* HealthKitAuthorizer.swift */; };
 		7A0C78952174317F0031BB06 /* WeightLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C788E217401F80031BB06 /* WeightLogic.swift */; };
 		7A0C7897217453090031BB06 /* OptionsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C7896217453090031BB06 /* OptionsInterfaceController.swift */; };
-		7A0C7899217459C10031BB06 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C7898217459C10031BB06 /* Globals.swift */; };
-		7A0C789A217459DE0031BB06 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C7898217459C10031BB06 /* Globals.swift */; };
 		7A12179721735E8A00F3AE27 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A12179621735E8A00F3AE27 /* HealthKit.framework */; };
 		7A330F74216B777800137F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F73216B777800137F78 /* AppDelegate.swift */; };
 		7A330F76216B777800137F78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F75216B777800137F78 /* ViewController.swift */; };
@@ -27,7 +25,14 @@
 		7A330F97216B777900137F78 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F96216B777900137F78 /* InterfaceController.swift */; };
 		7A330F99216B777900137F78 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F98216B777900137F78 /* ExtensionDelegate.swift */; };
 		7A330F9B216B777A00137F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F9A216B777A00137F78 /* Assets.xcassets */; };
+		7A3B9A6721A13D1000E6F1C1 /* HealthKitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */; };
+		7A4A9A5721868ADF00F7835E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A9A5621868ADF00F7835E /* ResultsViewController.swift */; };
 		7A602FBD2175D1EB006F22F5 /* SuccessInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */; };
+		7AA8D54421A10A35008540D9 /* SuccessParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* SuccessParameters.swift */; };
+		7AA8D54621A10DF1008540D9 /* SuccessParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* SuccessParameters.swift */; };
+		7AA8D54821A113A1008540D9 /* OptionsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54721A113A1008540D9 /* OptionsParameters.swift */; };
+		7AA8D54921A1142C008540D9 /* OptionsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54721A113A1008540D9 /* OptionsParameters.swift */; };
+		7AA8D54B21A116C5008540D9 /* HealthKitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +82,6 @@
 		7A0C789021740BC00031BB06 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		7A0C7892217415DC0031BB06 /* HealthKitAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAuthorizer.swift; sourceTree = "<group>"; };
 		7A0C7896217453090031BB06 /* OptionsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInterfaceController.swift; sourceTree = "<group>"; };
-		7A0C7898217459C10031BB06 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		7A12179221735E4C00F3AE27 /* Weight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weight.entitlements; sourceTree = "<group>"; };
 		7A12179621735E8A00F3AE27 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		7A12179821735E8A00F3AE27 /* Weight WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Weight WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -97,11 +101,15 @@
 		7A330F98216B777900137F78 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		7A330F9A216B777A00137F78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A330F9C216B777A00137F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A4A9A5621868ADF00F7835E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessInterfaceController.swift; sourceTree = "<group>"; };
 		7AA7CD7B2175E4CF00169EFD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7AA7CD7D2175E5C000169EFD /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
 		7AA7CD7E2175E5C000169EFD /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
 		7AA7CD7F2175E5C100169EFD /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
+		7AA8D54321A10A35008540D9 /* SuccessParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessParameters.swift; sourceTree = "<group>"; };
+		7AA8D54721A113A1008540D9 /* OptionsParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsParameters.swift; sourceTree = "<group>"; };
+		7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +135,9 @@
 		7A0C7894217431730031BB06 /* Universal */ = {
 			isa = PBXGroup;
 			children = (
-				7A0C7898217459C10031BB06 /* Globals.swift */,
+				7AA8D54321A10A35008540D9 /* SuccessParameters.swift */,
+				7AA8D54721A113A1008540D9 /* OptionsParameters.swift */,
+				7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */,
 				7A0C788E217401F80031BB06 /* WeightLogic.swift */,
 			);
 			path = Universal;
@@ -172,6 +182,7 @@
 				7A12179221735E4C00F3AE27 /* Weight.entitlements */,
 				7A330F73216B777800137F78 /* AppDelegate.swift */,
 				7A330F75216B777800137F78 /* ViewController.swift */,
+				7A4A9A5621868ADF00F7835E /* ResultsViewController.swift */,
 				7A0C7892217415DC0031BB06 /* HealthKitAuthorizer.swift */,
 				7A330F77216B777800137F78 /* Main.storyboard */,
 				7A330F7A216B777900137F78 /* Assets.xcassets */,
@@ -359,9 +370,12 @@
 			files = (
 				7A330F76216B777800137F78 /* ViewController.swift in Sources */,
 				7A0C7893217415DC0031BB06 /* HealthKitAuthorizer.swift in Sources */,
+				7AA8D54821A113A1008540D9 /* OptionsParameters.swift in Sources */,
+				7AA8D54B21A116C5008540D9 /* HealthKitLogic.swift in Sources */,
 				7A0C78952174317F0031BB06 /* WeightLogic.swift in Sources */,
-				7A0C789A217459DE0031BB06 /* Globals.swift in Sources */,
+				7AA8D54421A10A35008540D9 /* SuccessParameters.swift in Sources */,
 				7A330F74216B777800137F78 /* AppDelegate.swift in Sources */,
+				7A4A9A5721868ADF00F7835E /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,9 +385,11 @@
 			files = (
 				7A0C7897217453090031BB06 /* OptionsInterfaceController.swift in Sources */,
 				7A0C788F217401F80031BB06 /* WeightLogic.swift in Sources */,
+				7AA8D54921A1142C008540D9 /* OptionsParameters.swift in Sources */,
+				7A3B9A6721A13D1000E6F1C1 /* HealthKitLogic.swift in Sources */,
 				7A602FBD2175D1EB006F22F5 /* SuccessInterfaceController.swift in Sources */,
 				7A330F99216B777900137F78 /* ExtensionDelegate.swift in Sources */,
-				7A0C7899217459C10031BB06 /* Globals.swift in Sources */,
+				7AA8D54621A10DF1008540D9 /* SuccessParameters.swift in Sources */,
 				7A330F97216B777900137F78 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,40 +16,33 @@ class SuccessInterfaceController: WKInterfaceController {
     @IBOutlet weak var motivationLabel: WKInterfaceLabel!
     
     func weightLabelText(_ weight: Double?) -> String {
-        if let weightUnwrapped = weight {
-            return String(format: "%.1f KG", (weightUnwrapped / 100).rounded() / 10)
-        } else {
-            return "- KG"
-        }
+        let weightKG = ((weight ?? 0) / 100).rounded() / 10
+        return String(format: "%.1f KG", weightKG)
     }
     
     func bmiLabelText(_ bmi: Double?) -> String {
-        if let bmiUnwrapped = bmi {
-            return String(format: "%.1f", bmiUnwrapped)
-        } else {
-            return "-"
-        }
+        return String(format: "%.1f", bmi ?? 0)
     }
     
     func differenceLabelText(_ oldWeight: Double?, _ newWeight: Double?) -> String {
-        guard oldWeight != nil && newWeight != nil else {
-            return "- KG"
+        let difference = ((newWeight ?? 0) - (oldWeight ?? 0)) / 1000
+        
+        if difference > 0 {
+            motivationLabel.setHidden(true)
         }
         
-        let difference = ((newWeight! - oldWeight!) / 100).rounded() / 10
-        
-        motivationLabel.setHidden(difference > 0)
-        
-        return String(format: "%+.1f KG", ((newWeight! - oldWeight!) / 100).rounded() / 10)
+        return String(format: "%+.1f KG", difference)
     }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        if let parameters = context as? [String: Double] {
-            weightLabel.setText(weightLabelText(parameters["weight"]))
-            bmiLabel.setText(bmiLabelText(parameters["bmi"]))
-            differenceLabel.setText(differenceLabelText(parameters["previousWeight"], parameters["weight"]))
+        if let parameters = context as? SuccessParameters {
+            weightLabel.setText(weightLabelText(parameters.weight))
+            bmiLabel.setText(bmiLabelText(parameters.bmi))
+            differenceLabel.setText(differenceLabelText(parameters.weight, parameters.oldWeight))
+        } else {
+            print("Error recieving parameters")
         }
     }
 }

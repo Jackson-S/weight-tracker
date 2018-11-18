@@ -12,23 +12,20 @@ import HealthKit
 class ViewController: UIViewController {
     
     @IBOutlet var weightEntry: UITextField!
-    @IBOutlet var bmiSwitch: UISwitch!
     @IBOutlet weak var bmiLabel: UITextField!
     @IBOutlet weak var bmiClassificationLabel: UILabel!
     @IBOutlet weak var sliderImage: UIImageView!
     
     let weightLogic = WeightLogic()
     let hkAuthorizer = HealthKitAuthorizer()
-    var recordBMI = true
-
-    @IBAction func bmiSwitchToggle(_ sender: UISwitch, forEvent event: UIEvent) {
-        recordBMI = sender.isOn
-    }
     
     @IBAction func updateButtonPushed() {
-        weightLogic.addNewWeightSample()
-        if bmiSwitch.isOn {
-            weightLogic.addNewBMISample()
+        // TODO: Display errors nicely
+        let weightStatus = weightLogic.addNewWeightSample()
+        let bmiStatus = weightLogic.addNewBMISample()
+        
+        if !(weightStatus && bmiStatus) {
+            print("Failed to record")
         }
     }
     
@@ -39,36 +36,38 @@ class ViewController: UIViewController {
     }
     
     func updateWeightLabel() {
-        if let weight = weightLogic.getWeight() {
-            let weightLabelText = String(format: "%.1f KG", arguments: [weight.rounded() / 1000])
-            weightEntry.text = weightLabelText
-        } else {
-            weightEntry.text = "Error"
-        }
+        let weight = weightLogic.weight ?? 0
+        let bmi = weightLogic.bmi ?? 0
+        let classification = weightLogic.bmiCategory
         
-        if let bmi = weightLogic.getBMI() {
-            let bmiLabelText = String(format: "%.1f", arguments: [bmi])
-            bmiLabel.text = bmiLabelText
-        } else {
-            bmiLabel.text = "Error"
-        }
-
-        bmiClassificationLabel.text = weightLogic.getBMIClassification()
+        let weightKG = weight.rounded() / 1000
+        let weightLabelText = String(format: "%.1f KG", weightKG)
+        
+        let bmiLabelText = String(format: "%.1f BMI", bmi)
+        
+        weightEntry.text = weightLabelText
+        bmiLabel.text = bmiLabelText
+        bmiClassificationLabel.text = classification
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hkAuthorizer.requestAuth()
-        // Run an infinite loop while we wait for the weight logic to load
-        while !weightLogic.completedLoad {
-            usleep(100)
-        }
         
-        if !bmiSwitch.isOn {
-            bmiSwitch.setOn(true, animated: false)
-        }
+        // Run an infinite loop while we wait for the weight logic to load
+//        while !weightLogic.completedLoad {
+//            usleep(100)
+//        }
         
         updateWeightLabel()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let newView = segue.destination as! ResultsViewController
+        let parameters = SuccessParameters(weight: weightLogic.weight,
+                                           oldWeight: weightLogic.lastWeight,
+                                           bmi: weightLogic.bmi)
+        newView.parameters = parameters
     }
 }
 

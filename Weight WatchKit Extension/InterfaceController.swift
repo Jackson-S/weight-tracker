@@ -16,20 +16,20 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     
     let weightLogic = WeightLogic()
     
+    func roundedWeightInKG() -> Double {
+        let weight = weightLogic.weight ?? 0
+        return (weight / 100).rounded() / 10
+    }
+    
     func updateWeightLabel() {
-        if let weight = weightLogic.getWeight() {
-            let weightLabelText = String(format: "%.1f KG", arguments: [weight.rounded() / 1000])
-            weightLabel.setText(weightLabelText)
-        } else {
-            weightLabel.setText("Error")
-        }
+        let bmi = weightLogic.bmi ?? 0
         
-        if let bmi = weightLogic.getBMI() {
-            let bmiLabelText = String(format: "%.1f", arguments: [bmi])
-            bmiLabel.setText(bmiLabelText)
-        } else {
-            bmiLabel.setText("Error")
-        }
+        let weightLabelText = String(format: "%.1f KG", roundedWeightInKG())
+        
+        let bmiLabelText = String(format: "%.1f", bmi)
+        
+        weightLabel.setText(weightLabelText)
+        bmiLabel.setText(bmiLabelText)
     }
     
     override func awake(withContext context: Any?) {
@@ -45,10 +45,11 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     }
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        while !weightLogic.completedLoad {
-            usleep(100)
-        }
+//        // This method is called when watch view controller is about to be visible to user
+//        while !weightLogic.completedLoad {
+//            usleep(100)
+//        }
+        
         updateWeightLabel()
         crownSequencer.focus()
         super.willActivate()
@@ -58,6 +59,10 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
         crownSequencer.resignFocus()
+    }
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+        return OptionsParameters(height: weightLogic.height)
     }
     
     @IBAction func incButtonClick() {
@@ -73,43 +78,32 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     }
     
     @IBAction func updateButtonClick() {
-        let contextForSuccess: [String: Double?] = [
-            "weight": weightLogic.getWeight(),
-            "previousWeight": weightLogic.lastWeight,
-            "bmi": weightLogic.getBMI(),
-        ]
+        let weightResult = weightLogic.addNewWeightSample()
+        let bmiResult = weightLogic.addNewBMISample()
         
-        weightLogic.addNewWeightSample()
-        
-        if options["addBMI"]! {
-            weightLogic.addNewBMISample()
+        if !(weightResult && bmiResult) {
+            print("Error recording results!")
         }
         
         WKInterfaceDevice.current().play(.success)
         
-        presentController(withName: "successInterface", context: contextForSuccess)
+        let parameters = SuccessParameters(weight: weightLogic.weight,
+                                           oldWeight: weightLogic.lastWeight,
+                                           bmi: weightLogic.bmi)
+        
+        presentController(withName: "successInterface", context: parameters)
     }
     
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
         let incrementValue = (crownSequencer?.rotationsPerSecond)! * 15
         
-        var oldWeight: Double? = nil
-        var newWeight: Double? = nil
-        
-        if let weight = weightLogic.getWeight() {
-            oldWeight = (weight / 100).rounded() / 10
-        }
+        let startWeight = roundedWeightInKG()
         
         weightLogic.incrementBy(incrementValue)
         
-        if let weight = weightLogic.getWeight() {
-            newWeight = (weight / 100).rounded() / 10
-        }
-        
-        if let newWeightUnwrapped = newWeight, let oldWeightUnwrapped = oldWeight {
-            if newWeightUnwrapped != oldWeightUnwrapped {
-                WKInterfaceDevice.current().play(.click)
-            }
+        // Check to see if the output display has changed
+        if startWeight != roundedWeightInKG() {
+            WKInterfaceDevice.current().play(.click)
         }
 
         updateWeightLabel()

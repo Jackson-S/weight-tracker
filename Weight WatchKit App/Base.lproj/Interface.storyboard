@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
         <!--mainInterface-->
@@ -55,7 +55,6 @@
                     </items>
                     <connections>
                         <outlet property="bmiLabel" destination="HWI-tF-iH3" id="ICE-Cy-JNR"/>
-                        <outlet property="bmiToggle" destination="T10-eN-EdB" id="K16-Eg-flh"/>
                         <outlet property="weightLabel" destination="zSO-BU-G9J" id="HiH-H1-oq9"/>
                         <segue destination="n2g-qu-2xE" kind="relationship" relationship="nextPage" id="Vbq-xz-sKv"/>
                     </connections>
@@ -135,11 +134,6 @@
                                 </slider>
                             </items>
                         </group>
-                        <switch width="1" alignment="left" value="YES" title="Add BMI" id="T10-eN-EdB">
-                            <connections>
-                                <action selector="bmiToggle:" destination="AgC-eL-Hgc" id="CAk-MN-TjV"/>
-                            </connections>
-                        </switch>
                     </items>
                     <connections>
                         <outlet property="heightLabel" destination="jrj-MH-zxg" id="GTj-Bz-jr4"/>
