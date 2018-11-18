@@ -108,8 +108,9 @@ class WeightLogic {
         let sampleType = HKSampleType.quantityType(forIdentifier: .bodyMass)!
         let sampleDate = Date(timeIntervalSinceNow: 0)
         
-        // May cause issues due to concurrency?
-        return (healthLogic?.addMeasurement(type: sampleType, quantity: weight!, date: sampleDate))!
+        let sampleData = weightKG! * 1000
+        
+        return (healthLogic?.addMeasurement(type: sampleType, quantity: sampleData, date: sampleDate))!
     }
     
     func addNewBMISample() -> Bool {
