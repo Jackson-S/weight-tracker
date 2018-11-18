@@ -13,10 +13,12 @@ class WeightLogic {
     private var healthLogic: HealthKitLogic?
     
     // Height must be positive, otherwise crashes will happen
-    private(set) public var height: Double? {
+    public var height: Double? {
         didSet {
-            if height! <= 0 {
-                height = 0.01
+            if let heightUnwrap = height {
+                if heightUnwrap <= 0 {
+                    height = 0.01
+                }
             }
         }
     }
@@ -24,8 +26,10 @@ class WeightLogic {
     // Weight doesn't have to be positive, but it'll look nicer
     private(set) public var weight: Double? {
         didSet {
-            if weight! <= 0 {
-                weight = 1
+            if let weightUnwrap = weight {
+                if weightUnwrap <= 0 {
+                    weight = 1
+                }
             }
         }
     }
@@ -80,12 +84,12 @@ class WeightLogic {
             value in
             
             if self.lastWeight == nil {
-                self.lastWeight = value
+                self.lastWeight = value ?? 72 * 1000
             } else {
                 self.lastWeight = self.weight
             }
             
-            self.weight = value
+            self.weight = value ?? 72 * 1000
         }
     }
     

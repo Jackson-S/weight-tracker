@@ -82,6 +82,11 @@ class HealthKitLogic {
         let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: 1, sortDescriptors: [sortDescriptor]) {
             query, results, error in
             
+            guard results != nil else {
+                completion(nil)
+                return
+            }
+            
             if let sample = (results as! [HKQuantitySample]).last {
                 if sampleType == HKObjectType.quantityType(forIdentifier: .bodyMass)! {
                     completion(sample.quantity.doubleValue(for: .gram()))

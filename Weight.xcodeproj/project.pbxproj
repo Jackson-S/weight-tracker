@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7A0C788F217401F80031BB06 /* WeightLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C788E217401F80031BB06 /* WeightLogic.swift */; };
 		7A0C789121740BC00031BB06 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0C789021740BC00031BB06 /* HealthKit.framework */; };
-		7A0C7893217415DC0031BB06 /* HealthKitAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C7892217415DC0031BB06 /* HealthKitAuthorizer.swift */; };
 		7A0C78952174317F0031BB06 /* WeightLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C788E217401F80031BB06 /* WeightLogic.swift */; };
 		7A0C7897217453090031BB06 /* OptionsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C7896217453090031BB06 /* OptionsInterfaceController.swift */; };
 		7A12179721735E8A00F3AE27 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A12179621735E8A00F3AE27 /* HealthKit.framework */; };
@@ -80,7 +79,6 @@
 /* Begin PBXFileReference section */
 		7A0C788E217401F80031BB06 /* WeightLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLogic.swift; sourceTree = "<group>"; };
 		7A0C789021740BC00031BB06 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		7A0C7892217415DC0031BB06 /* HealthKitAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAuthorizer.swift; sourceTree = "<group>"; };
 		7A0C7896217453090031BB06 /* OptionsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInterfaceController.swift; sourceTree = "<group>"; };
 		7A12179221735E4C00F3AE27 /* Weight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weight.entitlements; sourceTree = "<group>"; };
 		7A12179621735E8A00F3AE27 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -183,7 +181,6 @@
 				7A330F73216B777800137F78 /* AppDelegate.swift */,
 				7A330F75216B777800137F78 /* ViewController.swift */,
 				7A4A9A5621868ADF00F7835E /* ResultsViewController.swift */,
-				7A0C7892217415DC0031BB06 /* HealthKitAuthorizer.swift */,
 				7A330F77216B777800137F78 /* Main.storyboard */,
 				7A330F7A216B777900137F78 /* Assets.xcassets */,
 				7A330F7C216B777900137F78 /* LaunchScreen.storyboard */,
@@ -369,7 +366,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A330F76216B777800137F78 /* ViewController.swift in Sources */,
-				7A0C7893217415DC0031BB06 /* HealthKitAuthorizer.swift in Sources */,
 				7AA8D54821A113A1008540D9 /* OptionsParameters.swift in Sources */,
 				7AA8D54B21A116C5008540D9 /* HealthKitLogic.swift in Sources */,
 				7A0C78952174317F0031BB06 /* WeightLogic.swift in Sources */,

@@ -11,29 +11,29 @@ import Foundation
 
 class OptionsInterfaceController: WKInterfaceController {
     
-    var parameters: OptionsParameters?
+    var weightLogic: WeightLogic?
     
     @IBOutlet weak var heightLabel: WKInterfaceLabel!
     @IBOutlet weak var heightSelector: WKInterfaceSlider!
     
     @IBAction func heightSelectorUpdate(_ value: Float) {
-        parameters?.height = Double(value) / 100
+        weightLogic?.height = Double(value) / 100
         heightLabel.setText(generateHeightText())
     }
     
     override func awake(withContext context: Any?) {
-        parameters = context as? OptionsParameters
-        
-        let heightCM = (parameters?.height ?? 0) * 100
+        weightLogic = context as? WeightLogic
+        super.awake(withContext: context)
+    }
+    
+    override func didAppear() {
+        let heightCM = (weightLogic?.height ?? 0) * 100
         
         heightSelector.setValue(Float(heightCM))
-        
-        super.awake(withContext: context)
-        
         heightLabel.setText(generateHeightText())
     }
     
     func generateHeightText() -> String {
-        return String(format: "%.2f M", parameters?.height ?? 0)
+        return String(format: "%.2f M", weightLogic?.height ?? 0)
     }
 }

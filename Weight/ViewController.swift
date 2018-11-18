@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderImage: UIImageView!
     
     let weightLogic = WeightLogic()
-    let hkAuthorizer = HealthKitAuthorizer()
     
     @IBAction func updateButtonPushed() {
         // TODO: Display errors nicely
@@ -52,12 +51,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hkAuthorizer.requestAuth()
-        
-        // Run an infinite loop while we wait for the weight logic to load
-//        while !weightLogic.completedLoad {
-//            usleep(100)
-//        }
         
         updateWeightLabel()
     }

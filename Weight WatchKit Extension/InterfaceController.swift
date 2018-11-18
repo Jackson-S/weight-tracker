@@ -16,22 +16,6 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     
     let weightLogic = WeightLogic()
     
-    func roundedWeightInKG() -> Double {
-        let weight = weightLogic.weight ?? 0
-        return (weight / 100).rounded() / 10
-    }
-    
-    func updateWeightLabel() {
-        let bmi = weightLogic.bmi ?? 0
-        
-        let weightLabelText = String(format: "%.1f KG", roundedWeightInKG())
-        
-        let bmiLabelText = String(format: "%.1f", bmi)
-        
-        weightLabel.setText(weightLabelText)
-        bmiLabel.setText(bmiLabelText)
-    }
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -44,17 +28,6 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
         crownSequencer.focus()
     }
     
-    override func willActivate() {
-//        // This method is called when watch view controller is about to be visible to user
-//        while !weightLogic.completedLoad {
-//            usleep(100)
-//        }
-        
-        updateWeightLabel()
-        crownSequencer.focus()
-        super.willActivate()
-    }
-    
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
@@ -62,7 +35,7 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-        return OptionsParameters(height: weightLogic.height)
+        return weightLogic
     }
     
     @IBAction func incButtonClick() {
@@ -107,6 +80,22 @@ class InterfaceController: WKInterfaceController, WKCrownDelegate {
         }
 
         updateWeightLabel()
+    }
+    
+    func roundedWeightInKG() -> Double {
+        let weight = weightLogic.weight ?? 0
+        return (weight / 100).rounded() / 10
+    }
+    
+    func updateWeightLabel() {
+        let bmi = weightLogic.bmi ?? 0
+        
+        let weightLabelText = String(format: "%.1f KG", roundedWeightInKG())
+        
+        let bmiLabelText = String(format: "%.1f", bmi)
+        
+        weightLabel.setText(weightLabelText)
+        bmiLabel.setText(bmiLabelText)
     }
 
 }
