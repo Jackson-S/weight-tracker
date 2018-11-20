@@ -2,7 +2,23 @@
   "images" : [
     {
       "idiom" : "watch",
-      "filename" : "Minus.png"
+      "filename" : "Minus_26@2x.png",
+      "screen-width" : "<=145"
+    },
+    {
+      "idiom" : "watch",
+      "filename" : "Minus_28@2x.png",
+      "screen-width" : ">161"
+    },
+    {
+      "idiom" : "watch",
+      "filename" : "Minus_28@2x-1.png",
+      "screen-width" : ">145"
+    },
+    {
+      "idiom" : "watch",
+      "filename" : "Minus_28@2x-2.png",
+      "screen-width" : ">183"
     }
   ],
   "info" : {

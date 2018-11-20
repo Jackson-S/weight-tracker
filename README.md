@@ -7,7 +7,10 @@ Literally zero internet connection is required and no non-required data is taken
 
 ## Screenshots
 
-![Beautiful Screenshot 1](/Screenshots/a.png)
-![Beautiful Screenshot 2](/Screenshots/b.png)
-![Beautiful Screenshot 3](/Screenshots/c.png)
+### WatchOS
+![Apple Watch Input Screen](/Screenshots/watchos_a.png)
+![Apple Watch Results Screen](/Screenshots/watchos_b.png)
 
+### iOS
+![iOS Input Screen](/Screenshots/ios_a.png)
+![iOS Results Screen](/Screenshots/ios_b.png)

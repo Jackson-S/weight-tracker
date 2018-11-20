@@ -15,9 +15,10 @@
                     <items>
                         <group width="1" alignment="center" id="f7A-Mn-gDG">
                             <items>
-                                <button width="25" height="25" alignment="left" verticalAlignment="center" backgroundImage="Minus" id="29h-CQ-2fz">
+                                <button width="28" height="28" alignment="left" verticalAlignment="center" backgroundImage="Minus" id="29h-CQ-2fz">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="system" pointSize="24"/>
+                                    <variation key="device=watch38mm" height="26" width="26"/>
                                     <connections>
                                         <action selector="decButtonClick" destination="AgC-eL-Hgc" id="HsT-BE-Xww"/>
                                     </connections>
@@ -26,9 +27,10 @@
                                     <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
                                     <fontDescription key="font" type="system" pointSize="22"/>
                                 </label>
-                                <button width="25" height="25" alignment="right" verticalAlignment="center" backgroundImage="Plus" id="UTq-C3-OYW">
+                                <button width="28" height="28" alignment="right" verticalAlignment="center" backgroundImage="Plus" id="UTq-C3-OYW">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="system" pointSize="24"/>
+                                    <variation key="device=watch38mm" height="26" width="26"/>
                                     <connections>
                                         <action selector="incButtonClick" destination="AgC-eL-Hgc" id="oJ1-Hr-sJh"/>
                                     </connections>
@@ -50,9 +52,13 @@
                                 <label alignment="center" verticalAlignment="bottom" text="BMI Category" textAlignment="center" id="Cmf-Iv-KpN" userLabel="BMI Category"/>
                             </items>
                         </group>
-                        <button width="1" alignment="center" verticalAlignment="bottom" semanticContentAttribute="playback" title="Update" backgroundImage="rectangularButton" id="v0e-Sp-vdp">
+                        <button width="100" height="35" alignment="center" verticalAlignment="bottom" semanticContentAttribute="playback" title="Update" backgroundImage="rectangularButton" id="v0e-Sp-vdp">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="system" pointSize="17"/>
+                            <variation key="device=watch38mm" height="35" width="134"/>
+                            <variation key="device=watch40mm" height="35" width="134"/>
+                            <variation key="device=watch42mm" height="40" width="154"/>
+                            <variation key="device=watch44mm" height="40" width="154"/>
                             <connections>
                                 <action selector="updateButtonClick" destination="AgC-eL-Hgc" id="neh-1l-ptt"/>
                             </connections>
@@ -65,7 +71,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="34" y="30.948717948717952"/>
+            <point key="canvasLocation" x="34" y="20"/>
         </scene>
         <!--Return-->
         <scene sceneID="ng2-i6-mih">
@@ -115,7 +121,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="269" y="31"/>
+            <point key="canvasLocation" x="275" y="20"/>
         </scene>
     </scenes>
 </document>
