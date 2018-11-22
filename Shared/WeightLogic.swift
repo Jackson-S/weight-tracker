@@ -94,24 +94,15 @@ class WeightLogic {
             healthLogic = nil
         }
         
-        self.getRecentWeight()
         self.getRecentHeight()
     }
     
     func updateWeight(_ callback: @escaping () -> Void) {
         healthLogic?.getMeasurement(sampleType: HKSampleType.quantityType(forIdentifier: .bodyMass)!) {
             value in
-            self.lastWeight = self.weight
+            self.lastWeight = value ?? 72 * 1000
             self.weight = value ?? 72 * 1000
             callback()
-        }
-    }
-    
-    private func getRecentWeight() {
-        healthLogic?.getMeasurement(sampleType: HKSampleType.quantityType(forIdentifier: .bodyMass)!) {
-            value in
-            self.weight = value ?? 72 * 1000
-            self.lastWeight = self.weight
         }
     }
     
