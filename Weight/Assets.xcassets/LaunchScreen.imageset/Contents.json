@@ -2,11 +2,14 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "AppStore @1x.png"
+      "filename" : "LaunchScreenPlus.pdf"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

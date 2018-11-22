@@ -2,23 +2,7 @@
   "images" : [
     {
       "idiom" : "watch",
-      "filename" : "Accept_38mm.png",
-      "screen-width" : "<=145"
-    },
-    {
-      "idiom" : "watch",
-      "filename" : "Accept_38mm-1.png",
-      "screen-width" : ">161"
-    },
-    {
-      "idiom" : "watch",
-      "filename" : "Accept_42mm.png",
-      "screen-width" : ">145"
-    },
-    {
-      "idiom" : "watch",
-      "filename" : "Accept_42mm-1.png",
-      "screen-width" : ">183"
+      "filename" : "Rectangular Button.pdf"
     }
   ],
   "info" : {

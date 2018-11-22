@@ -15,17 +15,28 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var differenceLabel: UILabel!
     
-    var parameters: SuccessParameters?
+    var parameters: ResultsParameters?
     
     override func viewDidLoad() {
         if let parameters = self.parameters {
-            let weightKG = parameters.weight / 1000
-            let differenceKG = (parameters.weight - parameters.oldWeight) / 1000
-            let bmi = parameters.bmi
+            if let weightKG = parameters.weightKG {
+                weightLabel.text = String(format: "%.1f KG", weightKG)
+            } else {
+                weightLabel.text = "--- KG"
+            }
             
-            weightLabel.text = String(format: "%.1f KG", weightKG)
-            differenceLabel.text = String(format: "%+.1f KG", differenceKG)
-            bmiLabel.text = String(format: "%.1f", bmi)
+            if let weight = parameters.weight, let oldWeight = parameters.oldWeight {
+                let differenceKG = ((weight - oldWeight) / 100).rounded() / 10
+                differenceLabel.text = String(format: "%+.1f KG", differenceKG)
+            } else {
+                differenceLabel.text = "--- KG"
+            }
+            
+            if let bmi = parameters.bmi {
+                bmiLabel.text = String(format: "%.1f", bmi)
+            } else {
+                bmiLabel.text = "---"
+            }
         }
     }
 }

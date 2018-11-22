@@ -51,16 +51,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Super hacky way to get the labels to update properly. TODO: Find good fix
-        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.2, execute: updateLabels)
+        weightLogic.updateWeight(updateLabels)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let newView = segue.destination as! ResultsViewController
-        let parameters = SuccessParameters(weight: weightLogic.weight,
+        let parameters = ResultsParameters(weight: weightLogic.weight,
                                            weightKG: weightLogic.weightKG,
                                            oldWeight: weightLogic.lastWeight,
-                                           bmi: weightLogic.bmi)
+                                           bmi: weightLogic.bmi,
+                                           bmiCategroy: weightLogic.bmiCategory,
+                                           totalLoss: 0)
         newView.parameters = parameters
     }
 }

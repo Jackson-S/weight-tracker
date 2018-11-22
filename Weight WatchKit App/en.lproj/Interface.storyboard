@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+    </dependencies>
+    <scenes>
+        <!--mainInterface-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="mainInterface" id="AgC-eL-Hgc" customClass="EntryInterfaceController" customModule="Weight_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="9QU-Lu-NwZ" userLabel="Weight Information">
+                            <items>
+                                <group width="136" alignment="center" id="f7A-Mn-gDG" userLabel="Weight Selector">
+                                    <items>
+                                        <button width="22" height="22" alignment="left" verticalAlignment="center" backgroundImage="Minus" id="29h-CQ-2fz">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            <variation key="device=watch38mm" height="20" width="20"/>
+                                            <connections>
+                                                <action selector="decButtonClick" destination="AgC-eL-Hgc" id="HsT-BE-Xww"/>
+                                            </connections>
+                                        </button>
+                                        <label width="0.59999999999999998" alignment="center" verticalAlignment="center" text="72.0" textAlignment="center" baselineAdjustment="alignCenters" minimumScaleFactor="0.80000000000000004" id="zSO-BU-G9J">
+                                            <accessibilityTraits key="accessibilityTraits" notEnabled="YES" updatesFrequently="YES"/>
+                                            <fontDescription key="font" type="system" pointSize="38"/>
+                                            <variation key="device=watch38mm">
+                                                <fontDescription key="font" type="system" pointSize="36"/>
+                                            </variation>
+                                        </label>
+                                        <button width="22" height="22" alignment="right" verticalAlignment="center" backgroundImage="Plus" id="UTq-C3-OYW">
+                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            <variation key="device=watch38mm" height="20" width="20"/>
+                                            <connections>
+                                                <action selector="incButtonClick" destination="AgC-eL-Hgc" id="oJ1-Hr-sJh"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <label alignment="center" verticalAlignment="bottom" text="Kilograms" textAlignment="center" id="ydA-RM-0iY">
+                                    <accessibilityTraits key="accessibilityTraits" staticText="YES" notEnabled="YES"/>
+                                    <color key="textColor" red="0.77706670761108398" green="0.97428315877914429" blue="0.42329245805740356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <label alignment="center" verticalAlignment="bottom" text="Previous: 72.4" textAlignment="center" id="L4J-3m-WwV">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <button alignment="center" verticalAlignment="bottom" semanticContentAttribute="playback" title="Update" backgroundImage="rectangularButton" id="v0e-Sp-vdp">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                            <connections>
+                                <action selector="updateButtonClick" destination="AgC-eL-Hgc" id="neh-1l-ptt"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <menu key="menu" id="hqQ-pd-pF9">
+                        <items>
+                            <menuItem title="Change Units" icon="repeat" id="1jR-Cp-51s">
+                                <connections>
+                                    <action selector="changeUnitButtonPushed" destination="AgC-eL-Hgc" id="GVh-4K-YPM"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="previousWeightLabel" destination="L4J-3m-WwV" id="cTf-2h-WFS"/>
+                        <outlet property="unitLabel" destination="ydA-RM-0iY" id="LhP-Qr-ejN"/>
+                        <outlet property="weightLabel" destination="zSO-BU-G9J" id="HiH-H1-oq9"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="19.615384615384617"/>
+        </scene>
+        <!--Return-->
+        <scene sceneID="ng2-i6-mih">
+            <objects>
+                <controller identifier="successInterface" title="Return" id="Fd9-ib-SiQ" customClass="SuccessInterfaceController" customModule="Weight_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" id="Fuj-at-MZX" userLabel="Weight">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Weight:" textAlignment="left" id="waq-ye-MvB">
+                                    <color key="textColor" red="0.77706670759999996" green="0.97428315880000005" blue="0.42329245809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <group alignment="right" verticalAlignment="center" layout="vertical" id="qLV-bD-vVc" userLabel="Weight Values">
+                                    <items>
+                                        <label alignment="right" text="72.0 KG" textAlignment="right" id="vYb-zN-yMC"/>
+                                        <label alignment="right" text="-0.2 KG" textAlignment="right" id="njI-hl-PG8"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <separator alignment="center" verticalAlignment="center" id="Awu-FH-JFX">
+                            <color key="color" red="0.77706670759999996" green="0.97428315880000005" blue="0.42329245809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </separator>
+                        <group width="1" alignment="left" verticalAlignment="center" id="wkD-yC-IeU" userLabel="BMI">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="BMI:" textAlignment="left" id="biV-0p-4qS">
+                                    <color key="textColor" red="0.77706670759999996" green="0.97428315880000005" blue="0.42329245809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <group alignment="right" verticalAlignment="center" layout="vertical" id="qLp-lM-TYV" userLabel="BMI Values">
+                                    <items>
+                                        <label alignment="right" text="24.9" textAlignment="right" id="SUV-JR-nqo"/>
+                                        <label alignment="right" verticalAlignment="bottom" text="Normal" textAlignment="right" id="TtC-iz-Nya"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <separator alignment="center" verticalAlignment="center" id="IeE-cj-lFU">
+                            <color key="color" red="0.77706670759999996" green="0.97428315880000005" blue="0.42329245809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </separator>
+                        <group width="1" alignment="left" verticalAlignment="center" id="9da-cd-Lcq" userLabel="Total Weight Loss">
+                            <items>
+                                <label alignment="left" text="Total:" id="elL-Pd-ybw">
+                                    <color key="textColor" red="0.77706670759999996" green="0.97428315880000005" blue="0.42329245809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="center" text="-20.0 KG" id="Z0D-yp-wd3"/>
+                            </items>
+                        </group>
+                        <label alignment="center" verticalAlignment="center" text="Keep it up!" id="iMa-Zj-f8y">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="bmiCategoryLabel" destination="TtC-iz-Nya" id="oMd-PU-1od"/>
+                        <outlet property="bmiLabel" destination="SUV-JR-nqo" id="RSd-xi-ZjA"/>
+                        <outlet property="differenceLabel" destination="njI-hl-PG8" id="ZGb-0I-ecQ"/>
+                        <outlet property="motivationLabel" destination="iMa-Zj-f8y" id="5Vk-Ck-aaq"/>
+                        <outlet property="totalWeightLossLabel" destination="Z0D-yp-wd3" id="hZo-VF-HeG"/>
+                        <outlet property="weightLabel" destination="vYb-zN-yMC" id="fdV-HJ-fNB"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="275" y="20"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.77706670761108398" green="0.97428315877914429" blue="0.42329245805740356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+</document>

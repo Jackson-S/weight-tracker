@@ -1,0 +1,36 @@
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "4xc-fX-KaY"; */
+"4xc-fX-KaY.normalTitle" = "Update";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6i4-33-jjE"; */
+"6i4-33-jjE.text" = "Label";
+
+/* Class = "UILabel"; text = "Test"; ObjectID = "Am7-bX-HB4"; */
+"Am7-bX-HB4.text" = "Test";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "AwB-eZ-WLM"; */
+"AwB-eZ-WLM.text" = "Label";
+
+/* Class = "UILabel"; text = "Difference:"; ObjectID = "Cv5-yd-hll"; */
+"Cv5-yd-hll.text" = "Difference:";
+
+/* Class = "UILabel"; text = "Added Successfully"; ObjectID = "KGj-2w-3p7"; */
+"KGj-2w-3p7.text" = "Added Successfully";
+
+/* Class = "UILabel"; text = "Weight:"; ObjectID = "Vkz-vF-pVC"; */
+"Vkz-vF-pVC.text" = "Weight:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ebh-DF-Mzo"; */
+"ebh-DF-Mzo.text" = "Label";
+
+/* Class = "UILabel"; text = "BMI:"; ObjectID = "jba-Rf-Xe3"; */
+"jba-Rf-Xe3.text" = "BMI:";
+
+/* Class = "UINavigationItem"; title = "Weight"; ObjectID = "oUe-td-wGA"; */
+"oUe-td-wGA.title" = "Weight";
+
+/* Class = "UILabel"; text = "BMI Classification"; ObjectID = "u93-hG-ql9"; */
+"u93-hG-ql9.text" = "BMI Classification";
+
+/* Class = "UILabel"; text = "Test"; ObjectID = "yDD-5i-XgI"; */
+"yDD-5i-XgI.text" = "Test";

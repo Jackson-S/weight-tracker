@@ -10,7 +10,6 @@
 		7A0C788F217401F80031BB06 /* WeightLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C788E217401F80031BB06 /* WeightLogic.swift */; };
 		7A0C789121740BC00031BB06 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0C789021740BC00031BB06 /* HealthKit.framework */; };
 		7A0C78952174317F0031BB06 /* WeightLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C788E217401F80031BB06 /* WeightLogic.swift */; };
-		7A0C7897217453090031BB06 /* OptionsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C7896217453090031BB06 /* OptionsInterfaceController.swift */; };
 		7A12179721735E8A00F3AE27 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A12179621735E8A00F3AE27 /* HealthKit.framework */; };
 		7A330F74216B777800137F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F73216B777800137F78 /* AppDelegate.swift */; };
 		7A330F76216B777800137F78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F75216B777800137F78 /* ViewController.swift */; };
@@ -18,20 +17,20 @@
 		7A330F7B216B777900137F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F7A216B777900137F78 /* Assets.xcassets */; };
 		7A330F7E216B777900137F78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F7C216B777900137F78 /* LaunchScreen.storyboard */; };
 		7A330F83216B777900137F78 /* Weight WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7A330F82216B777900137F78 /* Weight WatchKit App.app */; };
-		7A330F89216B777900137F78 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F87216B777900137F78 /* Interface.storyboard */; };
-		7A330F8B216B777900137F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F8A216B777900137F78 /* Assets.xcassets */; };
 		7A330F92216B777900137F78 /* Weight WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7A330F91216B777900137F78 /* Weight WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7A330F97216B777900137F78 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F96216B777900137F78 /* InterfaceController.swift */; };
+		7A330F97216B777900137F78 /* EntryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F96216B777900137F78 /* EntryInterfaceController.swift */; };
 		7A330F99216B777900137F78 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A330F98216B777900137F78 /* ExtensionDelegate.swift */; };
 		7A330F9B216B777A00137F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F9A216B777A00137F78 /* Assets.xcassets */; };
 		7A3B9A6721A13D1000E6F1C1 /* HealthKitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */; };
 		7A4A9A5721868ADF00F7835E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A9A5621868ADF00F7835E /* ResultsViewController.swift */; };
 		7A602FBD2175D1EB006F22F5 /* SuccessInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */; };
-		7AA8D54421A10A35008540D9 /* SuccessParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* SuccessParameters.swift */; };
-		7AA8D54621A10DF1008540D9 /* SuccessParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* SuccessParameters.swift */; };
-		7AA8D54821A113A1008540D9 /* OptionsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54721A113A1008540D9 /* OptionsParameters.swift */; };
-		7AA8D54921A1142C008540D9 /* OptionsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54721A113A1008540D9 /* OptionsParameters.swift */; };
+		7AA8D54421A10A35008540D9 /* ResultsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* ResultsParameters.swift */; };
+		7AA8D54621A10DF1008540D9 /* ResultsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* ResultsParameters.swift */; };
 		7AA8D54B21A116C5008540D9 /* HealthKitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */; };
+		7AA9FA9421A61B76001A017E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F8A216B777900137F78 /* Assets.xcassets */; };
+		7AA9FA9521A61B79001A017E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F8A216B777900137F78 /* Assets.xcassets */; };
+		7AFDEBF321A522D000199C85 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFDEBF221A522D000199C85 /* UnitsEnum.swift */; };
+		7AFDEBF421A5238500199C85 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFDEBF221A522D000199C85 /* UnitsEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,36 +78,29 @@
 /* Begin PBXFileReference section */
 		7A0C788E217401F80031BB06 /* WeightLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLogic.swift; sourceTree = "<group>"; };
 		7A0C789021740BC00031BB06 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		7A0C7896217453090031BB06 /* OptionsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInterfaceController.swift; sourceTree = "<group>"; };
 		7A12179221735E4C00F3AE27 /* Weight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weight.entitlements; sourceTree = "<group>"; };
 		7A12179621735E8A00F3AE27 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		7A12179821735E8A00F3AE27 /* Weight WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Weight WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		7A330F70216B777800137F78 /* Weight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A330F73216B777800137F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A330F75216B777800137F78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7A330F78216B777800137F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A330F7A216B777900137F78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7A330F7D216B777900137F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A330F7F216B777900137F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A330F82216B777900137F78 /* Weight WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weight WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A330F88216B777900137F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		7A330F8A216B777900137F78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A330F8C216B777900137F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A330F91216B777900137F78 /* Weight WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Weight WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A330F96216B777900137F78 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		7A330F96216B777900137F78 /* EntryInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryInterfaceController.swift; sourceTree = "<group>"; };
 		7A330F98216B777900137F78 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		7A330F9A216B777A00137F78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A330F9C216B777A00137F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A4A9A5621868ADF00F7835E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessInterfaceController.swift; sourceTree = "<group>"; };
-		7A68E30E21A3F0F000F2C3FD /* watchos_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchos_b.png; sourceTree = "<group>"; };
-		7A68E30F21A3F0F000F2C3FD /* watchos_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchos_a.png; sourceTree = "<group>"; };
-		7A68E31021A3F0F000F2C3FD /* ios_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_a.png; sourceTree = "<group>"; };
-		7A68E31121A3F0F000F2C3FD /* ios_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_b.png; sourceTree = "<group>"; };
-		7AA7CD7B2175E4CF00169EFD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		7AA8D54321A10A35008540D9 /* SuccessParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessParameters.swift; sourceTree = "<group>"; };
-		7AA8D54721A113A1008540D9 /* OptionsParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsParameters.swift; sourceTree = "<group>"; };
+		7AA8D54321A10A35008540D9 /* ResultsParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsParameters.swift; sourceTree = "<group>"; };
 		7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitLogic.swift; sourceTree = "<group>"; };
+		7AA9FA9621A63C5A001A017E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7AA9FA9821A63C5C001A017E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7AFDEBF221A522D000199C85 /* UnitsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,15 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7A0C7894217431730031BB06 /* Universal */ = {
+		7A0C7894217431730031BB06 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				7AA8D54321A10A35008540D9 /* SuccessParameters.swift */,
-				7AA8D54721A113A1008540D9 /* OptionsParameters.swift */,
+				7AA8D54321A10A35008540D9 /* ResultsParameters.swift */,
 				7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */,
 				7A0C788E217401F80031BB06 /* WeightLogic.swift */,
+				7AFDEBF221A522D000199C85 /* UnitsEnum.swift */,
 			);
-			path = Universal;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		7A12179321735E4C00F3AE27 /* Frameworks */ = {
@@ -154,9 +146,7 @@
 		7A330F67216B777800137F78 = {
 			isa = PBXGroup;
 			children = (
-				7AA7CD7C2175E5AF00169EFD /* Screenshots */,
-				7AA7CD7B2175E4CF00169EFD /* README.md */,
-				7A0C7894217431730031BB06 /* Universal */,
+				7A0C7894217431730031BB06 /* Shared */,
 				7A330F72216B777800137F78 /* Weight */,
 				7A330F86216B777900137F78 /* Weight WatchKit App */,
 				7A330F95216B777900137F78 /* Weight WatchKit Extension */,
@@ -193,7 +183,6 @@
 		7A330F86216B777900137F78 /* Weight WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				7A330F87216B777900137F78 /* Interface.storyboard */,
 				7A330F8A216B777900137F78 /* Assets.xcassets */,
 				7A330F8C216B777900137F78 /* Info.plist */,
 			);
@@ -204,25 +193,13 @@
 			isa = PBXGroup;
 			children = (
 				7A12179821735E8A00F3AE27 /* Weight WatchKit Extension.entitlements */,
-				7A330F96216B777900137F78 /* InterfaceController.swift */,
+				7A330F96216B777900137F78 /* EntryInterfaceController.swift */,
 				7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */,
-				7A0C7896217453090031BB06 /* OptionsInterfaceController.swift */,
 				7A330F98216B777900137F78 /* ExtensionDelegate.swift */,
 				7A330F9A216B777A00137F78 /* Assets.xcassets */,
 				7A330F9C216B777A00137F78 /* Info.plist */,
 			);
 			path = "Weight WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		7AA7CD7C2175E5AF00169EFD /* Screenshots */ = {
-			isa = PBXGroup;
-			children = (
-				7A68E31021A3F0F000F2C3FD /* ios_a.png */,
-				7A68E31121A3F0F000F2C3FD /* ios_b.png */,
-				7A68E30F21A3F0F000F2C3FD /* watchos_a.png */,
-				7A68E30E21A3F0F000F2C3FD /* watchos_b.png */,
-			);
-			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,8 +294,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
 			);
 			mainGroup = 7A330F67216B777800137F78;
 			productRefGroup = 7A330F71216B777800137F78 /* Products */;
@@ -347,8 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A330F8B216B777900137F78 /* Assets.xcassets in Resources */,
-				7A330F89216B777900137F78 /* Interface.storyboard in Resources */,
+				7AA9FA9421A61B76001A017E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA9FA9521A61B79001A017E /* Assets.xcassets in Resources */,
 				7A330F9B216B777A00137F78 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,10 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A330F76216B777800137F78 /* ViewController.swift in Sources */,
-				7AA8D54821A113A1008540D9 /* OptionsParameters.swift in Sources */,
+				7AFDEBF321A522D000199C85 /* UnitsEnum.swift in Sources */,
 				7AA8D54B21A116C5008540D9 /* HealthKitLogic.swift in Sources */,
 				7A0C78952174317F0031BB06 /* WeightLogic.swift in Sources */,
-				7AA8D54421A10A35008540D9 /* SuccessParameters.swift in Sources */,
+				7AA8D54421A10A35008540D9 /* ResultsParameters.swift in Sources */,
 				7A330F74216B777800137F78 /* AppDelegate.swift in Sources */,
 				7A4A9A5721868ADF00F7835E /* ResultsViewController.swift in Sources */,
 			);
@@ -381,14 +356,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A0C7897217453090031BB06 /* OptionsInterfaceController.swift in Sources */,
 				7A0C788F217401F80031BB06 /* WeightLogic.swift in Sources */,
-				7AA8D54921A1142C008540D9 /* OptionsParameters.swift in Sources */,
+				7AFDEBF421A5238500199C85 /* UnitsEnum.swift in Sources */,
 				7A3B9A6721A13D1000E6F1C1 /* HealthKitLogic.swift in Sources */,
 				7A602FBD2175D1EB006F22F5 /* SuccessInterfaceController.swift in Sources */,
 				7A330F99216B777900137F78 /* ExtensionDelegate.swift in Sources */,
-				7AA8D54621A10DF1008540D9 /* SuccessParameters.swift in Sources */,
-				7A330F97216B777900137F78 /* InterfaceController.swift in Sources */,
+				7AA8D54621A10DF1008540D9 /* ResultsParameters.swift in Sources */,
+				7A330F97216B777900137F78 /* EntryInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +385,7 @@
 		7A330F77216B777800137F78 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7A330F78216B777800137F78 /* Base */,
+				7AA9FA9621A63C5A001A017E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -419,17 +393,9 @@
 		7A330F7C216B777900137F78 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7A330F7D216B777900137F78 /* Base */,
+				7AA9FA9821A63C5C001A017E /* en */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		7A330F87216B777900137F78 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7A330F88216B777900137F78 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -439,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -500,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

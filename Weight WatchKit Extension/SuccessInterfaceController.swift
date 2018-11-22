@@ -13,19 +13,49 @@ class SuccessInterfaceController: WKInterfaceController {
     @IBOutlet weak var weightLabel: WKInterfaceLabel!
     @IBOutlet weak var differenceLabel: WKInterfaceLabel!
     @IBOutlet weak var bmiLabel: WKInterfaceLabel!
+    @IBOutlet weak var bmiCategoryLabel: WKInterfaceLabel!
+    @IBOutlet weak var totalWeightLossLabel: WKInterfaceLabel!
     @IBOutlet weak var motivationLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        let defaultString = "---"
         
-        if let parameters = context as? SuccessParameters {
+        if let parameters = context as? ResultsParameters {
+            if let weightKG = parameters.weightKG {
+                let weightLabelText = String(format: "%.1f KG", weightKG)
+                weightLabel.setText(weightLabelText)
+            } else {
+                weightLabel.setText(defaultString)
+            }
             
-            print("\(parameters.weight), \(parameters.oldWeight)")
-            weightLabel.setText(String(format: "%.1f KG", parameters.weightKG))
-            bmiLabel.setText(String(format: "%.1f", parameters.bmi))
-            let difference = (parameters.weight - parameters.oldWeight) / 1000
-            differenceLabel.setText(String(format: "%+.1f KG", difference))
-            motivationLabel.setHidden(difference > 0)
+            if let bmi = parameters.bmi {
+                let bmiLabelText = String(format: "%.1f", bmi)
+                bmiLabel.setText(bmiLabelText)
+            } else {
+                bmiLabel.setText(defaultString)
+            }
+            
+            if let bmiCategory = parameters.bmiCategroy {
+                bmiCategoryLabel.setText(bmiCategory)
+            } else {
+                bmiCategoryLabel.setText(defaultString)
+            }
+            
+            if let totalWeightLoss = parameters.totalLoss {
+                let totalWeightLossLabelText = String(format: "%.1f", totalWeightLoss)
+                totalWeightLossLabel.setText(totalWeightLossLabelText)
+            } else {
+                totalWeightLossLabel.setText(defaultString)
+            }
+            
+            if let weight = parameters.weight, let oldWeight = parameters.oldWeight {
+                let difference = ((weight - oldWeight) / 100).rounded() / 10
+                let differenceLabelText = String(format: "%+.1f KG", difference)
+                differenceLabel.setText(differenceLabelText)
+            } else {
+                differenceLabel.setText(defaultString)
+            }
         } else {
             print("Error recieving parameters")
         }

@@ -1,0 +1,45 @@
+
+/* Class = "WKInterfaceLabel"; text = "BMI:"; ObjectID = "12z-PS-MJh"; */
+"12z-PS-MJh.text" = "BMI:";
+
+/* Class = "WKInterfaceLabel"; text = "BMI Category"; ObjectID = "Cmf-Iv-KpN"; */
+"Cmf-Iv-KpN.text" = "BMI Category";
+
+/* Class = "WKInterfaceController"; title = "Return"; ObjectID = "Fd9-ib-SiQ"; */
+"Fd9-ib-SiQ.title" = "Return";
+
+/* Class = "WKInterfaceLabel"; text = "10.0"; ObjectID = "HWI-tF-iH3"; */
+"HWI-tF-iH3.text" = "10.0";
+
+/* Class = "WKInterfaceLabel"; text = "10.0"; ObjectID = "SUV-JR-nqo"; */
+"SUV-JR-nqo.text" = "10.0";
+
+/* Class = "WKInterfaceLabel"; text = "Logged"; ObjectID = "a9U-5e-jMI"; */
+"a9U-5e-jMI.text" = "Logged";
+
+/* Class = "WKInterfaceLabel"; text = "Difference:"; ObjectID = "aAt-t8-e41"; */
+"aAt-t8-e41.text" = "Difference:";
+
+/* Class = "WKInterfaceLabel"; text = "BMI:"; ObjectID = "biV-0p-4qS"; */
+"biV-0p-4qS.text" = "BMI:";
+
+/* Class = "WKInterfaceLabel"; text = "Keep it up!"; ObjectID = "iMa-Zj-f8y"; */
+"iMa-Zj-f8y.text" = "Keep it up!";
+
+/* Class = "WKInterfaceLabel"; text = "-1.0"; ObjectID = "njI-hl-PG8"; */
+"njI-hl-PG8.text" = "-1.0";
+
+/* Class = "WKInterfaceButton"; title = "Update"; ObjectID = "v0e-Sp-vdp"; */
+"v0e-Sp-vdp.title" = "Update";
+
+/* Class = "WKInterfaceLabel"; text = "10.0 KG"; ObjectID = "vYb-zN-yMC"; */
+"vYb-zN-yMC.text" = "10.0 KG";
+
+/* Class = "WKInterfaceLabel"; text = "Weight:"; ObjectID = "waq-ye-MvB"; */
+"waq-ye-MvB.text" = "Weight:";
+
+/* Class = "WKInterfaceLabel"; text = "KG"; ObjectID = "ydA-RM-0iY"; */
+"ydA-RM-0iY.text" = "KG";
+
+/* Class = "WKInterfaceLabel"; text = "87.9"; ObjectID = "zSO-BU-G9J"; */
+"zSO-BU-G9J.text" = "87.9";
