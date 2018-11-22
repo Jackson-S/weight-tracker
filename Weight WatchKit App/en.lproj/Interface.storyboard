@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch42" orientation="portrait">
+    <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -8,10 +8,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
-        <!--mainInterface-->
+        <!--Weight-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="mainInterface" id="AgC-eL-Hgc" customClass="EntryInterfaceController" customModule="Weight_WatchKit_App" customModuleProvider="target">
+                <controller identifier="mainInterface" title="Weight" id="AgC-eL-Hgc" customClass="EntryInterfaceController" customModule="Weight_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="9QU-Lu-NwZ" userLabel="Weight Information">
                             <items>
