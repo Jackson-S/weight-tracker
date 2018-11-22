@@ -1,12 +1,13 @@
 #  Weight
-### A weight logger for Apple Watch
+### A Weight Logger for Apple Watch
 
-So there was no way to log weight from an Apple Watch into HealthKit directly (without third party apps at least), so I made my own.
-
-Literally zero internet connection is required and no non-required data is taken from your health app.
+#### Features
+* Logs straight in to HealthKit and nowhere else
+* Logs BMI and Weight in one action
+* Watch Interface modelled on Activity app (should look native)
+* Feature parity between watch app and iOS app
 
 ## Screenshots
-
 ### WatchOS
 ![Apple Watch Input Screen](/Screenshots/watchos_a.png)
 ![Apple Watch Results Screen](/Screenshots/watchos_b.png)
