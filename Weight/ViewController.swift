@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var bmiClassificationLabel: UILabel!
+    @IBOutlet weak var lastWeightLabel: UILabel!
     @IBOutlet weak var sliderImage: UIImageView!
     
     
@@ -36,21 +37,27 @@ class ViewController: UIViewController {
     }
     
     func updateLabels() {
-        let weightKG = weightLogic.weightKG ?? 0
-        let bmi = weightLogic.bmi ?? 0
-        let classification = weightLogic.bmiCategory
-        
-        let weightLabelText = String(format: "%.1f KG", weightKG)
-        let bmiLabelText = String(format: "%.1f BMI", bmi)
-        
-        weightLabel.text = weightLabelText
-        bmiLabel.text = bmiLabelText
-        bmiClassificationLabel.text = classification
+        // Update the UI on the main thread
+        DispatchQueue.main.async {
+            let weightKG = self.weightLogic.weightKG ?? 0
+            let bmi = self.weightLogic.bmi ?? 0
+            let classification = self.weightLogic.bmiCategory
+            let previousWeight = self.weightLogic.lastWeightKG ?? 0
+            
+            let weightLabelText = String(format: "%.1f KG", weightKG)
+            let bmiLabelText = String(format: "%.1f BMI", bmi)
+            let lastWeightText = String(format: "Previous: %.1f KG", previousWeight)
+            
+            self.weightLabel.text = weightLabelText
+            self.bmiLabel.text = bmiLabelText
+            self.bmiClassificationLabel.text = classification
+            self.lastWeightLabel.text = lastWeightText
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Update HealthKit data and then update labels
         weightLogic.updateWeight(updateLabels)
     }
 

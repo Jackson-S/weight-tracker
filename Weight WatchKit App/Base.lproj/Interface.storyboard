@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+    <device id="watch44" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,37 +15,38 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="9QU-Lu-NwZ" userLabel="Weight Information">
                             <items>
-                                <group width="136" alignment="center" id="f7A-Mn-gDG" userLabel="Weight Selector">
+                                <group width="1" alignment="left" layout="vertical" spacing="0.0" id="prs-FM-Kzg">
                                     <items>
-                                        <button width="22" height="22" alignment="left" verticalAlignment="center" backgroundImage="Minus" id="29h-CQ-2fz">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                                            <variation key="device=watch38mm" height="20" width="20"/>
-                                            <connections>
-                                                <action selector="decButtonClick" destination="AgC-eL-Hgc" id="HsT-BE-Xww"/>
-                                            </connections>
-                                        </button>
-                                        <label width="0.59999999999999998" alignment="center" verticalAlignment="center" text="72.0" textAlignment="center" baselineAdjustment="alignCenters" minimumScaleFactor="0.80000000000000004" id="zSO-BU-G9J">
-                                            <accessibilityTraits key="accessibilityTraits" notEnabled="YES" updatesFrequently="YES"/>
-                                            <fontDescription key="font" type="system" pointSize="38"/>
-                                            <variation key="device=watch38mm">
-                                                <fontDescription key="font" type="system" pointSize="36"/>
-                                            </variation>
+                                        <group width="1" alignment="center" id="f7A-Mn-gDG" userLabel="Weight Selector">
+                                            <items>
+                                                <button width="22" height="22" alignment="left" verticalAlignment="center" backgroundImage="Minus" id="29h-CQ-2fz">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                    <variation key="device=watch38mm" height="20" width="20"/>
+                                                    <connections>
+                                                        <action selector="decButtonClick" destination="AgC-eL-Hgc" id="HsT-BE-Xww"/>
+                                                    </connections>
+                                                </button>
+                                                <label alignment="center" verticalAlignment="center" text="72.0" textAlignment="justified" minimumScaleFactor="0.80000000000000004" id="zSO-BU-G9J">
+                                                    <accessibilityTraits key="accessibilityTraits" notEnabled="YES" updatesFrequently="YES"/>
+                                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                                </label>
+                                                <button width="22" height="22" alignment="right" verticalAlignment="center" backgroundImage="Plus" id="UTq-C3-OYW">
+                                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                    <variation key="device=watch38mm" height="20" width="20"/>
+                                                    <connections>
+                                                        <action selector="incButtonClick" destination="AgC-eL-Hgc" id="oJ1-Hr-sJh"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <label alignment="center" verticalAlignment="bottom" text="Kilograms" textAlignment="justified" id="ydA-RM-0iY">
+                                            <accessibilityTraits key="accessibilityTraits" staticText="YES" notEnabled="YES"/>
+                                            <color key="textColor" red="0.77706670761108398" green="0.97428315877914429" blue="0.42329245805740356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </label>
-                                        <button width="22" height="22" alignment="right" verticalAlignment="center" backgroundImage="Plus" id="UTq-C3-OYW">
-                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                                            <variation key="device=watch38mm" height="20" width="20"/>
-                                            <connections>
-                                                <action selector="incButtonClick" destination="AgC-eL-Hgc" id="oJ1-Hr-sJh"/>
-                                            </connections>
-                                        </button>
                                     </items>
                                 </group>
-                                <label alignment="center" verticalAlignment="bottom" text="Kilograms" textAlignment="center" id="ydA-RM-0iY">
-                                    <accessibilityTraits key="accessibilityTraits" staticText="YES" notEnabled="YES"/>
-                                    <color key="textColor" red="0.77706670761108398" green="0.97428315877914429" blue="0.42329245805740356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </label>
-                                <label alignment="center" verticalAlignment="bottom" text="Previous: 72.4" textAlignment="center" id="L4J-3m-WwV">
+                                <label height="0.29999999999999999" alignment="center" verticalAlignment="bottom" text="Previous: Weight" textAlignment="justified" baselineAdjustment="alignCenters" id="L4J-3m-WwV">
                                     <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                 </label>
                             </items>
