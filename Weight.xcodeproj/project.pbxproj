@@ -27,6 +27,8 @@
 		7AA8D54421A10A35008540D9 /* ResultsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* ResultsParameters.swift */; };
 		7AA8D54621A10DF1008540D9 /* ResultsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* ResultsParameters.swift */; };
 		7AA8D54B21A116C5008540D9 /* HealthKitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */; };
+		7AA8E95421A63F96000F5225 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA8E95221A63F96000F5225 /* Interface.storyboard */; };
+		7AA8E95521A63F96000F5225 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA8E95221A63F96000F5225 /* Interface.storyboard */; };
 		7AA9FA9421A61B76001A017E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F8A216B777900137F78 /* Assets.xcassets */; };
 		7AA9FA9521A61B79001A017E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F8A216B777900137F78 /* Assets.xcassets */; };
 		7AFDEBF321A522D000199C85 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFDEBF221A522D000199C85 /* UnitsEnum.swift */; };
@@ -98,6 +100,7 @@
 		7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessInterfaceController.swift; sourceTree = "<group>"; };
 		7AA8D54321A10A35008540D9 /* ResultsParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsParameters.swift; sourceTree = "<group>"; };
 		7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitLogic.swift; sourceTree = "<group>"; };
+		7AA8E95321A63F96000F5225 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		7AA9FA9621A63C5A001A017E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AA9FA9821A63C5C001A017E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AFDEBF221A522D000199C85 /* UnitsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEnum.swift; sourceTree = "<group>"; };
@@ -183,6 +186,7 @@
 		7A330F86216B777900137F78 /* Weight WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				7AA8E95221A63F96000F5225 /* Interface.storyboard */,
 				7A330F8A216B777900137F78 /* Assets.xcassets */,
 				7A330F8C216B777900137F78 /* Info.plist */,
 			);
@@ -294,6 +298,8 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
+				en,
 			);
 			mainGroup = 7A330F67216B777800137F78;
 			productRefGroup = 7A330F71216B777800137F78 /* Products */;
@@ -322,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA8E95421A63F96000F5225 /* Interface.storyboard in Resources */,
 				7AA9FA9421A61B76001A017E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AA9FA9521A61B79001A017E /* Assets.xcassets in Resources */,
+				7AA8E95521A63F96000F5225 /* Interface.storyboard in Resources */,
 				7A330F9B216B777A00137F78 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +404,14 @@
 				7AA9FA9821A63C5C001A017E /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7AA8E95221A63F96000F5225 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AA8E95321A63F96000F5225 /* en */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
