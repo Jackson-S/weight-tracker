@@ -6,6 +6,7 @@
 * Logs BMI and Weight in one action
 * Watch Interface modelled on Activity app (should look native)
 * Feature parity between watch app and iOS app
+* Supports imperial and metric measurements
 
 ## Screenshots
 ### WatchOS
