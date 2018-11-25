@@ -15,7 +15,6 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var differenceLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var totalLostLabel: UILabel!
     
     var parameters: ResultsParameters?
     
@@ -44,13 +43,6 @@ class ResultsViewController: UIViewController {
                 categoryLabel.text = bmiCategory
             } else {
                 categoryLabel.text = "---"
-            }
-            
-            if let totalLoss = parameters.totalLoss {
-                let totalDiffereceKG = (totalLoss / 100).rounded() / 10
-                totalLostLabel.text = String(format: "%+.1f KG", totalDiffereceKG)
-            } else {
-                totalLostLabel.text = "--- KG"
             }
         }
     }

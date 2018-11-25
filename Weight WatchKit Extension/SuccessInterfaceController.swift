@@ -14,7 +14,6 @@ class SuccessInterfaceController: WKInterfaceController {
     @IBOutlet weak var differenceLabel: WKInterfaceLabel!
     @IBOutlet weak var bmiLabel: WKInterfaceLabel!
     @IBOutlet weak var bmiCategoryLabel: WKInterfaceLabel!
-    @IBOutlet weak var totalWeightLossLabel: WKInterfaceLabel!
     @IBOutlet weak var motivationLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
@@ -40,13 +39,6 @@ class SuccessInterfaceController: WKInterfaceController {
                 bmiCategoryLabel.setText(bmiCategory)
             } else {
                 bmiCategoryLabel.setText(defaultString)
-            }
-            
-            if let totalWeightLoss = parameters.totalLoss {
-                let totalWeightLossLabelText = String(format: "%.1f", totalWeightLoss)
-                totalWeightLossLabel.setText(totalWeightLossLabelText)
-            } else {
-                totalWeightLossLabel.setText(defaultString)
             }
             
             if let weight = parameters.weight, let oldWeight = parameters.oldWeight {

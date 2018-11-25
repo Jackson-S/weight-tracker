@@ -111,17 +111,6 @@
                                 </group>
                             </items>
                         </group>
-                        <separator alignment="center" verticalAlignment="center" id="IeE-cj-lFU">
-                            <color key="color" red="0.77706670759999996" green="0.97428315880000005" blue="0.42329245809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </separator>
-                        <group width="1" alignment="left" verticalAlignment="center" id="9da-cd-Lcq" userLabel="Total Weight Loss">
-                            <items>
-                                <label alignment="left" text="Total:" id="elL-Pd-ybw">
-                                    <color key="textColor" red="0.77706670759999996" green="0.97428315880000005" blue="0.42329245809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </label>
-                                <label alignment="right" verticalAlignment="center" text="-20.0 KG" id="Z0D-yp-wd3"/>
-                            </items>
-                        </group>
                         <label alignment="center" verticalAlignment="center" text="Keep it up!" id="iMa-Zj-f8y">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
@@ -131,7 +120,6 @@
                         <outlet property="bmiLabel" destination="SUV-JR-nqo" id="RSd-xi-ZjA"/>
                         <outlet property="differenceLabel" destination="njI-hl-PG8" id="ZGb-0I-ecQ"/>
                         <outlet property="motivationLabel" destination="iMa-Zj-f8y" id="5Vk-Ck-aaq"/>
-                        <outlet property="totalWeightLossLabel" destination="Z0D-yp-wd3" id="hZo-VF-HeG"/>
                         <outlet property="weightLabel" destination="vYb-zN-yMC" id="fdV-HJ-fNB"/>
                     </connections>
                 </controller>

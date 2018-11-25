@@ -62,14 +62,18 @@ class ViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let newView = segue.destination as! ResultsViewController
-        let parameters = ResultsParameters(weight: weightLogic.weight,
-                                           weightKG: weightLogic.weightKG,
-                                           oldWeight: weightLogic.lastWeight,
-                                           bmi: weightLogic.bmi,
-                                           bmiCategroy: weightLogic.bmiCategory,
-                                           totalLoss: 0)
-        newView.parameters = parameters
+        if let segueName = segue.identifier {
+            if segueName == "results" {
+                let newView = segue.destination as! ResultsViewController
+                let parameters = ResultsParameters(weight: weightLogic.weight,
+                                                   weightKG: weightLogic.weightKG,
+                                                   oldWeight: weightLogic.lastWeight,
+                                                   bmi: weightLogic.bmi,
+                                                   bmiCategroy: weightLogic.bmiCategory,
+                                                   totalLoss: 0)
+                newView.parameters = parameters
+            }
+        }
     }
 }
 
