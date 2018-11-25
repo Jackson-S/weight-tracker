@@ -15,7 +15,6 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     @IBOutlet weak var unitLabel: WKInterfaceLabel!
     @IBOutlet weak var previousWeightLabel: WKInterfaceLabel!
     
-    
     var selectedUnit: UnitType = .Metric
     let weightLogic = WeightLogic()
     
@@ -83,8 +82,7 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
                                            weightKG: weightLogic.weightKG,
                                            oldWeight: previousWeight,
                                            bmi: weightLogic.bmi,
-                                           bmiCategroy: weightLogic.bmiCategory,
-                                           totalLoss: 0)
+                                           bmiCategroy: weightLogic.bmiCategory)
 
         pushController(withName: "successInterface", context: parameters)
     }

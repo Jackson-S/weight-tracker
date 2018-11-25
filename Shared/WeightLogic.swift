@@ -97,6 +97,10 @@ class WeightLogic {
         self.getRecentHeight()
     }
     
+    func fetchHistoricalWeight(_ callback: @escaping ([Date: Double?]?) -> Void) {
+        healthLogic?.getMeasurements(sampleType: HKSampleType.quantityType(forIdentifier: .bodyMass)!, completion: callback)
+    }
+    
     func updateWeight(_ callback: @escaping () -> Void) {
         healthLogic?.getMeasurement(sampleType: HKSampleType.quantityType(forIdentifier: .bodyMass)!) {
             value in

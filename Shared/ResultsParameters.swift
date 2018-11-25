@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import HealthKit
 
 struct ResultsParameters {
     let weight: Double?
@@ -14,5 +15,4 @@ struct ResultsParameters {
     let oldWeight: Double?
     let bmi: Double?
     let bmiCategroy: String?
-    let totalLoss: Double?
 }

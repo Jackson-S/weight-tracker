@@ -75,6 +75,16 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7AEC9FB721AA2CA80015FC3F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -217,6 +227,7 @@
 				7A330F6D216B777800137F78 /* Frameworks */,
 				7A330F6E216B777800137F78 /* Resources */,
 				7A330FA6216B777A00137F78 /* Embed Watch Content */,
+				7AEC9FB721AA2CA80015FC3F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -621,6 +632,7 @@
 		7A330FA8216B777A00137F78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Weight/Weight.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -640,6 +652,7 @@
 		7A330FA9216B777A00137F78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Weight/Weight.entitlements;
 				CODE_SIGN_STYLE = Automatic;

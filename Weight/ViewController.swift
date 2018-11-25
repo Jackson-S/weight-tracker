@@ -69,8 +69,7 @@ class ViewController: UIViewController {
                                                    weightKG: weightLogic.weightKG,
                                                    oldWeight: weightLogic.lastWeight,
                                                    bmi: weightLogic.bmi,
-                                                   bmiCategroy: weightLogic.bmiCategory,
-                                                   totalLoss: 0)
+                                                   bmiCategroy: weightLogic.bmiCategory)
                 newView.parameters = parameters
             }
         }

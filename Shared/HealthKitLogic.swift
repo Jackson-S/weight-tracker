@@ -102,4 +102,32 @@ class HealthKitLogic {
         
         self.healthStore.execute(query)
     }
+    
+    func getMeasurements(sampleType: HKSampleType, completion: @escaping ([Date: Double?]?) -> Void) {
+        let startDate = healthStore.earliestPermittedSampleDate()
+        let endDate = Date(timeIntervalSinceNow: 0)
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        let sortDescriptor = NSSortDescriptor(key: "endDate", ascending: false)
+        
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) {
+            query, results, error in
+            
+            guard results != nil else {
+                completion(nil)
+                return
+            }
+            
+            var result = [Date: Double?]()
+            
+            if let samples = results as? [HKQuantitySample] {
+                if sampleType == HKObjectType.quantityType(forIdentifier: .bodyMass) {
+                    for sample in samples {
+                        result[sample.endDate] = sample.quantity.doubleValue(for: .gram())
+                    }
+                }
+            }
+            completion(result)
+        }
+        self.healthStore.execute(query)
+    }
 }
