@@ -6,8 +6,8 @@
 //  Copyright © 2018 Jackson Sommerich. All rights reserved.
 //
 
-import WatchKit
 import Foundation
+import WatchKit
 
 class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     

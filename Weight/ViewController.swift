@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HealthKit
 
 class ViewController: UIViewController {
     
