@@ -17,22 +17,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastWeightLabel: UILabel!
     @IBOutlet weak var sliderImage: UIImageView!
     
-    
+    let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+    let confirmationFeedbackGenerator = UINotificationFeedbackGenerator()
     let weightLogic = WeightLogic()
     
     @IBAction func updateButtonPushed() {
         // TODO: Display errors nicely
+        confirmationFeedbackGenerator.prepare()
+        
         let weightStatus = weightLogic.addNewWeightSample()
         let bmiStatus = weightLogic.addNewBMISample()
         
         if !(weightStatus && bmiStatus) {
+            confirmationFeedbackGenerator.notificationOccurred(.error)
             print("Failed to record")
+        } else {
+            confirmationFeedbackGenerator.notificationOccurred(.success)
         }
     }
     
     @IBAction func panGesture(_ sender: UIPanGestureRecognizer) {
-        let verticalVelocity = Double(sender.velocity(in: sliderImage).y)
-        weightLogic.incrementBy(Double(-verticalVelocity / 4))
+        selectionFeedbackGenerator.prepare()
+        let verticalVelocity = Double(-sender.velocity(in: sliderImage).y)
+        let startWeight = weightLogic.weightKG
+
+        weightLogic.incrementBy(verticalVelocity / 8)
+        
+        // Check to see if the output display has changed
+        if startWeight != weightLogic.weightKG {
+            selectionFeedbackGenerator.selectionChanged()
+        }
+        
         updateLabels()
     }
     
