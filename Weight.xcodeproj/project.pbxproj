@@ -23,6 +23,10 @@
 		7A330F9B216B777A00137F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F9A216B777A00137F78 /* Assets.xcassets */; };
 		7A3B9A6721A13D1000E6F1C1 /* HealthKitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */; };
 		7A4A9A5721868ADF00F7835E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A9A5621868ADF00F7835E /* ResultsViewController.swift */; };
+		7A4CA7A021B1461B006708A3 /* HealthKitResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CA79F21B1461B006708A3 /* HealthKitResult.swift */; };
+		7A4CA7A121B1461B006708A3 /* HealthKitResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CA79F21B1461B006708A3 /* HealthKitResult.swift */; };
+		7A4CA7A321B16642006708A3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CA7A221B16642006708A3 /* DateExtension.swift */; };
+		7A4CA7A421B16642006708A3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4CA7A221B16642006708A3 /* DateExtension.swift */; };
 		7A602FBD2175D1EB006F22F5 /* SuccessInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */; };
 		7AA8D54421A10A35008540D9 /* ResultsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* ResultsParameters.swift */; };
 		7AA8D54621A10DF1008540D9 /* ResultsParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* ResultsParameters.swift */; };
@@ -107,6 +111,8 @@
 		7A330F9A216B777A00137F78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A330F9C216B777A00137F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A4A9A5621868ADF00F7835E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		7A4CA79F21B1461B006708A3 /* HealthKitResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitResult.swift; sourceTree = "<group>"; };
+		7A4CA7A221B16642006708A3 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		7A602FBC2175D1EB006F22F5 /* SuccessInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessInterfaceController.swift; sourceTree = "<group>"; };
 		7AA5B87921A653C4006E00E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AA5B87A21A653C4006E00E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,9 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				7AA8D54321A10A35008540D9 /* ResultsParameters.swift */,
+				7A4CA79F21B1461B006708A3 /* HealthKitResult.swift */,
 				7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */,
 				7A0C788E217401F80031BB06 /* WeightLogic.swift */,
 				7AFDEBF221A522D000199C85 /* UnitsEnum.swift */,
+				7A4CA7A221B16642006708A3 /* DateExtension.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -365,6 +373,8 @@
 				7AA8D54B21A116C5008540D9 /* HealthKitLogic.swift in Sources */,
 				7A0C78952174317F0031BB06 /* WeightLogic.swift in Sources */,
 				7AA8D54421A10A35008540D9 /* ResultsParameters.swift in Sources */,
+				7A4CA7A321B16642006708A3 /* DateExtension.swift in Sources */,
+				7A4CA7A021B1461B006708A3 /* HealthKitResult.swift in Sources */,
 				7A330F74216B777800137F78 /* AppDelegate.swift in Sources */,
 				7A4A9A5721868ADF00F7835E /* ResultsViewController.swift in Sources */,
 			);
@@ -379,6 +389,8 @@
 				7A3B9A6721A13D1000E6F1C1 /* HealthKitLogic.swift in Sources */,
 				7A602FBD2175D1EB006F22F5 /* SuccessInterfaceController.swift in Sources */,
 				7A330F99216B777900137F78 /* ExtensionDelegate.swift in Sources */,
+				7A4CA7A421B16642006708A3 /* DateExtension.swift in Sources */,
+				7A4CA7A121B1461B006708A3 /* HealthKitResult.swift in Sources */,
 				7AA8D54621A10DF1008540D9 /* ResultsParameters.swift in Sources */,
 				7A330F97216B777900137F78 /* EntryInterfaceController.swift in Sources */,
 			);

@@ -73,7 +73,7 @@ class HealthKitLogic {
         return false
     }
     
-    func getMeasurement(sampleType: HKSampleType, completion: @escaping (Double?) -> Void) {
+    func getMeasurement(sampleType: HKSampleType, completion: @escaping (HealthKitResult?) -> Void) {
         let startDate = healthStore.earliestPermittedSampleDate()
         let endDate = Date(timeIntervalSinceNow: 0)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
@@ -88,11 +88,15 @@ class HealthKitLogic {
             }
             
             if let sample = (results as! [HKQuantitySample]).last {
+                var completionData = HealthKitResult(startDate: sample.startDate, endDate: sample.endDate, value: 0)
+
                 if sampleType == HKObjectType.quantityType(forIdentifier: .bodyMass)! {
-                    completion(sample.quantity.doubleValue(for: .gram()))
+                    completionData.value = sample.quantity.doubleValue(for: .gram())
                 } else if sampleType == HKObjectType.quantityType(forIdentifier: .height)! {
-                    completion(sample.quantity.doubleValue(for: .meter()))
+                    completionData.value = sample.quantity.doubleValue(for: .meter())
                 }
+                
+                completion(completionData)
             } else {
                 print("Error getting value \(sampleType.description)")
                 // Return a nil value and completion should fill in default

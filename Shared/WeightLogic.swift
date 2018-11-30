@@ -75,6 +75,7 @@ class WeightLogic {
     }
     
     private(set) public var lastWeight: Double?
+    private(set) public var lastWeightDate: Date?
     
     public var lastWeightKG: Double? {
         get {
@@ -103,17 +104,28 @@ class WeightLogic {
     
     func updateWeight(_ callback: @escaping () -> Void) {
         healthLogic?.getMeasurement(sampleType: HKSampleType.quantityType(forIdentifier: .bodyMass)!) {
-            value in
-            self.lastWeight = value ?? 72 * 1000
-            self.weight = value ?? 72 * 1000
+            result in
+            if let resultUnwrapped = result {
+                self.lastWeight = resultUnwrapped.value
+                self.lastWeightDate = resultUnwrapped.endDate
+                self.weight = resultUnwrapped.value
+            } else {
+                self.lastWeight = 72 * 1000
+                self.lastWeightDate = Date(timeIntervalSinceNow: 0)
+                self.weight = 72 * 1000
+            }
             callback()
         }
     }
     
     private func getRecentHeight() {
         healthLogic?.getMeasurement(sampleType: HKSampleType.quantityType(forIdentifier: .height)!) {
-            value in
-            self.height = value ?? 1.72
+            result in
+            if let resultUnwrapped = result {
+                self.height = resultUnwrapped.value
+            } else {
+                self.height = 1.72
+            }
         }
     }
     

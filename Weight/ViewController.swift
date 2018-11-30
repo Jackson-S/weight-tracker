@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var bmiClassificationLabel: UILabel!
     @IBOutlet weak var lastWeightLabel: UILabel!
+    @IBOutlet weak var lastWeightDateLabel: UILabel!
     @IBOutlet weak var sliderImage: UIImageView!
     
     let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
@@ -55,18 +56,33 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             let weightKG = self.weightLogic.weightKG ?? 0
             let bmi = self.weightLogic.bmi ?? 0
-            let classification = self.weightLogic.bmiCategory
+            let classification = self.weightLogic.bmiCategory ?? "Unknown"
             let previousWeight = self.weightLogic.lastWeightKG ?? 0
+            let previousWeightDate = self.weightLogic.lastWeightDate ?? Date(timeIntervalSinceNow: 0)
             
             let weightLabelText = String(format: "%.1f KG", weightKG)
-            let bmiLabelText = String(format: "%.1f BMI", bmi)
+            let bmiLabelText = String(format: "BMI: %.1f", bmi)
             let lastWeightText = String(format: "Previous: %.1f KG", previousWeight)
+            
+            var lastWeightDateText = ""
+            let previousDateString = previousWeightDate.string(dateFormat: "HH:mm")
+            if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: 0)) {
+                // Same day, only needs to display time
+                lastWeightDateText = "Today at \(previousDateString)"
+            } else if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: -86_400)) {
+                lastWeightDateText = "Yesterday at \(previousDateString)"
+            } else {
+                let daysPassed = ceil(DateInterval(start: previousWeightDate, end: Date(timeIntervalSinceNow: 0)).duration / 60 / 60 / 24)
+                lastWeightDateText = "\(Int(daysPassed)) days ago at \(previousDateString)"
+            }
             
             self.weightLabel.text = weightLabelText
             self.bmiLabel.text = bmiLabelText
-            self.bmiClassificationLabel.text = classification
+            self.bmiClassificationLabel.text = "(\(classification))"
             self.lastWeightLabel.text = lastWeightText
+            self.lastWeightDateLabel.text = "(\(lastWeightDateText))"
         }
+        
     }
     
     override func viewDidLoad() {
