@@ -44,6 +44,16 @@ class WeightLogic {
         }
     }
     
+    public var weightLbs: Double? {
+        get {
+            if let weightUnwrapped = weight {
+                return (weightUnwrapped / 100).rounded() / 10 / 0.45359237
+            } else {
+                return nil
+            }
+        }
+    }
+    
     public var bmi: Double? {
         get {
             // Compute BMI when requested

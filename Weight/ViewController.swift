@@ -65,7 +65,7 @@ class ViewController: UIViewController {
             let lastWeightText = String(format: "Previous: %.1f KG", previousWeight)
             
             var lastWeightDateText = ""
-            let previousDateString = previousWeightDate.string(dateFormat: "HH:mm")
+            let previousDateString = previousWeightDate.string(dateFormat: DateFormatter.Style.short)
             if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: 0)) {
                 // Same day, only needs to display time
                 lastWeightDateText = "Today at \(previousDateString)"

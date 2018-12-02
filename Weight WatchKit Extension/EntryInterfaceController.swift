@@ -14,6 +14,7 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     @IBOutlet weak var weightLabel: WKInterfaceLabel!
     @IBOutlet weak var unitLabel: WKInterfaceLabel!
     @IBOutlet weak var previousWeightLabel: WKInterfaceLabel!
+    @IBOutlet weak var previousWeightDateLabel: WKInterfaceLabel!
     
     var selectedUnit: UnitType = .Metric
     let weightLogic = WeightLogic()
@@ -31,11 +32,11 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
         if let deactivationTime = self.deactivationTime {
             // Check if more than 2 minutes have passed since last run.
             if Date(timeIntervalSinceNow: 0).timeIntervalSince(deactivationTime) > TimeInterval(exactly: 120)! {
-                weightLogic.updateWeight(updateWeightLabel)
+                weightLogic.updateWeight(updateLabels)
             }
         } else {
             // If this is the first run
-            weightLogic.updateWeight(updateWeightLabel)
+            weightLogic.updateWeight(updateLabels)
         }
         
         crownSequencer.focus()
@@ -43,6 +44,7 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     }
     
     override func didAppear() {
+        updateLabels()
         crownSequencer.focus()
     }
     
@@ -95,7 +97,7 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
             self.selectedUnit = .Imperial
         }
         
-        updateWeightLabel()
+        updateLabels()
     }
     
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
@@ -113,28 +115,55 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
         updateWeightLabel()
     }
     
-    func updateWeightLabel() {
+    private func lastWeighDateText() -> String {
+        let previousWeightDate = weightLogic.lastWeightDate ?? Date(timeIntervalSinceNow: 0)
+
+        let previousTimeString = previousWeightDate.string(timeFormat: DateFormatter.Style.short)
+        let nonBreakingPreviousTimeString = previousTimeString.replacingOccurrences(of: " ", with: " ")
+        
+        if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: 0)) {
+            // Same day, only needs to display time
+            return "Today \(nonBreakingPreviousTimeString)"
+        } else if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: -86_400)) {
+            return "Yesterday \(nonBreakingPreviousTimeString)"
+        } else {
+            let durationPassed = DateInterval(start: previousWeightDate, end: Date(timeIntervalSinceNow: 0)).duration
+            let daysPassed = ceil(durationPassed / 60 / 60 / 24)
+            return "\(Int(daysPassed)) days ago at \(nonBreakingPreviousTimeString)"
+        }
+    }
+    
+    private func updateLabels() {
         var unitText: String
-        var weightInUnit: Double
+        var shortUnitText: String
         var previousWeightInUnit: Double
         
         switch selectedUnit {
         case .Metric:
-            weightInUnit = weightLogic.weightKG ?? 0
             previousWeightInUnit = weightLogic.lastWeightKG ?? 0
             unitText = "Kilograms"
+            shortUnitText = "Kg"
         case .Imperial:
-            weightInUnit = (weightLogic.weightKG ?? 0) / 0.45359237
             previousWeightInUnit = (weightLogic.lastWeightKG ?? 0) / 0.45359237
             unitText = "Pounds"
+            shortUnitText = "lbs"
         }
         
-        let weightLabelText = String(format: "%.1f", weightInUnit)
-        let previousWeightLabelText = String(format: "Previous: %.1f", previousWeightInUnit)
+        let previousWeightTruncated = String(format: "%.1f", previousWeightInUnit)
+        let previousWeightLabelText = "\(previousWeightTruncated) \(shortUnitText) \(lastWeighDateText())"
         
-        weightLabel.setText(weightLabelText)
         unitLabel.setText(unitText)
-        previousWeightLabel.setText(previousWeightLabelText)
+        previousWeightDateLabel.setText(previousWeightLabelText)
+        updateWeightLabel()
+    }
+    
+    private func updateWeightLabel() {
+        switch selectedUnit {
+            case .Metric:
+                weightLabel.setText(String(format: "%.1f", weightLogic.weightKG ?? 0))
+            case .Imperial:
+                weightLabel.setText(String(format: "%.1f", weightLogic.weightLbs ?? 0))
+        }
     }
 
 }

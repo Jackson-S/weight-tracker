@@ -10,6 +10,6 @@
     "author" : "xcode"
   },
   "properties" : {
-    "preserves-vector-representation" : true
+    "auto-scaling" : "auto"
   }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch42" orientation="portrait">
+    <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,7 +13,7 @@
             <objects>
                 <controller identifier="mainInterface" title="Weight" id="AgC-eL-Hgc" customClass="EntryInterfaceController" customModule="Weight_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" layout="vertical" id="9QU-Lu-NwZ" userLabel="Weight Information">
+                        <group width="1" alignment="center" layout="vertical" id="9QU-Lu-NwZ" userLabel="Weight Information">
                             <items>
                                 <group width="1" alignment="left" layout="vertical" spacing="0.0" id="prs-FM-Kzg">
                                     <items>
@@ -46,12 +46,22 @@
                                         </label>
                                     </items>
                                 </group>
-                                <label height="0.29999999999999999" alignment="center" verticalAlignment="bottom" text="Previous: Weight" textAlignment="justified" baselineAdjustment="alignCenters" id="L4J-3m-WwV">
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
+                                <separator alignment="center" verticalAlignment="center" id="cMd-VM-iYF"/>
+                                <group alignment="center" verticalAlignment="center" layout="vertical" id="aBw-w4-Sb5">
+                                    <items>
+                                        <label width="1" alignment="center" verticalAlignment="center" text="Previous" textAlignment="center" id="L4J-3m-WwV">
+                                            <color key="textColor" red="0.77706670759999996" green="0.97428315880000005" blue="0.42329245809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                        <label width="1" alignment="center" verticalAlignment="center" text="Weight (Date)" textAlignment="center" numberOfLines="2" id="e62-j5-QFa">
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
                             </items>
                         </group>
-                        <button alignment="center" verticalAlignment="bottom" semanticContentAttribute="playback" title="Update" backgroundImage="rectangularButton" id="v0e-Sp-vdp">
+                        <button alignment="center" verticalAlignment="bottom" semanticContentAttribute="playback" title="Update" backgroundImage="Button" id="v0e-Sp-vdp">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                             <connections>
@@ -69,6 +79,7 @@
                         </items>
                     </menu>
                     <connections>
+                        <outlet property="previousWeightDateLabel" destination="e62-j5-QFa" id="GJR-Wb-bMS"/>
                         <outlet property="previousWeightLabel" destination="L4J-3m-WwV" id="cTf-2h-WFS"/>
                         <outlet property="unitLabel" destination="ydA-RM-0iY" id="LhP-Qr-ejN"/>
                         <outlet property="weightLabel" destination="zSO-BU-G9J" id="HiH-H1-oq9"/>
@@ -95,9 +106,7 @@
                                 </group>
                             </items>
                         </group>
-                        <separator alignment="center" verticalAlignment="center" id="Awu-FH-JFX">
-                            <color key="color" red="0.77706670759999996" green="0.97428315880000005" blue="0.42329245809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </separator>
+                        <separator alignment="center" verticalAlignment="center" id="Awu-FH-JFX"/>
                         <group width="1" alignment="left" verticalAlignment="center" id="wkD-yC-IeU" userLabel="BMI">
                             <items>
                                 <label alignment="left" verticalAlignment="center" text="BMI:" textAlignment="left" id="biV-0p-4qS">
