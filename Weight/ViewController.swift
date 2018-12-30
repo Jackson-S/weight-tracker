@@ -65,15 +65,15 @@ class ViewController: UIViewController {
             let lastWeightText = String(format: "Previous: %.1f KG", previousWeight)
             
             var lastWeightDateText = ""
-            let previousDateString = previousWeightDate.string(dateFormat: DateFormatter.Style.short)
+            let previousTimeString = previousWeightDate.string(timeFormat: DateFormatter.Style.short)
             if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: 0)) {
                 // Same day, only needs to display time
-                lastWeightDateText = "Today at \(previousDateString)"
+                lastWeightDateText = "Today at \(previousTimeString)"
             } else if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: -86_400)) {
-                lastWeightDateText = "Yesterday at \(previousDateString)"
+                lastWeightDateText = "Yesterday at \(previousTimeString)"
             } else {
                 let daysPassed = ceil(DateInterval(start: previousWeightDate, end: Date(timeIntervalSinceNow: 0)).duration / 60 / 60 / 24)
-                lastWeightDateText = "\(Int(daysPassed)) days ago at \(previousDateString)"
+                lastWeightDateText = "\(Int(daysPassed)) days ago at \(previousTimeString)"
             }
             
             self.weightLabel.text = weightLabelText
