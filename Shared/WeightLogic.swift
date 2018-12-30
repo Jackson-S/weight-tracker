@@ -65,17 +65,17 @@ class WeightLogic {
         }
     }
     
-    public var bmiCategory: String? {
+    public var bmiCategory: BMICategory? {
         get {
-            let ranges = [(-Double.infinity..<18.5): "Underweight",
-                          (18.5..<25): "Normal",
-                          (25..<30): "Overweight",
-                          (30..<Double.infinity): "Obese"]
+            let ranges = [(-Double.infinity..<18.5): BMICategory.Underweight,
+                          (18.5..<25): BMICategory.Normal,
+                          (25..<30): BMICategory.Overweight,
+                          (30..<Double.infinity): BMICategory.Obese]
             
             
-            for (range, string) in ranges {
+            for (range, category) in ranges {
                 if range.contains(bmi ?? 0) {
-                    return string
+                    return category
                 }
             }
             

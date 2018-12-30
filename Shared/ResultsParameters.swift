@@ -14,5 +14,5 @@ struct ResultsParameters {
     let weightKG: Double?
     let oldWeight: Double?
     let bmi: Double?
-    let bmiCategroy: String?
+    let bmiCategroy: BMICategory?
 }

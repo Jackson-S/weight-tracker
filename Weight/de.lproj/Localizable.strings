@@ -1,0 +1,30 @@
+/* Weight label display text */
+"%.1f KG" = "%.1f Kg";
+
+/* Last weight date text for >2 days ago */
+"%i days ago at %@" = "%1$i Tage vor um %2$@";
+
+/* BMI label display text */
+"BMI: %.1f" = "KMI: %.1f";
+
+/* BMI Category: Normal */
+"Normal" = "Normalgewicht";
+
+/* BMI Category: Obese */
+"Obese" = "Adipositas";
+
+/* BMI Category: Overweight */
+"Overweight" = "Übergewicht";
+
+/* Previous weight label display text */
+"Previous: %.1f KG" = "Vor: %.1f Kg";
+
+/* Last weight date text for current day */
+"Today at %@" = "Heute um %@";
+
+/* BMI Category: Underweight */
+"Underweight" = "Untergewicht";
+
+/* Last weight date text for yesterday */
+"Yesterday at %@" = "Gestern um %@";
+

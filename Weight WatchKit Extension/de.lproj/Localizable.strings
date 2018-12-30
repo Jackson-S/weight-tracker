@@ -1,0 +1,42 @@
+/* Weight result display */
+"%.1f KG" = "%.1f Kg";
+
+/* (PreviousWeight) (Unit) (last date) */
+"%@ %@ %@" = "%1$@ %2$@ %3$@";
+
+/* Weight difference text */
+"%+.1f KG" = "%+.1f Kg";
+
+/* No comment provided by engineer. */
+"%i days ago at %@" = "%1$i Tage vor um %2$@";
+
+/* KG short form unit text */
+"KG" = "Kg";
+
+/* KG long form unit text */
+"Kilograms" = "Kilogramme";
+
+/* Pounds short form unit text */
+"lbs" = "lb.";
+
+/* BMI Category: Normal */
+"Normal" = "Normalgewicht";
+
+/* BMI Category: Obese */
+"Obese" = "Adipositas";
+
+/* BMI Category: Overweight */
+"Overweight" = "Übergewicht";
+
+/* Pounds long form unit text */
+"Pounds" = "Pfund";
+
+/* No comment provided by engineer. */
+"Today at %@" = "Heute um %@";
+
+/* BMI Category: Underweight */
+"Underweight" = "Untergewicht";
+
+/* No comment provided by engineer. */
+"Yesterday at %@" = "Gestern um %@";
+

@@ -1,21 +1,8 @@
-
 /* Class = "WKInterfaceMenuItem"; title = "Change Units"; ObjectID = "1jR-Cp-51s"; */
 "1jR-Cp-51s.title" = "Change Units";
 
 /* Class = "WKInterfaceController"; title = "Weight"; ObjectID = "AgC-eL-Hgc"; */
 "AgC-eL-Hgc.title" = "Weight";
-
-/* Class = "WKInterfaceController"; title = "Return"; ObjectID = "Fd9-ib-SiQ"; */
-"Fd9-ib-SiQ.title" = "Return";
-
-/* Class = "WKInterfaceLabel"; text = "Previous"; ObjectID = "L4J-3m-WwV"; */
-"L4J-3m-WwV.text" = "Previous";
-
-/* Class = "WKInterfaceLabel"; text = "24.9"; ObjectID = "SUV-JR-nqo"; */
-"SUV-JR-nqo.text" = "24.9";
-
-/* Class = "WKInterfaceLabel"; text = "Normal"; ObjectID = "TtC-iz-Nya"; */
-"TtC-iz-Nya.text" = "Normal";
 
 /* Class = "WKInterfaceLabel"; text = "BMI:"; ObjectID = "biV-0p-4qS"; */
 "biV-0p-4qS.text" = "BMI:";
@@ -23,11 +10,23 @@
 /* Class = "WKInterfaceLabel"; text = "Weight (Date)"; ObjectID = "e62-j5-QFa"; */
 "e62-j5-QFa.text" = "Weight (Date)";
 
+/* Class = "WKInterfaceController"; title = "Return"; ObjectID = "Fd9-ib-SiQ"; */
+"Fd9-ib-SiQ.title" = "Return";
+
 /* Class = "WKInterfaceLabel"; text = "Keep it up!"; ObjectID = "iMa-Zj-f8y"; */
 "iMa-Zj-f8y.text" = "Keep it up!";
 
+/* Class = "WKInterfaceLabel"; text = "Previous"; ObjectID = "L4J-3m-WwV"; */
+"L4J-3m-WwV.text" = "Previous";
+
 /* Class = "WKInterfaceLabel"; text = "-0.2 KG"; ObjectID = "njI-hl-PG8"; */
 "njI-hl-PG8.text" = "-0.2 KG";
+
+/* Class = "WKInterfaceLabel"; text = "24.9"; ObjectID = "SUV-JR-nqo"; */
+"SUV-JR-nqo.text" = "24.9";
+
+/* Class = "WKInterfaceLabel"; text = "Normal"; ObjectID = "TtC-iz-Nya"; */
+"TtC-iz-Nya.text" = "Normal";
 
 /* Class = "WKInterfaceButton"; title = "Update"; ObjectID = "v0e-Sp-vdp"; */
 "v0e-Sp-vdp.title" = "Update";
@@ -43,3 +42,4 @@
 
 /* Class = "WKInterfaceLabel"; text = "72.0"; ObjectID = "zSO-BU-G9J"; */
 "zSO-BU-G9J.text" = "72.0";
+

@@ -1,33 +1,32 @@
-
 /* Class = "WKInterfaceMenuItem"; title = "Change Units"; ObjectID = "1jR-Cp-51s"; */
-"1jR-Cp-51s.title" = "Change Units";
+"1jR-Cp-51s.title" = "Maßeinheit Ändern";
 
 /* Class = "WKInterfaceController"; title = "Weight"; ObjectID = "AgC-eL-Hgc"; */
-"AgC-eL-Hgc.title" = "Weight";
+"AgC-eL-Hgc.title" = "Gewicht";
+
+/* Class = "WKInterfaceLabel"; text = "BMI:"; ObjectID = "biV-0p-4qS"; */
+"biV-0p-4qS.text" = "KMI:";
+
+/* Class = "WKInterfaceLabel"; text = "Weight (Date)"; ObjectID = "e62-j5-QFa"; */
+"e62-j5-QFa.text" = "Gewicht (Datum)";
 
 /* Class = "WKInterfaceController"; title = "Return"; ObjectID = "Fd9-ib-SiQ"; */
-"Fd9-ib-SiQ.title" = "Return";
+"Fd9-ib-SiQ.title" = "Zurück";
+
+/* Class = "WKInterfaceLabel"; text = "Keep it up!"; ObjectID = "iMa-Zj-f8y"; */
+"iMa-Zj-f8y.text" = "Weiter so!";
 
 /* Class = "WKInterfaceLabel"; text = "Previous"; ObjectID = "L4J-3m-WwV"; */
-"L4J-3m-WwV.text" = "Previous";
+"L4J-3m-WwV.text" = "Vor";
+
+/* Class = "WKInterfaceLabel"; text = "-0.2 KG"; ObjectID = "njI-hl-PG8"; */
+"njI-hl-PG8.text" = "-0.2 KG";
 
 /* Class = "WKInterfaceLabel"; text = "24.9"; ObjectID = "SUV-JR-nqo"; */
 "SUV-JR-nqo.text" = "24.9";
 
 /* Class = "WKInterfaceLabel"; text = "Normal"; ObjectID = "TtC-iz-Nya"; */
 "TtC-iz-Nya.text" = "Normal";
-
-/* Class = "WKInterfaceLabel"; text = "BMI:"; ObjectID = "biV-0p-4qS"; */
-"biV-0p-4qS.text" = "BMI:";
-
-/* Class = "WKInterfaceLabel"; text = "Weight (Date)"; ObjectID = "e62-j5-QFa"; */
-"e62-j5-QFa.text" = "Weight (Date)";
-
-/* Class = "WKInterfaceLabel"; text = "Keep it up!"; ObjectID = "iMa-Zj-f8y"; */
-"iMa-Zj-f8y.text" = "Keep it up!";
-
-/* Class = "WKInterfaceLabel"; text = "-0.2 KG"; ObjectID = "njI-hl-PG8"; */
-"njI-hl-PG8.text" = "-0.2 KG";
 
 /* Class = "WKInterfaceButton"; title = "Update"; ObjectID = "v0e-Sp-vdp"; */
 "v0e-Sp-vdp.title" = "Update";
@@ -36,10 +35,11 @@
 "vYb-zN-yMC.text" = "72.0 KG";
 
 /* Class = "WKInterfaceLabel"; text = "Weight:"; ObjectID = "waq-ye-MvB"; */
-"waq-ye-MvB.text" = "Weight:";
+"waq-ye-MvB.text" = "Gewicht:";
 
 /* Class = "WKInterfaceLabel"; text = "Kilograms"; ObjectID = "ydA-RM-0iY"; */
-"ydA-RM-0iY.text" = "Kilograms";
+"ydA-RM-0iY.text" = "Kilogramme";
 
 /* Class = "WKInterfaceLabel"; text = "72.0"; ObjectID = "zSO-BU-G9J"; */
 "zSO-BU-G9J.text" = "72.0";
+

@@ -123,13 +123,16 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
         
         if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: 0)) {
             // Same day, only needs to display time
-            return "Today \(nonBreakingPreviousTimeString)"
+            let localisedResult = NSLocalizedString("Today at %@", comment: "")
+            return String.localizedStringWithFormat(localisedResult, nonBreakingPreviousTimeString)
         } else if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: -86_400)) {
-            return "Yesterday \(nonBreakingPreviousTimeString)"
+            let localisedResult = NSLocalizedString("Yesterday at %@", comment: "")
+            return String.localizedStringWithFormat(localisedResult, nonBreakingPreviousTimeString)
         } else {
             let durationPassed = DateInterval(start: previousWeightDate, end: Date(timeIntervalSinceNow: 0)).duration
             let daysPassed = ceil(durationPassed / 60 / 60 / 24)
-            return "\(Int(daysPassed)) days ago at \(nonBreakingPreviousTimeString)"
+            let localisedResult = NSLocalizedString("%i days ago at %@", comment: "")
+            return String.localizedStringWithFormat(localisedResult, Int(daysPassed), nonBreakingPreviousTimeString)
         }
     }
     
@@ -141,16 +144,17 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
         switch selectedUnit {
         case .Metric:
             previousWeightInUnit = weightLogic.lastWeightKG ?? 0
-            unitText = "Kilograms"
-            shortUnitText = "Kg"
+            unitText = NSLocalizedString("Kilograms", comment: "KG long form unit text")
+            shortUnitText = NSLocalizedString("KG", comment: "KG short form unit text")
         case .Imperial:
             previousWeightInUnit = (weightLogic.lastWeightKG ?? 0) / 0.45359237
-            unitText = "Pounds"
-            shortUnitText = "lbs"
+            unitText = NSLocalizedString("Pounds", comment: "Pounds long form unit text")
+            shortUnitText = NSLocalizedString("lbs", comment: "Pounds short form unit text")
         }
         
-        let previousWeightTruncated = String(format: "%.1f", previousWeightInUnit)
-        let previousWeightLabelText = "\(previousWeightTruncated) \(shortUnitText) \(lastWeighDateText())"
+        let previousWeightTruncated = String.localizedStringWithFormat("%.1f", previousWeightInUnit)
+        let previousWeightLabelLocal = NSLocalizedString("%@ %@ %@", comment: "(PreviousWeight) (Unit) (last date)")
+        let previousWeightLabelText = String.localizedStringWithFormat(previousWeightLabelLocal, previousWeightTruncated, shortUnitText, lastWeighDateText())
         
         unitLabel.setText(unitText)
         previousWeightDateLabel.setText(previousWeightLabelText)
@@ -160,9 +164,9 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     private func updateWeightLabel() {
         switch selectedUnit {
             case .Metric:
-                weightLabel.setText(String(format: "%.1f", weightLogic.weightKG ?? 0))
+                weightLabel.setText(String.localizedStringWithFormat("%.1f", weightLogic.weightKG ?? 0))
             case .Imperial:
-                weightLabel.setText(String(format: "%.1f", weightLogic.weightLbs ?? 0))
+                weightLabel.setText(String.localizedStringWithFormat("%.1f", weightLogic.weightLbs ?? 0))
         }
     }
 

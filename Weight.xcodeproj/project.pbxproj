@@ -35,6 +35,12 @@
 		7AA8E95521A63F96000F5225 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA8E95221A63F96000F5225 /* Interface.storyboard */; };
 		7AA9FA9421A61B76001A017E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F8A216B777900137F78 /* Assets.xcassets */; };
 		7AA9FA9521A61B79001A017E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A330F8A216B777900137F78 /* Assets.xcassets */; };
+		7AE00F5521D848F900CFE5E5 /* BMICategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE00F5421D848F900CFE5E5 /* BMICategoryEnum.swift */; };
+		7AE00F5621D8498100CFE5E5 /* BMICategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE00F5421D848F900CFE5E5 /* BMICategoryEnum.swift */; };
+		7AE00F6021D8609200CFE5E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AE00F5E21D8609200CFE5E5 /* InfoPlist.strings */; };
+		7AE00F6321D8609200CFE5E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AE00F6121D8609200CFE5E5 /* InfoPlist.strings */; };
+		7AE00F6821D8609F00CFE5E5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AE00F6621D8609F00CFE5E5 /* Localizable.strings */; };
+		7AE00F6B21D8609F00CFE5E5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AE00F6921D8609F00CFE5E5 /* Localizable.strings */; };
 		7AFDEBF321A522D000199C85 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFDEBF221A522D000199C85 /* UnitsEnum.swift */; };
 		7AFDEBF421A5238500199C85 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFDEBF221A522D000199C85 /* UnitsEnum.swift */; };
 /* End PBXBuildFile section */
@@ -119,6 +125,24 @@
 		7AA5B87B21A653C5006E00E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		7AA8D54321A10A35008540D9 /* ResultsParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsParameters.swift; sourceTree = "<group>"; };
 		7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitLogic.swift; sourceTree = "<group>"; };
+		7AE00F4B21D8457B00CFE5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		7AE00F4C21D8457C00CFE5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7AE00F4D21D8457C00CFE5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
+		7AE00F4E21D845AA00CFE5E5 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Main.strings"; sourceTree = "<group>"; };
+		7AE00F4F21D845AA00CFE5E5 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7AE00F5021D845AA00CFE5E5 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Interface.strings"; sourceTree = "<group>"; };
+		7AE00F5121D845B300CFE5E5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		7AE00F5221D845B300CFE5E5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7AE00F5321D845B300CFE5E5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Interface.strings; sourceTree = "<group>"; };
+		7AE00F5421D848F900CFE5E5 /* BMICategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICategoryEnum.swift; sourceTree = "<group>"; };
+		7AE00F5F21D8609200CFE5E5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7AE00F6221D8609200CFE5E5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7AE00F6421D8609F00CFE5E5 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		7AE00F6521D8609F00CFE5E5 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		7AE00F6721D8609F00CFE5E5 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7AE00F6A21D8609F00CFE5E5 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7AE00F6C21D861F300CFE5E5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7AE00F6D21D861F300CFE5E5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7AFDEBF221A522D000199C85 /* UnitsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +174,7 @@
 				7AA8D54A21A116C5008540D9 /* HealthKitLogic.swift */,
 				7A0C788E217401F80031BB06 /* WeightLogic.swift */,
 				7AFDEBF221A522D000199C85 /* UnitsEnum.swift */,
+				7AE00F5421D848F900CFE5E5 /* BMICategoryEnum.swift */,
 				7A4CA7A221B16642006708A3 /* DateExtension.swift */,
 			);
 			path = Shared;
@@ -197,6 +222,8 @@
 				7A330F7A216B777900137F78 /* Assets.xcassets */,
 				7A330F7C216B777900137F78 /* LaunchScreen.storyboard */,
 				7A330F7F216B777900137F78 /* Info.plist */,
+				7AE00F6621D8609F00CFE5E5 /* Localizable.strings */,
+				7AE00F5E21D8609200CFE5E5 /* InfoPlist.strings */,
 			);
 			path = Weight;
 			sourceTree = "<group>";
@@ -220,6 +247,8 @@
 				7A330F98216B777900137F78 /* ExtensionDelegate.swift */,
 				7A330F9A216B777A00137F78 /* Assets.xcassets */,
 				7A330F9C216B777A00137F78 /* Info.plist */,
+				7AE00F6921D8609F00CFE5E5 /* Localizable.strings */,
+				7AE00F6121D8609200CFE5E5 /* InfoPlist.strings */,
 			);
 			path = "Weight WatchKit Extension";
 			sourceTree = "<group>";
@@ -318,6 +347,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				en,
+				de,
+				"en-AU",
 			);
 			mainGroup = 7A330F67216B777800137F78;
 			productRefGroup = 7A330F71216B777800137F78 /* Products */;
@@ -336,7 +368,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE00F6821D8609F00CFE5E5 /* Localizable.strings in Resources */,
 				7A330F7E216B777900137F78 /* LaunchScreen.storyboard in Resources */,
+				7AE00F6021D8609200CFE5E5 /* InfoPlist.strings in Resources */,
 				7A330F7B216B777900137F78 /* Assets.xcassets in Resources */,
 				7A330F79216B777800137F78 /* Main.storyboard in Resources */,
 			);
@@ -355,7 +389,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE00F6B21D8609F00CFE5E5 /* Localizable.strings in Resources */,
 				7AA9FA9521A61B79001A017E /* Assets.xcassets in Resources */,
+				7AE00F6321D8609200CFE5E5 /* InfoPlist.strings in Resources */,
 				7AA8E95521A63F96000F5225 /* Interface.storyboard in Resources */,
 				7A330F9B216B777A00137F78 /* Assets.xcassets in Resources */,
 			);
@@ -373,6 +409,7 @@
 				7AA8D54B21A116C5008540D9 /* HealthKitLogic.swift in Sources */,
 				7A0C78952174317F0031BB06 /* WeightLogic.swift in Sources */,
 				7AA8D54421A10A35008540D9 /* ResultsParameters.swift in Sources */,
+				7AE00F5521D848F900CFE5E5 /* BMICategoryEnum.swift in Sources */,
 				7A4CA7A321B16642006708A3 /* DateExtension.swift in Sources */,
 				7A4CA7A021B1461B006708A3 /* HealthKitResult.swift in Sources */,
 				7A330F74216B777800137F78 /* AppDelegate.swift in Sources */,
@@ -389,6 +426,7 @@
 				7A3B9A6721A13D1000E6F1C1 /* HealthKitLogic.swift in Sources */,
 				7A602FBD2175D1EB006F22F5 /* SuccessInterfaceController.swift in Sources */,
 				7A330F99216B777900137F78 /* ExtensionDelegate.swift in Sources */,
+				7AE00F5621D8498100CFE5E5 /* BMICategoryEnum.swift in Sources */,
 				7A4CA7A421B16642006708A3 /* DateExtension.swift in Sources */,
 				7A4CA7A121B1461B006708A3 /* HealthKitResult.swift in Sources */,
 				7AA8D54621A10DF1008540D9 /* ResultsParameters.swift in Sources */,
@@ -416,6 +454,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				7AA5B87921A653C4006E00E8 /* Base */,
+				7AE00F4B21D8457B00CFE5E5 /* en */,
+				7AE00F4E21D845AA00CFE5E5 /* en-AU */,
+				7AE00F5121D845B300CFE5E5 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -424,6 +465,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				7AA5B87A21A653C4006E00E8 /* Base */,
+				7AE00F4C21D8457C00CFE5E5 /* en */,
+				7AE00F4F21D845AA00CFE5E5 /* en-AU */,
+				7AE00F5221D845B300CFE5E5 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -432,8 +476,47 @@
 			isa = PBXVariantGroup;
 			children = (
 				7AA5B87B21A653C5006E00E8 /* Base */,
+				7AE00F4D21D8457C00CFE5E5 /* en */,
+				7AE00F5021D845AA00CFE5E5 /* en-AU */,
+				7AE00F5321D845B300CFE5E5 /* de */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		7AE00F5E21D8609200CFE5E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AE00F5F21D8609200CFE5E5 /* de */,
+				7AE00F6421D8609F00CFE5E5 /* en-AU */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7AE00F6121D8609200CFE5E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AE00F6221D8609200CFE5E5 /* de */,
+				7AE00F6521D8609F00CFE5E5 /* en-AU */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7AE00F6621D8609F00CFE5E5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AE00F6721D8609F00CFE5E5 /* en-AU */,
+				7AE00F6D21D861F300CFE5E5 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		7AE00F6921D8609F00CFE5E5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AE00F6A21D8609F00CFE5E5 /* en-AU */,
+				7AE00F6C21D861F300CFE5E5 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
