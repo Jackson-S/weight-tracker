@@ -10,18 +10,6 @@
 /* No comment provided by engineer. */
 "%i days ago at %@" = "%1$i days ago at %2$@";
 
-/* BMI Category: Normal */
-"BMI_NORMAL" = "Normal";
-
-/* BMI Category: Obese */
-"BMI_OBESE" = "Obese";
-
-/* BMI Category: Overweight */
-"BMI_OVERWEIGHT" = "Overweight";
-
-/* BMI Category: Underweight */
-"BMI_UNDERWEIGHT" = "Underweight";
-
 /* KG short form unit text */
 "KG" = "Kg";
 
@@ -31,11 +19,23 @@
 /* Pounds short form unit text */
 "lbs" = "lbs";
 
+/* BMI Category: Normal */
+"Normal" = "Normal";
+
+/* BMI Category: Obese */
+"Obese" = "Obese";
+
+/* BMI Category: Overweight */
+"Overweight" = "Overweight";
+
 /* Pounds long form unit text */
 "Pounds" = "Pounds";
 
 /* No comment provided by engineer. */
 "Today at %@" = "Today at %@";
+
+/* BMI Category: Underweight */
+"Underweight" = "Underweight";
 
 /* No comment provided by engineer. */
 "Yesterday at %@" = "Yesterday at %@";

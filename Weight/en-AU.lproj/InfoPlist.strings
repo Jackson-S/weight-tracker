@@ -1,5 +1,5 @@
 /* Bundle name */
-"CFBundleName" = "$(PRODUCT_NAME)";
+"CFBundleName" = "";
 
 /* Privacy - Health Share Usage Description */
 "NSHealthShareUsageDescription" = "Retrieves height to calculate BMI, as well as to present previous weight to provide a starting value for the app.";

@@ -4,26 +4,26 @@
 /* Last weight date text for >2 days ago */
 "%i days ago at %@" = "%1$i days ago at %2$@";
 
-/* BMI Category: Normal */
-"BMI_NORMAL" = "Normal";
-
-/* BMI Category: Obese */
-"BMI_OBESE" = "Obese";
-
-/* BMI Category: Overweight */
-"BMI_OVERWEIGHT" = "Overweight";
-
-/* BMI Category: Underweight */
-"BMI_UNDERWEIGHT" = "Underweight";
-
 /* BMI label display text */
 "BMI: %.1f" = "BMI: %.1f";
+
+/* BMI Category: Normal */
+"Normal" = "Normal";
+
+/* BMI Category: Obese */
+"Obese" = "Obese";
+
+/* BMI Category: Overweight */
+"Overweight" = "Overweight";
 
 /* Previous weight label display text */
 "Previous: %.1f KG" = "Previous: %.1f KG";
 
 /* Last weight date text for current day */
 "Today at %@" = "Today at %@";
+
+/* BMI Category: Underweight */
+"Underweight" = "Underweight";
 
 /* Last weight date text for yesterday */
 "Yesterday at %@" = "Yesterday at %@";

@@ -17,7 +17,7 @@
 "Overweight" = "Übergewicht";
 
 /* Previous weight label display text */
-"Previous: %.1f KG" = "Vor: %.1f Kg";
+"Previous: %.1f KG" = "War: %.1f Kg";
 
 /* Last weight date text for current day */
 "Today at %@" = "Heute um %@";
