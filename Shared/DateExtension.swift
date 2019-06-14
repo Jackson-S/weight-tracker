@@ -35,4 +35,17 @@ extension Date {
     func isSameDay(as date: Date) -> Bool {
         return Calendar.current.isDate(self, inSameDayAs: date)
     }
+    
+    func isToday() -> Bool {
+        return Calendar.current.isDateInToday(self)
+    }
+    
+    func isYesterday() -> Bool {
+        return Calendar.current.isDateInYesterday(self)
+    }
+    
+    func daysElapsedToToday() -> Int {
+        let elapsedTime = DateInterval(start: self, end: Date(timeIntervalSinceNow: 0)).duration
+        return Int(ceil(elapsedTime / 60 / 60 / 24))
+    }
 }

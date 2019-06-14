@@ -60,42 +60,19 @@ class ViewController: UIViewController {
             let previousWeight = self.weightLogic.lastWeightKG ?? 0
             let previousWeightDate = self.weightLogic.lastWeightDate ?? Date(timeIntervalSinceNow: 0)
             
-            let weightLabelLocalString = NSLocalizedString("%.1f KG", comment: "Weight label display text")
-            let weightLabelText = String.localizedStringWithFormat(weightLabelLocalString, weightKG)
-            let bmiLabelLocalString = NSLocalizedString("BMI: %.1f", comment: "BMI label display text")
-            let bmiLabelText = String.localizedStringWithFormat(bmiLabelLocalString, bmi)
-            let previousWeightLocalString = NSLocalizedString("Previous: %.1f KG", comment: "Previous weight label display text")
-            let lastWeightText = String.localizedStringWithFormat(previousWeightLocalString, previousWeight)
-            
-            var lastWeightDateText = ""
+            let weightLabelText = String.localizedStringWithFormat(LocalizedStrings.weightLabel, weightKG)
+            let bmiLabelText = String.localizedStringWithFormat(LocalizedStrings.bmiLabel, bmi)
+            let lastWeightText = String.localizedStringWithFormat(LocalizedStrings.previousWeight, previousWeight)
+
             let previousTimeString = previousWeightDate.string(timeFormat: DateFormatter.Style.short)
-            if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: 0)) {
-                // Same day, only needs to display time
-                let lastWeightLocalString = NSLocalizedString("Today at %@", comment: "Last weight date text for current day")
-                lastWeightDateText = String.localizedStringWithFormat(lastWeightLocalString, previousTimeString)
-            } else if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: -86_400)) {
-                let lastWeightLocalString = NSLocalizedString("Yesterday at %@", comment: "Last weight date text for yesterday")
-                lastWeightDateText = String.localizedStringWithFormat(lastWeightLocalString, previousTimeString)
-            } else {
-                let lastWeightLocalString = NSLocalizedString("%i days ago at %@", comment: "Last weight date text for >2 days ago")
-                let daysPassed = ceil(DateInterval(start: previousWeightDate, end: Date(timeIntervalSinceNow: 0)).duration / 60 / 60 / 24)
-                lastWeightDateText = String.localizedStringWithFormat(lastWeightLocalString, daysPassed, previousTimeString)
-            }
+            let previousDateString = String.localizedStringWithFormat(getTemporalNounString(previousDate: previousWeightDate), previousTimeString)
             
             self.weightLabel.text = weightLabelText
             self.bmiLabel.text = bmiLabelText
-            switch classification {
-                case .Underweight:
-                    self.bmiClassificationLabel.text = String(format: "(%@)", NSLocalizedString("Underweight", comment: "BMI Category: Underweight"))
-                case .Normal:
-                    self.bmiClassificationLabel.text = String(format: "(%@)", NSLocalizedString("Normal", comment: "BMI Category: Normal"))
-                case .Overweight:
-                    self.bmiClassificationLabel.text = String(format: "(%@)", NSLocalizedString("Overweight", comment: "BMI Category: Overweight"))
-                case .Obese:
-                    self.bmiClassificationLabel.text = String(format: "(%@)", NSLocalizedString("Obese", comment: "BMI Category: Obese"))
-            }
+            self.bmiClassificationLabel.text = getBmiClassification(bmiClassification: classification)
+
             self.lastWeightLabel.text = lastWeightText
-            self.lastWeightDateLabel.text = "(\(lastWeightDateText))"
+            self.lastWeightDateLabel.text = "(\(previousDateString))"
         }
         
     }
