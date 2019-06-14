@@ -44,14 +44,15 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     }
     
     override func didAppear() {
+        super.didAppear()
         updateLabels()
         crownSequencer.focus()
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        self.deactivationTime = Date(timeIntervalSinceNow: 0)
         super.didDeactivate()
+        // Set the deactivation time so we can selectively update if needed.
+        self.deactivationTime = Date(timeIntervalSinceNow: 0)
         crownSequencer.resignFocus()
     }
     
@@ -165,5 +166,4 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
                 weightLabel.setText(String.localizedStringWithFormat("%.1f", weightLogic.weightLbs ?? 0))
         }
     }
-
 }
