@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Adds string formatting to the Date class.
 extension Date {
     func string(dateFormat format: DateFormatter.Style) -> String {
         let dateFormatter = DateFormatter()
@@ -26,9 +27,12 @@ extension Date {
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
     }
-    
+}
+
+
+// Adds day comparison to Date class.
+extension Date {
     func isSameDay(as date: Date) -> Bool {
-        // Likely a better way to do this than string comparison, TODO later.
-        return self.string(dateFormat: "dd/MM") == date.string(dateFormat: "dd/MM")
+        return Calendar.current.isDate(self, inSameDayAs: date)
     }
 }
