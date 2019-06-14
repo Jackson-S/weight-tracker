@@ -22,7 +22,7 @@ func getTemporalNounString(previousDate: Date) -> String {
 }
 
 func getBmiClassification(bmiClassification: BMICategory) -> String {
-    switch bmiClas {
+    switch bmiClassification {
     case .Underweight:
         return String(format: "(%@)", LocalizedStrings.underweightBmi)
     case .Normal:
@@ -33,4 +33,4 @@ func getBmiClassification(bmiClassification: BMICategory) -> String {
         return String(format: "(%@)", LocalizedStrings.obeseBmi)
     }
 }
-    
+
