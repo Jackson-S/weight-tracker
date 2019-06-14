@@ -116,23 +116,20 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     }
     
     private func lastWeighDateText() -> String {
+        // Get the last weight date, defaulting to the current time if none found.
         let previousWeightDate = weightLogic.lastWeightDate ?? Date(timeIntervalSinceNow: 0)
 
         let previousTimeString = previousWeightDate.string(timeFormat: DateFormatter.Style.short)
+        // Replace spaces with non-breaking spaces to stop time from being seperated if display isn't big enough.
         let nonBreakingPreviousTimeString = previousTimeString.replacingOccurrences(of: " ", with: " ")
         
-        if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: 0)) {
-            // Same day, only needs to display time
-            let localisedResult = NSLocalizedString("Today at %@", comment: "")
-            return String.localizedStringWithFormat(localisedResult, nonBreakingPreviousTimeString)
-        } else if previousWeightDate.isSameDay(as: Date(timeIntervalSinceNow: -86_400)) {
-            let localisedResult = NSLocalizedString("Yesterday at %@", comment: "")
-            return String.localizedStringWithFormat(localisedResult, nonBreakingPreviousTimeString)
+        if previousWeightDate.isToday() {
+            return String.localizedStringWithFormat(LocalizedStrings.previousWeightTimeToday, nonBreakingPreviousTimeString)
+        } else if previousWeightDate.isYesterday() {
+            return String.localizedStringWithFormat(LocalizedStrings.previousWeightTimeYesterday, nonBreakingPreviousTimeString)
         } else {
-            let durationPassed = DateInterval(start: previousWeightDate, end: Date(timeIntervalSinceNow: 0)).duration
-            let daysPassed = ceil(durationPassed / 60 / 60 / 24)
-            let localisedResult = NSLocalizedString("%i days ago at %@", comment: "")
-            return String.localizedStringWithFormat(localisedResult, Int(daysPassed), nonBreakingPreviousTimeString)
+            let daysPassed = previousWeightDate.daysElapsedToToday()
+            return String.localizedStringWithFormat(LocalizedStrings.previousWeightTimeOther, daysPassed, nonBreakingPreviousTimeString)
         }
     }
     
@@ -144,17 +141,16 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
         switch selectedUnit {
         case .Metric:
             previousWeightInUnit = weightLogic.lastWeightKG ?? 0
-            unitText = NSLocalizedString("Kilograms", comment: "KG long form unit text")
-            shortUnitText = NSLocalizedString("KG", comment: "KG short form unit text")
+            unitText = LocalizedStrings.longFormKg
+            shortUnitText = LocalizedStrings.shortFormKg
         case .Imperial:
             previousWeightInUnit = (weightLogic.lastWeightKG ?? 0) / 0.45359237
-            unitText = NSLocalizedString("Pounds", comment: "Pounds long form unit text")
-            shortUnitText = NSLocalizedString("lbs", comment: "Pounds short form unit text")
+            unitText = LocalizedStrings.longFormLbs
+            shortUnitText = LocalizedStrings.shortFormLbs
         }
         
         let previousWeightTruncated = String.localizedStringWithFormat("%.1f", previousWeightInUnit)
-        let previousWeightLabelLocal = NSLocalizedString("%@ %@ %@", comment: "(PreviousWeight) (Unit) (last date)")
-        let previousWeightLabelText = String.localizedStringWithFormat(previousWeightLabelLocal, previousWeightTruncated, shortUnitText, lastWeighDateText())
+        let previousWeightLabelText = String.localizedStringWithFormat(LocalizedStrings.previousWeightLabel, previousWeightTruncated, shortUnitText, lastWeighDateText())
         
         unitLabel.setText(unitText)
         previousWeightDateLabel.setText(previousWeightLabelText)

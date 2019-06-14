@@ -22,8 +22,7 @@ class SuccessInterfaceController: WKInterfaceController {
         
         if let parameters = context as? ResultsParameters {
             if let weightKG = parameters.weightKG {
-                let weightLabelLocal = NSLocalizedString("%.1f KG", comment: "Weight result display")
-                let weightLabelText = String.localizedStringWithFormat(weightLabelLocal, weightKG)
+                let weightLabelText = String.localizedStringWithFormat(LocalizedStrings.weightLabel, weightKG)
                 weightLabel.setText(weightLabelText)
             } else {
                 weightLabel.setText(defaultString)
@@ -39,13 +38,13 @@ class SuccessInterfaceController: WKInterfaceController {
             if let bmiCategory = parameters.bmiCategroy {
                 switch bmiCategory {
                     case .Underweight:
-                        bmiCategoryLabel.setText(NSLocalizedString("Underweight", comment: "BMI Category: Underweight"))
+                        bmiCategoryLabel.setText(LocalizedStrings.underweightBmi)
                     case .Normal:
-                        bmiCategoryLabel.setText(NSLocalizedString("Normal", comment: "BMI Category: Normal"))
+                        bmiCategoryLabel.setText(LocalizedStrings.normalBmi)
                     case .Overweight:
-                        bmiCategoryLabel.setText(NSLocalizedString("Overweight", comment: "BMI Category: Overweight"))
+                        bmiCategoryLabel.setText(LocalizedStrings.overweightBmi)
                     case .Obese:
-                        bmiCategoryLabel.setText(NSLocalizedString("Obese", comment: "BMI Category: Obese"))
+                        bmiCategoryLabel.setText(LocalizedStrings.obeseBmi)
                 }
             } else {
                 bmiCategoryLabel.setText(defaultString)
@@ -53,8 +52,7 @@ class SuccessInterfaceController: WKInterfaceController {
             
             if let weight = parameters.weight, let oldWeight = parameters.oldWeight {
                 let difference = ((weight - oldWeight) / 100).rounded() / 10
-                let differenceLabelLocal = NSLocalizedString("%+.1f KG", comment: "Weight difference text")
-                let differenceLabelText = String.localizedStringWithFormat(differenceLabelLocal, difference)
+                let differenceLabelText = String.localizedStringWithFormat(LocalizedStrings.weightDifference, difference)
                 differenceLabel.setText(differenceLabelText)
             } else {
                 differenceLabel.setText(defaultString)
