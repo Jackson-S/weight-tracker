@@ -1,0 +1,84 @@
+/* 
+  Localizable.strings
+  Weight
+
+  Created by Jackson Sommerich on 22/6/19.
+  Copyright © 2019 Jackson Sommerich. All rights reserved.
+*/
+
+/* Weight label display text */
+"%.1f %@" = "%1$.1f %2$@";
+
+/* Last weight date text for >2 days ago */
+"%i days ago at %@" = "%1$i days ago at %2$@";
+
+/* BMI label display text */
+"BMI: %.1f" = "BMI: %.1f";
+
+/* Centimeter long form unit singular */
+"centimeter" = "centimeter";
+
+/* Centimeters long form unit plural */
+"centimeters" = "centimeters";
+
+/* Feet long form unit plural */
+"feet" = "feet";
+
+/* foot long form unit singular */
+"foot" = "foot";
+
+/* Gram long form unit singular */
+"gram" = "gram";
+
+/* Grams long form unit plural */
+"grams" = "grams";
+
+/* Inch long form unit singular */
+"inch" = "inch";
+
+/* Inches long form unit plural */
+"inches" = "inches";
+
+/* Kilogram long form unit singular */
+"kilogram" = "kilogram";
+
+/* Kilograms long form unit plural */
+"kilograms" = "kilograms";
+
+/* Meter long form unit singular */
+"meter" = "meter";
+
+/* Meters long form unit plural */
+"meters" = "meters";
+
+/* BMI Category: Normal */
+"Normal" = "Normal";
+
+/* BMI Category: Obese */
+"Obese" = "Obese";
+
+/* BMI Category: Overweight */
+"Overweight" = "Overweight";
+
+/* Pound long form unit singular */
+"pound" = "pound";
+
+/* Pounds long form unit plural */
+"pounds" = "pounds";
+
+/* Previous weight label display text */
+"Previous: %.1f %@" = "Previous: %1$.1f %2$@";
+
+/* Stone long form unit plural
+ Stone long form unit singular */
+"stone" = "stone";
+
+/* Last weight date text for current day */
+"Today at %@" = "Today at %@";
+
+/* BMI Category: Underweight */
+"Underweight" = "Underweight";
+
+/* Last weight date text for yesterday */
+"Yesterday at %@" = "Yesterday at %@";
+

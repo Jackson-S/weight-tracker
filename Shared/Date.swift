@@ -15,7 +15,7 @@ extension Date {
         dateFormatter.dateStyle = format
         return dateFormatter.string(from: self)
     }
-    
+
     func string(timeFormat format: DateFormatter.Style) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = format
@@ -29,23 +29,24 @@ extension Date {
     }
 }
 
-
 // Adds day comparison to Date class.
 extension Date {
     func isSameDay(as date: Date) -> Bool {
         return Calendar.current.isDate(self, inSameDayAs: date)
     }
-    
+
     func isToday() -> Bool {
         return Calendar.current.isDateInToday(self)
     }
-    
+
     func isYesterday() -> Bool {
         return Calendar.current.isDateInYesterday(self)
     }
-    
+
     func daysElapsedToToday() -> Int {
         let elapsedTime = DateInterval(start: self, end: Date(timeIntervalSinceNow: 0)).duration
-        return Int(ceil(elapsedTime / 60 / 60 / 24))
+        // Convert from seconds to days.
+        let elapsedTimeAsDays = Int(ceil(elapsedTime / 60 / 60 / 24))
+        return elapsedTimeAsDays
     }
 }

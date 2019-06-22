@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "In order to calculate your BMI (body mass index) weight needs to know your current height. This height will be logged into Health Kit and will not be transmitted to any other parties or retained by this app."; ObjectID = "0PP-vG-EnZ"; */
+"0PP-vG-EnZ.text" = "あなたのボディマス指数を計算するために、このアプリはあなたの身長を知る必要があります。";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "4xc-fX-KaY"; */
+"4xc-fX-KaY.normalTitle" = "アップデート";
+
+/* Class = "UILabel"; text = "BMI"; ObjectID = "6i4-33-jjE"; */
+"6i4-33-jjE.text" = "ボディマス指数";
+
+/* Class = "UILabel"; text = "Difference"; ObjectID = "AwB-eZ-WLM"; */
+"AwB-eZ-WLM.text" = "換算";
+
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "NRj-y1-d7c"; */
+"NRj-y1-d7c.title" = "設定";
+
+/* Class = "UILabel"; text = "Results"; ObjectID = "OJq-ir-aXt"; */
+"OJq-ir-aXt.text" = "成績";
+
+/* Class = "UILabel"; text = "Last Weight Date"; ObjectID = "ThH-Sm-TKX"; */
+"ThH-Sm-TKX.text" = "昨ウェイトの年月日";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "U7k-fV-eDy"; */
+"U7k-fV-eDy.normalTitle" = "キャンセル";
+
+/* Class = "UILabel"; text = "Weight:"; ObjectID = "Vkz-vF-pVC"; */
+"Vkz-vF-pVC.text" = "重量:";
+
+/* Class = "UILabel"; text = "Last Weight"; ObjectID = "Vwt-CX-b4e"; */
+"Vwt-CX-b4e.text" = "前広ウェイト";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "cai-hx-94t"; */
+"cai-hx-94t.text" = "カテゴリ";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "fH7-jg-IfA"; */
+"fH7-jg-IfA.normalTitle" = "記録する";
+
+/* Class = "UILabel"; text = "BMI:"; ObjectID = "jba-Rf-Xe3"; */
+"jba-Rf-Xe3.text" = "ボディマス指数";
+
+/* Class = "UINavigationItem"; title = "Weight"; ObjectID = "oUe-td-wGA"; */
+"oUe-td-wGA.title" = "Weight";
+
+/* Class = "UILabel"; text = "BMI Classification"; ObjectID = "u93-hG-ql9"; */
+"u93-hG-ql9.text" = "ボディマス指数分類";
+
+/* Class = "UILabel"; text = "BMI"; ObjectID = "yDD-5i-XgI"; */
+"yDD-5i-XgI.text" = "ボディマス指数";

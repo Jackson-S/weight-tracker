@@ -8,7 +8,7 @@
 
 import Foundation
 
-func getTemporalNounString(previousDate: Date) -> String {
+internal func getTemporalNounString(previousDate: Date) -> String {
     // Return the localized string for the previous weight time
     if previousDate.isToday() {
         return LocalizedStrings.previousWeightTimeToday
@@ -21,16 +21,21 @@ func getTemporalNounString(previousDate: Date) -> String {
     }
 }
 
-func getBmiClassification(bmiClassification: BMICategory) -> String {
+internal func getBmiClassification(bmiClassification: BodyMassIndexCategory) -> String {
     switch bmiClassification {
-    case .Underweight:
+    case .underweight:
         return String(format: "(%@)", LocalizedStrings.underweightBmi)
-    case .Normal:
+
+    case .normal:
         return String(format: "(%@)", LocalizedStrings.normalBmi)
-    case .Overweight:
+
+    case .overweight:
         return String(format: "(%@)", LocalizedStrings.overweightBmi)
-    case .Obese:
+
+    case .obese:
         return String(format: "(%@)", LocalizedStrings.obeseBmi)
+
+    case .unknown:
+        return "?"
     }
 }
-

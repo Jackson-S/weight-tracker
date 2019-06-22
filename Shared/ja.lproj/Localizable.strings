@@ -1,0 +1,84 @@
+/* 
+  Localizable.strings
+  Weight
+
+  Created by Jackson Sommerich on 22/6/19.
+  Copyright © 2019 Jackson Sommerich. All rights reserved.
+*/
+
+/* Weight label display text */
+"%.1f %@" = "%1$.1f %2$@";
+
+/* Last weight date text for >2 days ago */
+"%i days ago at %@" = "%1$i days ago at %2$@";
+
+/* BMI label display text */
+"BMI: %.1f" = "ボディマス指数: %.1f";
+
+/* Centimeter long form unit singular */
+"centimeter" = "センチ";
+
+/* Centimeters long form unit plural */
+"centimeters" = "センチ";
+
+/* Feet long form unit plural */
+"feet" = "フィート";
+
+/* foot long form unit singular */
+"foot" = "フィート";
+
+/* Gram long form unit singular */
+"gram" = "グラム";
+
+/* Grams long form unit plural */
+"grams" = "グラム";
+
+/* Inch long form unit singular */
+"inch" = "インチ";
+
+/* Inches long form unit plural */
+"inches" = "インチ";
+
+/* Kilogram long form unit singular */
+"kilogram" = "キログラム";
+
+/* Kilograms long form unit plural */
+"kilograms" = "キログラム";
+
+/* Meter long form unit singular */
+"meter" = "メーター";
+
+/* Meters long form unit plural */
+"meters" = "メーター";
+
+/* BMI Category: Normal */
+"Normal" = "普通体重";
+
+/* BMI Category: Obese */
+"Obese" = "肥満クラス1–3";
+
+/* BMI Category: Overweight */
+"Overweight" = "過体重";
+
+/* Pound long form unit singular */
+"pound" = "ポンド";
+
+/* Pounds long form unit plural */
+"pounds" = "ポンド";
+
+/* Previous weight label display text */
+"Previous: %.1f %@" = "作: %1$.1f %2$@";
+
+/* Stone long form unit plural
+ Stone long form unit singular */
+"stone" = "ストーン";
+
+/* Last weight date text for current day */
+"Today at %@" = "今日に%@";
+
+/* BMI Category: Underweight */
+"Underweight" = "低体重";
+
+/* Last weight date text for yesterday */
+"Yesterday at %@" = "昨日に%@";
+

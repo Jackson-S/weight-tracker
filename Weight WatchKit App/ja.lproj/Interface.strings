@@ -1,0 +1,24 @@
+
+/* Class = "WKInterfaceController"; title = "Weight"; ObjectID = "AgC-eL-Hgc"; */
+"AgC-eL-Hgc.title" = "重量";
+
+/* Class = "WKInterfaceController"; title = "Return"; ObjectID = "Fd9-ib-SiQ"; */
+"Fd9-ib-SiQ.title" = "戻る";
+
+/* Class = "WKInterfaceLabel"; text = "Previous"; ObjectID = "L4J-3m-WwV"; */
+"L4J-3m-WwV.text" = "昨";
+
+/* Class = "WKInterfaceLabel"; text = "BMI:"; ObjectID = "biV-0p-4qS"; */
+"biV-0p-4qS.text" = "ボディマス指数";
+
+/* Class = "WKInterfaceLabel"; text = "Keep it up!"; ObjectID = "iMa-Zj-f8y"; */
+"iMa-Zj-f8y.text" = "よくやった！ がんばり続ける！";
+
+/* Class = "WKInterfaceButton"; title = "Update"; ObjectID = "v0e-Sp-vdp"; */
+"v0e-Sp-vdp.title" = "記録する";
+
+/* Class = "WKInterfaceLabel"; text = "Weight:"; ObjectID = "waq-ye-MvB"; */
+"waq-ye-MvB.text" = "重量";
+
+/* Class = "WKInterfaceLabel"; text = "Kilograms"; ObjectID = "ydA-RM-0iY"; */
+"ydA-RM-0iY.text" = "キログラム";

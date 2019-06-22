@@ -1,9 +1,0 @@
-/* Bundle name */
-"CFBundleName" = "";
-
-/* Privacy - Health Share Usage Description */
-"NSHealthShareUsageDescription" = "Retrieves height to calculate BMI, as well as to present previous weight to provide a starting value for the app.";
-
-/* Privacy - Health Update Usage Description */
-"NSHealthUpdateUsageDescription" = "Adds weight and BMI values to HealthKit.";
-
