@@ -33,6 +33,8 @@
 		7A71547222B34BD900D61878 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71547122B34BD900D61878 /* LocalizedStrings.swift */; };
 		7A71547522B3565F00D61878 /* StringFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71547422B3565F00D61878 /* StringFormatting.swift */; };
 		7A71547822B3577F00D61878 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71547722B3577F00D61878 /* LocalizedStrings.swift */; };
+		7A968E5722C062B90033D483 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A968E5622C062B90033D483 /* Measurement.swift */; };
+		7A968E5822C062B90033D483 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A968E5622C062B90033D483 /* Measurement.swift */; };
 		7AA8D54421A10A35008540D9 /* InterfaceLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */; };
 		7AA8D54621A10DF1008540D9 /* InterfaceLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */; };
 		7AA8D54B21A116C5008540D9 /* HealthKitAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54A21A116C5008540D9 /* HealthKitAdapter.swift */; };
@@ -129,6 +131,7 @@
 		7A71547122B34BD900D61878 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		7A71547422B3565F00D61878 /* StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatting.swift; sourceTree = "<group>"; };
 		7A71547722B3577F00D61878 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		7A968E5622C062B90033D483 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceLocalDataStore.swift; sourceTree = "<group>"; };
 		7AA8D54A21A116C5008540D9 /* HealthKitAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAdapter.swift; sourceTree = "<group>"; };
 		7AE251B322BE32E1007C9BC1 /* UIHeightPickerImperialDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHeightPickerImperialDataSource.swift; sourceTree = "<group>"; };
@@ -175,6 +178,7 @@
 				7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */,
 				7A5A65CA22B5192800BFF3E9 /* BodyMassIndexCalculator.swift */,
 				7AEE7D1622BE0CAA009048B9 /* LocalizedUnits.swift */,
+				7A968E5622C062B90033D483 /* Measurement.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -474,6 +478,7 @@
 				7A330F74216B777800137F78 /* AppDelegate.swift in Sources */,
 				7A0F2FAF22BDC95D00718C08 /* FirstRunViewController.swift in Sources */,
 				7A71547222B34BD900D61878 /* LocalizedStrings.swift in Sources */,
+				7A968E5722C062B90033D483 /* Measurement.swift in Sources */,
 				7A0F2FB322BDD12500718C08 /* SegueTransitionableProtocol.swift in Sources */,
 				7A4A9A5721868ADF00F7835E /* ResultsViewController.swift in Sources */,
 			);
@@ -488,6 +493,7 @@
 				7A3B9A6721A13D1000E6F1C1 /* HealthKitAdapter.swift in Sources */,
 				7A602FBD2175D1EB006F22F5 /* ResultsInterfaceController.swift in Sources */,
 				7A330F99216B777900137F78 /* ExtensionDelegate.swift in Sources */,
+				7A968E5822C062B90033D483 /* Measurement.swift in Sources */,
 				7AEE7D1822BE0D2E009048B9 /* LocalizedUnits.swift in Sources */,
 				7A4CA7A421B16642006708A3 /* Date.swift in Sources */,
 				7AA8D54621A10DF1008540D9 /* InterfaceLocalDataStore.swift in Sources */,
