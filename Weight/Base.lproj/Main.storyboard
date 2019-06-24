@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elQ-D4-dEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="-620"/>
+            <point key="canvasLocation" x="816" y="-211"/>
         </scene>
         <!--Weight-->
         <scene sceneID="tne-QT-ifu">
@@ -161,25 +161,19 @@
                                 <rect key="frame" x="178.66666666666666" y="703" width="57" height="33"/>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Update">
-                                    <color key="titleColor" red="0.55443567039999997" green="0.90775567290000003" blue="0.27809911970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" title="Update"/>
                                 <connections>
                                     <action selector="updateButtonPushed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kon-13-FIz"/>
                                     <segue destination="HJ3-pv-Rt8" kind="show" identifier="results" id="SiI-2U-Plf"/>
                                 </connections>
                             </button>
-                            <skView contentMode="scaleAspectFit" fixedFrame="YES" allowsTransparency="YES" ignoresSiblingOrder="YES" sceneName="Slider.sks" shouldCullNonVisibleNodes="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihu-Pk-gjf">
+                            <containerView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBL-VU-kx7">
                                 <rect key="frame" x="0.0" y="184" width="414" height="511"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </skView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide To Change Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26p-4G-HcY">
-                                <rect key="frame" x="0.0" y="184" width="414" height="511"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <connections>
+                                    <segue destination="5C2-Hn-U1Q" kind="embed" id="r8Q-OZ-0rN"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <gestureRecognizers/>
@@ -216,6 +210,7 @@
                         <outlet property="previousWeightDateLabel" destination="ThH-Sm-TKX" id="nk4-Ch-ggW"/>
                         <outlet property="previousWeightLabel" destination="Vwt-CX-b4e" id="yos-8J-CPV"/>
                         <outlet property="sliderSpriteKitView" destination="Ihu-Pk-gjf" id="Y7S-Zw-pSX"/>
+                        <outlet property="sliderView" destination="dBL-VU-kx7" id="Fnc-oE-yvT"/>
                         <outlet property="weightLabel" destination="Am7-bX-HB4" id="2hf-qN-yVz"/>
                     </connections>
                 </viewController>
@@ -345,7 +340,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcp-a1-NCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="130"/>
+            <point key="canvasLocation" x="816" y="436"/>
+        </scene>
+        <!--Slider View Controller-->
+        <scene sceneID="Rjd-dp-IPZ">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="5C2-Hn-U1Q" customClass="SliderViewController" customModule="Weight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cr0-8i-5NE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="511"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleAspectFit" allowsTransparency="YES" ignoresSiblingOrder="YES" preferredFramesPerSecond="15" sceneName="Slider.sks" translatesAutoresizingMaskIntoConstraints="NO" id="Ihu-Pk-gjf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="511"/>
+                            </skView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide To Change Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26p-4G-HcY">
+                                <rect key="frame" x="0.0" y="246.66666666666666" width="414" height="17.999999999999972"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="26p-4G-HcY" firstAttribute="centerX" secondItem="Cr0-8i-5NE" secondAttribute="centerX" id="KvS-Ca-OcV"/>
+                            <constraint firstItem="Ihu-Pk-gjf" firstAttribute="width" secondItem="Cr0-8i-5NE" secondAttribute="width" id="Nj6-bL-X4T"/>
+                            <constraint firstItem="Ihu-Pk-gjf" firstAttribute="centerX" secondItem="Cr0-8i-5NE" secondAttribute="centerX" id="bAb-OC-6aM"/>
+                            <constraint firstItem="Ihu-Pk-gjf" firstAttribute="height" secondItem="Cr0-8i-5NE" secondAttribute="height" id="bI7-11-BJ8"/>
+                            <constraint firstItem="26p-4G-HcY" firstAttribute="width" secondItem="Cr0-8i-5NE" secondAttribute="width" id="ntE-N0-fyP"/>
+                            <constraint firstItem="26p-4G-HcY" firstAttribute="centerY" secondItem="Cr0-8i-5NE" secondAttribute="centerY" id="tce-GV-aRI"/>
+                            <constraint firstItem="Ihu-Pk-gjf" firstAttribute="centerY" secondItem="Cr0-8i-5NE" secondAttribute="centerY" id="vzs-Yq-Hmc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="slideInstructionLabel" destination="26p-4G-HcY" id="MdC-hc-2JT"/>
+                        <outlet property="sliderSpriteKitView" destination="Ihu-Pk-gjf" id="hZf-Rv-Ipk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mn4-CO-Tcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14" y="776"/>
         </scene>
     </scenes>
     <resources>

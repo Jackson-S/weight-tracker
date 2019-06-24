@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import SpriteKit
 
 class MainViewController: UIViewController {
-    private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
-    private let confirmationFeedbackGenerator = UINotificationFeedbackGenerator()
     private let dataManager = DataManager()
 
     private var localData = InterfaceLocalDataStore(
@@ -32,16 +29,12 @@ class MainViewController: UIViewController {
     @IBOutlet private var bodyMassIndexClassificationLabel: UILabel!
     @IBOutlet private var previousWeightLabel: UILabel!
     @IBOutlet private var previousWeightDateLabel: UILabel!
-    @IBOutlet private var sliderImageView: UIImageView!
-    @IBOutlet private var sliderSpriteKitView: SKView!
+    @IBOutlet private var sliderView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         localData.dataManager = dataManager
-        sliderSpriteKitView.backgroundColor = .clear
-        sliderSpriteKitView.scene?.backgroundColor = .clear
-        sliderSpriteKitView.allowsTransparency = true
 
         if !NSLocale.current.usesMetricSystem {
             localData.weightDisplayUnits = .pounds
@@ -52,6 +45,7 @@ class MainViewController: UIViewController {
     }
 
     @IBAction private func updateButtonPushed() {
+        let confirmationFeedbackGenerator = UINotificationFeedbackGenerator()
         confirmationFeedbackGenerator.prepare()
         do {
             if let unwrappedWeight = localData.weight {
@@ -73,11 +67,12 @@ class MainViewController: UIViewController {
     }
 
     @IBAction private func panGesture(_ sender: UIPanGestureRecognizer) {
+        let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
         selectionFeedbackGenerator.prepare()
-        let slideVelocity = Double(-sender.velocity(in: sliderImageView).y)
+
+        let slideVelocity = Double(-sender.velocity(in: sliderView).y)
         if let startingWeight = localData.weight {
             let weightDifference = Measurement(value: slideVelocity / 8, unit: UnitMass.grams)
-            changeWeight(by: weightDifference)
 
             // Click if a digit has changed (assumes 1 decimal place)
             let startWeightFloored = floor(startingWeight.converted(to: localData.weightDisplayUnits).value * 10)
@@ -86,6 +81,7 @@ class MainViewController: UIViewController {
                 selectionFeedbackGenerator.selectionChanged()
             }
 
+            changeWeight(by: weightDifference)
             updateLabels()
         }
     }
@@ -146,7 +142,8 @@ class MainViewController: UIViewController {
         DispatchQueue.main.async {
             if let weightUnwrapped = self.localData.weight {
                 let weightConverted = weightUnwrapped.converted(to: self.localData.weightDisplayUnits)
-                let weightLabelString = String(format: LocalizedStrings.weightLabel, weightConverted.value, weightConverted.unit.symbol)
+                let weightFloored = floor(weightConverted.value * 10) / 10
+                let weightLabelString = String(format: LocalizedStrings.weightLabel, weightFloored, weightConverted.unit.symbol)
                 self.weightLabel.text = weightLabelString
             }
 

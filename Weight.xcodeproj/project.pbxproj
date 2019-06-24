@@ -48,6 +48,7 @@
 		7AE251B422BE32E1007C9BC1 /* UIHeightPickerImperialDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE251B322BE32E1007C9BC1 /* UIHeightPickerImperialDataSource.swift */; };
 		7AE251B622BE348E007C9BC1 /* UIHeightPickerMetricDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE251B522BE348E007C9BC1 /* UIHeightPickerMetricDataSource.swift */; };
 		7AE251C522BE633A007C9BC1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AE251C722BE633A007C9BC1 /* Localizable.strings */; };
+		7AE812CB22C0B0C900B476D6 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE812CA22C0B0C900B476D6 /* SliderViewController.swift */; };
 		7AEE7D1322BDE416009048B9 /* UIHeightPickerDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE7D1222BDE416009048B9 /* UIHeightPickerDataSourceProtocol.swift */; };
 		7AEE7D1722BE0CAA009048B9 /* LocalizedUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE7D1622BE0CAA009048B9 /* LocalizedUnits.swift */; };
 		7AEE7D1822BE0D2E009048B9 /* LocalizedUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE7D1622BE0CAA009048B9 /* LocalizedUnits.swift */; };
@@ -150,6 +151,7 @@
 		7AE251C622BE633A007C9BC1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7AE251C822BE633D007C9BC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7AE812C922C0A00E00B476D6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		7AE812CA22C0B0C900B476D6 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		7AEE7D1222BDE416009048B9 /* UIHeightPickerDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHeightPickerDataSourceProtocol.swift; sourceTree = "<group>"; };
 		7AEE7D1622BE0CAA009048B9 /* LocalizedUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedUnits.swift; sourceTree = "<group>"; };
 		7AEE7D1E22BE2F49009048B9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				7A968E7522C08AF50033D483 /* Slider.sks */,
+				7AE812CA22C0B0C900B476D6 /* SliderViewController.swift */,
 			);
 			path = Slider;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				7A5A65CB22B5192800BFF3E9 /* BodyMassIndexCalculator.swift in Sources */,
 				7AEE7D1722BE0CAA009048B9 /* LocalizedUnits.swift in Sources */,
 				7AA8D54421A10A35008540D9 /* InterfaceLocalDataStore.swift in Sources */,
+				7AE812CB22C0B0C900B476D6 /* SliderViewController.swift in Sources */,
 				7A4CA7A321B16642006708A3 /* Date.swift in Sources */,
 				7A71547522B3565F00D61878 /* StringFormatting.swift in Sources */,
 				7A330F74216B777800137F78 /* AppDelegate.swift in Sources */,
