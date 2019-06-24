@@ -228,7 +228,8 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
 
     private func changeWeight(by addedMass: Measurement<UnitMass>) {
         if let unwrappedWeight = localData.weight {
-            let updatedWeight = unwrappedWeight + addedMass
+            // Add weights together and ensure they're positive by clamping.
+            let updatedWeight = (unwrappedWeight + addedMass).clamped(0, Double.infinity)
             localData.weight = updatedWeight
         } else {
             print("Unable to change weight (Reason: Weight is nil)")
