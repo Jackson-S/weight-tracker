@@ -162,7 +162,7 @@ class MainViewController: UIViewController {
 
             if let lastRecordedWeightDateUnwrapped = self.localData.lastRecordedWeightDate {
                 let temporalNounString = getTemporalNounString(previousDate: lastRecordedWeightDateUnwrapped)
-                let lastRecordedTime = lastRecordedWeightDateUnwrapped.string(dateFormat: .short)
+                let lastRecordedTime = lastRecordedWeightDateUnwrapped.string(timeFormat: .short)
                 let lastRecordedWeightDateString = String(format: temporalNounString, lastRecordedTime)
                 self.previousWeightDateLabel.text = "(\(lastRecordedWeightDateString))"
             }

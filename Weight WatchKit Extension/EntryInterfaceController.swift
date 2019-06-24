@@ -179,7 +179,7 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
 
     private func getLastRecordedWeightText() -> String {
         if let unwrappedLastRecordedWeightDate = localData.lastRecordedWeightDate {
-            let lastRecordedWeightTime = unwrappedLastRecordedWeightDate.string(dateFormat: .short)
+            let lastRecordedWeightTime = unwrappedLastRecordedWeightDate.string(timeFormat: .short)
             // Replace spaces with non-breaking spaces to stop time from being seperated if display isn't big enough.
             let lastRecordedWeightTimeNonBreaking = lastRecordedWeightTime.replacingOccurrences(of: " ", with: " ")
             if unwrappedLastRecordedWeightDate.isToday() {
