@@ -14,9 +14,17 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     @IBOutlet weak var unitLabel: WKInterfaceLabel!
     @IBOutlet weak var previousWeightLabel: WKInterfaceLabel!
     @IBOutlet weak var previousWeightDateLabel: WKInterfaceLabel!
+    @IBOutlet weak var mainScreenSeparator: WKInterfaceSeparator!
 
     private let dataManager = DataManager()
     private var localData: InterfaceLocalDataStore
+
+    private enum UpdateResult {
+        case success
+        case weightError
+        case bmiError
+        case otherError
+    }
 
     override init() {
         localData = InterfaceLocalDataStore(
@@ -81,18 +89,44 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     }
 
     @IBAction func updateButtonClick() {
-        do {
-            if let unwrappedWeight = localData.weight {
-                try dataManager.addWeightMeasurement(measurement: unwrappedWeight, withBmi: true)
+        switch recordWeight(withBmi: true) {
+        case .weightError:
+            NSLog("Could not record weight (Reason: weight is nil)")
+        case .otherError:
+            NSLog("Could not record weight (Reason: Unknown error occurred)")
+        case .bmiError:
+            let weightRecordReattempt = recordWeight(withBmi: false)
+            if weightRecordReattempt == .success {
+                // IMPORTANT: Falls through to next case (.success)
+                fallthrough
+            } else {
+                NSLog("Could not record weight (Reason: \(weightRecordReattempt))")
             }
-        } catch {
-            WKInterfaceDevice.current().play(.failure)
-            print("Failed to update weight")
+        case .success:
+            WKInterfaceDevice.current().play(.success)
+            localData.lastRecordedWeight = localData.weight
+            localData.lastRecordedWeightDate = Date(timeIntervalSinceNow: 0)
+            pushController(withName: "resultsInterface", context: localData)
             return
         }
 
-        WKInterfaceDevice.current().play(.success)
-        pushController(withName: "resultsInterface", context: localData)
+        // Only failures should reach here.
+        WKInterfaceDevice.current().play(.failure)
+    }
+
+    private func recordWeight(withBmi bmi: Bool) -> UpdateResult {
+        guard let unwrappedWeight = localData.weight else {
+            return .weightError
+        }
+        do {
+            try dataManager.addWeightMeasurement(measurement: unwrappedWeight, withBmi: bmi)
+        } catch DataManager.DataManagerError.valueUnavailable {
+            return .bmiError
+        } catch {
+            return .otherError
+        }
+
+        return .success
     }
 
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
@@ -164,21 +198,32 @@ class EntryInterfaceController: WKInterfaceController, WKCrownDelegate {
     private func updateLabels() {
         let longFormUnits = [UnitMass.kilograms: LocalizedUnits.longFormKilogramPlural, UnitMass.pounds: LocalizedUnits.longFormPoundPlural]
 
-        if let lastRecordedWeightUnwrapped = localData.lastRecordedWeight {
-            let lastRecordedWeightConverted = lastRecordedWeightUnwrapped.converted(to: localData.weightDisplayUnits)
-            let lastRecordedWeightRounded = String(format: "%.1f", lastRecordedWeightConverted.value)
-            let shortFormUnit = lastRecordedWeightConverted.unit.symbol
-            let lastRecordedWeightString = String(format: LocalizedStrings.previousWeightLabel, lastRecordedWeightRounded, shortFormUnit)
-            previousWeightLabel.setText(lastRecordedWeightString)
-            previousWeightDateLabel.setText(getLastRecordedWeightText())
-        }
-
         if let currentWeightUnwrapped = localData.weight {
             let currentWeightConverted = currentWeightUnwrapped.converted(to: localData.weightDisplayUnits)
             let currentWeightString = String(format: "%.1f", currentWeightConverted.value)
             weightLabel.setText(currentWeightString)
             unitLabel.setText(longFormUnits[currentWeightConverted.unit])
         }
+
+        if let lastRecordedWeightUnwrapped = localData.lastRecordedWeight {
+            // Unhide the last recored weight labels
+            let lastRecordedWeightConverted = lastRecordedWeightUnwrapped.converted(to: localData.weightDisplayUnits)
+            let lastRecordedWeightRounded = String(format: "%.1f", lastRecordedWeightConverted.value)
+            let shortFormUnit = lastRecordedWeightConverted.unit.symbol
+            let lastRecordedWeightString = String(format: LocalizedStrings.previousWeightLabel, lastRecordedWeightRounded, shortFormUnit)
+            hideLastWeight(false)
+            previousWeightLabel.setText(lastRecordedWeightString)
+            previousWeightDateLabel.setText(getLastRecordedWeightText())
+        } else {
+            // Hide the last recorded weight labels
+            hideLastWeight(true)
+        }
+    }
+
+    private func hideLastWeight(_ isTrue: Bool) {
+        previousWeightLabel.setHidden(isTrue)
+        previousWeightDateLabel.setHidden(isTrue)
+        mainScreenSeparator.setHidden(isTrue)
     }
 
     private func changeWeight(by addedMass: Measurement<UnitMass>) {

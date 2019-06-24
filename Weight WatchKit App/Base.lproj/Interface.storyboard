@@ -13,9 +13,9 @@
             <objects>
                 <controller identifier="mainInterface" title="Weight" fullBounds="YES" id="AgC-eL-Hgc" customClass="EntryInterfaceController" customModule="Weight_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="center" layout="vertical" id="9QU-Lu-NwZ" userLabel="Weight Information">
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="9QU-Lu-NwZ" userLabel="Weight Information">
                             <items>
-                                <group width="1" alignment="left" layout="vertical" spacing="0.0" id="prs-FM-Kzg">
+                                <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="0.0" id="prs-FM-Kzg">
                                     <items>
                                         <group width="1" alignment="center" id="f7A-Mn-gDG" userLabel="Weight Selector">
                                             <items>
@@ -61,7 +61,7 @@
                                 </group>
                             </items>
                         </group>
-                        <button alignment="center" verticalAlignment="bottom" semanticContentAttribute="playback" title="Update" backgroundImage="Button" id="v0e-Sp-vdp">
+                        <button alignment="center" verticalAlignment="center" semanticContentAttribute="playback" title="Update" backgroundImage="Button" id="v0e-Sp-vdp">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                             <connections>
@@ -70,6 +70,7 @@
                         </button>
                     </items>
                     <connections>
+                        <outlet property="mainScreenSeparator" destination="cMd-VM-iYF" id="6NS-Fl-xyw"/>
                         <outlet property="previousWeightDateLabel" destination="e62-j5-QFa" id="GJR-Wb-bMS"/>
                         <outlet property="previousWeightLabel" destination="L4J-3m-WwV" id="cTf-2h-WFS"/>
                         <outlet property="unitLabel" destination="ydA-RM-0iY" id="LhP-Qr-ejN"/>
