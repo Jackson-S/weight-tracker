@@ -172,7 +172,7 @@ class MainViewController: UIViewController {
     private func changeWeight(by addedMass: Measurement<UnitMass>) {
         if let unwrappedWeight = localData.weight {
             // Update the weight
-            let updatedWeight = unwrappedWeight + addedMass
+            let updatedWeight = (unwrappedWeight + addedMass).clamped(0, Double.infinity)
             localData.weight = updatedWeight
             // Recalculate Body Mass Index
             if let unwrappedHeight = self.localData.height {
