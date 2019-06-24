@@ -108,4 +108,3 @@ class BmiCalculatorTest: XCTestCase {
         XCTAssertNotNil(bodyMassIndexCategories.randomElement()!)
     }
 }
-
