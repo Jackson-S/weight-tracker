@@ -94,6 +94,7 @@ class DataManager {
         if withBmi {
             // Check there is a height value available and throw before any changes have been made.
             guard let height = localDataStore.height?.value else {
+                NSLog("Unable to record BMI, height unavailable")
                 throw DataManagerError.valueUnavailable
             }
 
