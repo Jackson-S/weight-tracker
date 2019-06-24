@@ -17,7 +17,7 @@ internal func getTemporalNounString(previousDate: Date) -> String {
     } else {
         let otherTime = LocalizedStrings.previousWeightTimeOther
         // Add in days elapsed.
-        return String.localizedStringWithFormat(otherTime, previousDate.daysElapsedToToday())
+        return String.localizedStringWithFormat(otherTime, previousDate.daysElapsedToToday(), previousDate.string(timeFormat: .short))
     }
 }
 
