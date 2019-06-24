@@ -45,7 +45,7 @@ class DataManager {
     func refreshValues(callback: (() -> Void)? = nil) {
         // Query for each of the stored data types
         healthKitAdapter?.getHeightMeasurements { result in
-            if let unwrappedResult = result.first {
+            if let unwrappedResult = result?.first {
                 self.localDataStore.height = unwrappedResult
             }
 
@@ -55,7 +55,7 @@ class DataManager {
         }
 
         healthKitAdapter?.getWeightMeasurements { result in
-            if let unwrappedResult = result.first {
+            if let unwrappedResult = result?.first {
                 self.localDataStore.weight = unwrappedResult
             }
 
@@ -99,7 +99,12 @@ class DataManager {
             }
 
             let heightMeasurement = Measurement(value: height, unit: UnitLength.meters)
-            let bodyMassIndex = calculateBodyMassIndex(weight: measurement, height: heightMeasurement)
+
+            guard let bodyMassIndex = calculateBodyMassIndex(weight: measurement, height: heightMeasurement) else {
+                NSLog("Unable to record BMI, invalid height or weight.")
+                throw DataManagerError.valueUnavailable
+            }
+
             healthKitAdapter?.addBmiMeasurement(bmi: bodyMassIndex)
         }
 

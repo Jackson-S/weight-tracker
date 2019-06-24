@@ -16,25 +16,32 @@ public enum BodyMassIndexCategory {
     case unknown
 }
 
-public func calculateBodyMassIndex(weight: Measurement<UnitMass>, height: Measurement<UnitLength>) -> Double {
+public func calculateBodyMassIndex(weight: Measurement<UnitMass>, height: Measurement<UnitLength>) -> Double? {
     let weightInKilograms = weight.converted(to: .kilograms).value
     let heightInMeters = height.converted(to: .meters).value
+
+    guard heightInMeters > 0 && weightInKilograms >= 0 else {
+        return nil
+    }
+
     return weightInKilograms / pow(heightInMeters, 2.0)
 }
 
-public func getBodyMassIndexCategory(forBodyMassIndex bmi: Double) -> BodyMassIndexCategory {
-    let bodyMassIndexCategories: [Range<Double>: BodyMassIndexCategory] = [
-        (-Double.infinity..<18.5): .underweight,
-        (18.5..<25): .normal,
-        (25..<30): .overweight,
-        (30..<Double.infinity): .obese
-    ]
-
-    for (range, category) in bodyMassIndexCategories {
-        if range.contains(bmi) {
-            return category
-        }
+public func getBodyMassIndexCategory(forBodyMassIndex bodyMassIndex: Double?) -> BodyMassIndexCategory? {
+    guard let bodyMassIndexUnwrapped = bodyMassIndex else {
+        return nil
     }
 
-    return BodyMassIndexCategory.unknown
+    switch bodyMassIndexUnwrapped {
+    case 0..<18.5:
+        return .underweight
+    case 18.5..<25:
+        return .normal
+    case 25..<30:
+        return .overweight
+    case 30..<Double.infinity:
+        return .obese
+    default:
+        return nil
+    }
 }

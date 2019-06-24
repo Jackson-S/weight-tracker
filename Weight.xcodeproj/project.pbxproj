@@ -35,6 +35,8 @@
 		7A71547822B3577F00D61878 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A71547722B3577F00D61878 /* LocalizedStrings.swift */; };
 		7A968E5722C062B90033D483 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A968E5622C062B90033D483 /* Measurement.swift */; };
 		7A968E5822C062B90033D483 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A968E5622C062B90033D483 /* Measurement.swift */; };
+		7A968E7322C06A190033D483 /* BmiCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A968E7222C06A190033D483 /* BmiCalculatorTest.swift */; };
+		7A968E7422C06A490033D483 /* BodyMassIndexCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A65CA22B5192800BFF3E9 /* BodyMassIndexCalculator.swift */; };
 		7AA8D54421A10A35008540D9 /* InterfaceLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */; };
 		7AA8D54621A10DF1008540D9 /* InterfaceLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */; };
 		7AA8D54B21A116C5008540D9 /* HealthKitAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54A21A116C5008540D9 /* HealthKitAdapter.swift */; };
@@ -132,6 +134,9 @@
 		7A71547422B3565F00D61878 /* StringFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatting.swift; sourceTree = "<group>"; };
 		7A71547722B3577F00D61878 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		7A968E5622C062B90033D483 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		7A968E6A22C069F10033D483 /* WeightBackendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightBackendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A968E6E22C069F10033D483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A968E7222C06A190033D483 /* BmiCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCalculatorTest.swift; sourceTree = "<group>"; };
 		7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceLocalDataStore.swift; sourceTree = "<group>"; };
 		7AA8D54A21A116C5008540D9 /* HealthKitAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAdapter.swift; sourceTree = "<group>"; };
 		7AE251B322BE32E1007C9BC1 /* UIHeightPickerImperialDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHeightPickerImperialDataSource.swift; sourceTree = "<group>"; };
@@ -162,6 +167,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A12179721735E8A00F3AE27 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A968E6722C069F10033D483 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +220,7 @@
 				7A330F72216B777800137F78 /* Weight */,
 				7A330F86216B777900137F78 /* Weight WatchKit App */,
 				7A330F95216B777900137F78 /* Weight WatchKit Extension */,
+				7A968E6B22C069F10033D483 /* WeightBackendTests */,
 				7A330F71216B777800137F78 /* Products */,
 				7A12179321735E4C00F3AE27 /* Frameworks */,
 			);
@@ -219,6 +232,7 @@
 				7A330F70216B777800137F78 /* Weight.app */,
 				7A330F82216B777900137F78 /* Weight WatchKit App.app */,
 				7A330F91216B777900137F78 /* Weight WatchKit Extension.appex */,
+				7A968E6A22C069F10033D483 /* WeightBackendTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,6 +295,15 @@
 				7A71547722B3577F00D61878 /* LocalizedStrings.swift */,
 			);
 			path = StringHandling;
+			sourceTree = "<group>";
+		};
+		7A968E6B22C069F10033D483 /* WeightBackendTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A968E7222C06A190033D483 /* BmiCalculatorTest.swift */,
+				7A968E6E22C069F10033D483 /* Info.plist */,
+			);
+			path = WeightBackendTests;
 			sourceTree = "<group>";
 		};
 		7AE251B022BE329F007C9BC1 /* UIHeightPicker */ = {
@@ -351,13 +374,30 @@
 			productReference = 7A330F91216B777900137F78 /* Weight WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		7A968E6922C069F10033D483 /* WeightBackendTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A968E6F22C069F10033D483 /* Build configuration list for PBXNativeTarget "WeightBackendTests" */;
+			buildPhases = (
+				7A968E6622C069F10033D483 /* Sources */,
+				7A968E6722C069F10033D483 /* Frameworks */,
+				7A968E6822C069F10033D483 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeightBackendTests;
+			productName = WeightBackendTests;
+			productReference = 7A968E6A22C069F10033D483 /* WeightBackendTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7A330F68216B777800137F78 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Jackson Sommerich";
 				TargetAttributes = {
@@ -382,6 +422,9 @@
 							};
 						};
 					};
+					7A968E6922C069F10033D483 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 7A330F6B216B777800137F78 /* Build configuration list for PBXProject "Weight" */;
@@ -401,6 +444,7 @@
 				7A330F6F216B777800137F78 /* Weight */,
 				7A330F81216B777900137F78 /* Weight WatchKit App */,
 				7A330F90216B777900137F78 /* Weight WatchKit Extension */,
+				7A968E6922C069F10033D483 /* WeightBackendTests */,
 			);
 		};
 /* End PBXProject section */
@@ -434,6 +478,13 @@
 				7AA9FA9521A61B79001A017E /* Assets.xcassets in Resources */,
 				7AA8E95521A63F96000F5225 /* Interface.storyboard in Resources */,
 				7A330F9B216B777A00137F78 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A968E6822C069F10033D483 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +550,15 @@
 				7AA8D54621A10DF1008540D9 /* InterfaceLocalDataStore.swift in Sources */,
 				7A71547822B3577F00D61878 /* LocalizedStrings.swift in Sources */,
 				7A330F97216B777900137F78 /* EntryInterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A968E6622C069F10033D483 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A968E7322C06A190033D483 /* BmiCalculatorTest.swift in Sources */,
+				7A968E7422C06A490033D483 /* BodyMassIndexCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,6 +858,42 @@
 			};
 			name = Release;
 		};
+		7A968E7022C069F10033D483 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeightBackendTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = None.WeightBackendTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7A968E7122C069F10033D483 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeightBackendTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = None.WeightBackendTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -833,6 +929,15 @@
 			buildConfigurations = (
 				7A330FA8216B777A00137F78 /* Debug */,
 				7A330FA9216B777A00137F78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A968E6F22C069F10033D483 /* Build configuration list for PBXNativeTarget "WeightBackendTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A968E7022C069F10033D483 /* Debug */,
+				7A968E7122C069F10033D483 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

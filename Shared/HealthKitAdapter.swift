@@ -89,28 +89,28 @@ class HealthKitAdapter {
         addMeasurement(sample: healthKitSample)
     }
 
-    func getHeightMeasurements(occurrences: Int = 1, completion: @escaping ([HealthKitResult]) -> Void) {
+    func getHeightMeasurements(occurrences: Int = 1, completion: @escaping ([HealthKitResult]?) -> Void) {
         guard let heightSampleType = HKSampleType.quantityType(forIdentifier: .height) else {
             return
         }
         getMeasurements(occurrences: occurrences, sampleType: heightSampleType, completion: completion)
     }
 
-    func getWeightMeasurements(occurrences: Int = 1, completion: @escaping ([HealthKitResult]) -> Void) {
+    func getWeightMeasurements(occurrences: Int = 1, completion: @escaping ([HealthKitResult]?) -> Void) {
         guard let weightSampleType = HKSampleType.quantityType(forIdentifier: .bodyMass) else {
             return
         }
         getMeasurements(occurrences: occurrences, sampleType: weightSampleType, completion: completion)
     }
 
-    func getBmiMeasurements(occurrences: Int = 1, completion: @escaping ([HealthKitResult]) -> Void) {
+    func getBmiMeasurements(occurrences: Int = 1, completion: @escaping ([HealthKitResult]?) -> Void) {
         guard let bmiSampleType = HKSampleType.quantityType(forIdentifier: .bodyMassIndex) else {
             return
         }
         getMeasurements(occurrences: occurrences, sampleType: bmiSampleType, completion: completion)
     }
 
-    private func getMeasurements(occurrences: Int = 1, sampleType: HKSampleType, completion: @escaping ([HealthKitResult]) -> Void) {
+    private func getMeasurements(occurrences: Int = 1, sampleType: HKSampleType, completion: @escaping ([HealthKitResult]?) -> Void) {
         // Create the parameters for a HKSampleQuery
         let startDate = healthStore.earliestPermittedSampleDate()
         let endDate = Date(timeIntervalSinceNow: 0)
@@ -121,11 +121,13 @@ class HealthKitAdapter {
             // If the results are nil then silently quit
             guard let samples = results as? [HKQuantitySample] else {
                 NSLog("Error occurred retrieving data from HealthKit (Sample Type: \(sampleType.description)) (Reason: \(error.debugDescription))")
+                completion(nil)
                 return
             }
 
             guard samples.count >= occurrences else {
                 NSLog("Error occurred retrieving data from HealthKit (Sample Type: \(sampleType.description)) (Reason: result count is \(samples.count), requesting \(occurrences))")
+                completion(nil)
                 return
             }
 
