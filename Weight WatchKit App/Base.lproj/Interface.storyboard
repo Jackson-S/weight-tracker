@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+    <device id="watch44" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -61,9 +61,12 @@
                                 </group>
                             </items>
                         </group>
-                        <button alignment="center" verticalAlignment="center" semanticContentAttribute="playback" title="Update" backgroundImage="Button" id="v0e-Sp-vdp">
+                        <button width="1" alignment="center" verticalAlignment="center" semanticContentAttribute="playback" title="Update" id="v0e-Sp-vdp">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.72252213954925537" green="0.98150914907455444" blue="0.31185027956962585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                            <variation key="device=watch40mm" widthAdjustment="-5"/>
+                            <variation key="device=watch44mm" widthAdjustment="-5"/>
                             <connections>
                                 <action selector="updateButtonClick" destination="AgC-eL-Hgc" id="neh-1l-ptt"/>
                             </connections>
