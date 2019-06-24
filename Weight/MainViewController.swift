@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 class MainViewController: UIViewController {
     private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
@@ -32,11 +33,15 @@ class MainViewController: UIViewController {
     @IBOutlet private var previousWeightLabel: UILabel!
     @IBOutlet private var previousWeightDateLabel: UILabel!
     @IBOutlet private var sliderImageView: UIImageView!
+    @IBOutlet private var sliderSpriteKitView: SKView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         localData.dataManager = dataManager
+        sliderSpriteKitView.backgroundColor = .clear
+        sliderSpriteKitView.scene?.backgroundColor = .clear
+        sliderSpriteKitView.allowsTransparency = true
 
         if !NSLocale.current.usesMetricSystem {
             localData.weightDisplayUnits = .pounds

@@ -37,6 +37,7 @@
 		7A968E5822C062B90033D483 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A968E5622C062B90033D483 /* Measurement.swift */; };
 		7A968E7322C06A190033D483 /* BmiCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A968E7222C06A190033D483 /* BmiCalculatorTest.swift */; };
 		7A968E7422C06A490033D483 /* BodyMassIndexCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A65CA22B5192800BFF3E9 /* BodyMassIndexCalculator.swift */; };
+		7A968E7622C08AF50033D483 /* Slider.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7A968E7522C08AF50033D483 /* Slider.sks */; };
 		7AA8D54421A10A35008540D9 /* InterfaceLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */; };
 		7AA8D54621A10DF1008540D9 /* InterfaceLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */; };
 		7AA8D54B21A116C5008540D9 /* HealthKitAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8D54A21A116C5008540D9 /* HealthKitAdapter.swift */; };
@@ -137,6 +138,7 @@
 		7A968E6A22C069F10033D483 /* WeightBackendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightBackendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A968E6E22C069F10033D483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A968E7222C06A190033D483 /* BmiCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCalculatorTest.swift; sourceTree = "<group>"; };
+		7A968E7522C08AF50033D483 /* Slider.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Slider.sks; sourceTree = "<group>"; };
 		7AA8D54321A10A35008540D9 /* InterfaceLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceLocalDataStore.swift; sourceTree = "<group>"; };
 		7AA8D54A21A116C5008540D9 /* HealthKitAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAdapter.swift; sourceTree = "<group>"; };
 		7AE251B322BE32E1007C9BC1 /* UIHeightPickerImperialDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHeightPickerImperialDataSource.swift; sourceTree = "<group>"; };
@@ -144,10 +146,10 @@
 		7AE251B722BE59D4007C9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AE251B822BE59D4007C9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AE251B922BE59D5007C9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		7AE251BF22BE5B72007C9BC1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		7AE251C022BE5B72007C9BC1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Interface.strings; sourceTree = "<group>"; };
 		7AE251C622BE633A007C9BC1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7AE251C822BE633D007C9BC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7AE812C922C0A00E00B476D6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		7AEE7D1222BDE416009048B9 /* UIHeightPickerDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHeightPickerDataSourceProtocol.swift; sourceTree = "<group>"; };
 		7AEE7D1622BE0CAA009048B9 /* LocalizedUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedUnits.swift; sourceTree = "<group>"; };
 		7AEE7D1E22BE2F49009048B9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		7A330F72216B777800137F78 /* Weight */ = {
 			isa = PBXGroup;
 			children = (
+				7A968E7722C08BC90033D483 /* Slider */,
 				7A0F2FB422BDD2AE00718C08 /* Protocols */,
 				7A71547322B3564800D61878 /* StringHandling */,
 				7AE251B022BE329F007C9BC1 /* UIHeightPicker */,
@@ -304,6 +307,14 @@
 				7A968E6E22C069F10033D483 /* Info.plist */,
 			);
 			path = WeightBackendTests;
+			sourceTree = "<group>";
+		};
+		7A968E7722C08BC90033D483 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				7A968E7522C08AF50033D483 /* Slider.sks */,
+			);
+			path = Slider;
 			sourceTree = "<group>";
 		};
 		7AE251B022BE329F007C9BC1 /* UIHeightPicker */ = {
@@ -458,6 +469,7 @@
 				7AEE7D1F22BE2F49009048B9 /* .swiftlint.yml in Resources */,
 				7A330F7E216B777900137F78 /* LaunchScreen.storyboard in Resources */,
 				7A330F7B216B777900137F78 /* Assets.xcassets in Resources */,
+				7A968E7622C08AF50033D483 /* Slider.sks in Resources */,
 				7A330F79216B777800137F78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,7 +594,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7AE251B722BE59D4007C9BC1 /* Base */,
-				7AE251BF22BE5B72007C9BC1 /* ja */,
+				7AE812C922C0A00E00B476D6 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

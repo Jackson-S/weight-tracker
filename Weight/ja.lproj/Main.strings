@@ -46,3 +46,6 @@
 
 /* Class = "UILabel"; text = "BMI"; ObjectID = "yDD-5i-XgI"; */
 "yDD-5i-XgI.text" = "ボディマス指数";
+
+/* Class = "UILabel"; text = "Slide To Change Weight"; ObjectID = "26p-4G-HcY"; */
+"26p-4G-HcY.text" = "スライドして値を変更";
