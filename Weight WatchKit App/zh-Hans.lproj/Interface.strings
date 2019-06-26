@@ -1,12 +1,12 @@
 
 /* Class = "WKInterfaceController"; title = "Weight"; ObjectID = "AgC-eL-Hgc"; */
-"AgC-eL-Hgc.title" = "Weight";
+"AgC-eL-Hgc.title" = "体重";
 
 /* Class = "WKInterfaceController"; title = "Return"; ObjectID = "Fd9-ib-SiQ"; */
-"Fd9-ib-SiQ.title" = "Return";
+"Fd9-ib-SiQ.title" = "返回";
 
 /* Class = "WKInterfaceLabel"; text = "Previous"; ObjectID = "L4J-3m-WwV"; */
-"L4J-3m-WwV.text" = "Previous";
+"L4J-3m-WwV.text" = "上一次体重";
 
 /* Class = "WKInterfaceLabel"; text = "24.9"; ObjectID = "SUV-JR-nqo"; */
 "SUV-JR-nqo.text" = "24.9";
@@ -21,19 +21,19 @@
 "e62-j5-QFa.text" = "Weight (Date)";
 
 /* Class = "WKInterfaceLabel"; text = "Keep it up!"; ObjectID = "iMa-Zj-f8y"; */
-"iMa-Zj-f8y.text" = "Keep it up!";
+"iMa-Zj-f8y.text" = "加油!";
 
 /* Class = "WKInterfaceLabel"; text = "-0.2 KG"; ObjectID = "njI-hl-PG8"; */
 "njI-hl-PG8.text" = "-0.2 KG";
 
 /* Class = "WKInterfaceButton"; title = "Update"; ObjectID = "v0e-Sp-vdp"; */
-"v0e-Sp-vdp.title" = "Update";
+"v0e-Sp-vdp.title" = "更新";
 
 /* Class = "WKInterfaceLabel"; text = "72.0 KG"; ObjectID = "vYb-zN-yMC"; */
 "vYb-zN-yMC.text" = "72.0 KG";
 
 /* Class = "WKInterfaceLabel"; text = "Weight:"; ObjectID = "waq-ye-MvB"; */
-"waq-ye-MvB.text" = "Weight:";
+"waq-ye-MvB.text" = "体重:";
 
 /* Class = "WKInterfaceLabel"; text = "Kilograms"; ObjectID = "ydA-RM-0iY"; */
 "ydA-RM-0iY.text" = "Kilograms";

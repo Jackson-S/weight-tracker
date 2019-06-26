@@ -1,9 +1,12 @@
 
 /* Class = "UILabel"; text = "In order to calculate your BMI (body mass index) weight needs to know your current height. This height will be logged into Health Kit and will not be transmitted to any other parties or retained by this app."; ObjectID = "0PP-vG-EnZ"; */
-"0PP-vG-EnZ.text" = "In order to calculate your BMI (body mass index) weight needs to know your current height. This height will be logged into Health Kit and will not be transmitted to any other parties or retained by this app.";
+"0PP-vG-EnZ.text" = "需要您的身高去测量您的BMI(身高体重指数)";
+
+/* Class = "UILabel"; text = "Slide To Change Weight"; ObjectID = "26p-4G-HcY"; */
+"26p-4G-HcY.text" = "通过滑动去改变您的体重";
 
 /* Class = "UIButton"; normalTitle = "Update"; ObjectID = "4xc-fX-KaY"; */
-"4xc-fX-KaY.normalTitle" = "Update";
+"4xc-fX-KaY.normalTitle" = "更新您的重量";
 
 /* Class = "UILabel"; text = "BMI"; ObjectID = "6i4-33-jjE"; */
 "6i4-33-jjE.text" = "BMI";
@@ -12,40 +15,40 @@
 "Am7-bX-HB4.text" = "Weight";
 
 /* Class = "UILabel"; text = "Difference"; ObjectID = "AwB-eZ-WLM"; */
-"AwB-eZ-WLM.text" = "Difference";
+"AwB-eZ-WLM.text" = "变化";
 
 /* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "NRj-y1-d7c"; */
-"NRj-y1-d7c.title" = "Settings";
+"NRj-y1-d7c.title" = "设置";
 
 /* Class = "UILabel"; text = "Results"; ObjectID = "OJq-ir-aXt"; */
-"OJq-ir-aXt.text" = "Results";
+"OJq-ir-aXt.text" = "结果";
 
 /* Class = "UILabel"; text = "Last Weight Date"; ObjectID = "ThH-Sm-TKX"; */
 "ThH-Sm-TKX.text" = "Last Weight Date";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "U7k-fV-eDy"; */
-"U7k-fV-eDy.normalTitle" = "Cancel";
+"U7k-fV-eDy.normalTitle" = "取消";
 
 /* Class = "UILabel"; text = "Weight:"; ObjectID = "Vkz-vF-pVC"; */
-"Vkz-vF-pVC.text" = "Weight:";
+"Vkz-vF-pVC.text" = "您的体重:";
 
 /* Class = "UILabel"; text = "Last Weight"; ObjectID = "Vwt-CX-b4e"; */
 "Vwt-CX-b4e.text" = "Last Weight";
 
 /* Class = "UILabel"; text = "Category"; ObjectID = "cai-hx-94t"; */
-"cai-hx-94t.text" = "Category";
+"cai-hx-94t.text" = "目录";
 
 /* Class = "UILabel"; text = "Weight"; ObjectID = "ebh-DF-Mzo"; */
 "ebh-DF-Mzo.text" = "Weight";
 
 /* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "fH7-jg-IfA"; */
-"fH7-jg-IfA.normalTitle" = "Confirm";
+"fH7-jg-IfA.normalTitle" = "确认";
 
 /* Class = "UILabel"; text = "BMI:"; ObjectID = "jba-Rf-Xe3"; */
 "jba-Rf-Xe3.text" = "BMI:";
 
 /* Class = "UINavigationItem"; title = "Weight"; ObjectID = "oUe-td-wGA"; */
-"oUe-td-wGA.title" = "Weight";
+"oUe-td-wGA.title" = "体重";
 
 /* Class = "UILabel"; text = "Small Unit"; ObjectID = "sVd-t2-iXy"; */
 "sVd-t2-iXy.text" = "Small Unit";
@@ -54,7 +57,7 @@
 "svj-5M-UX5.text" = "Large Unit";
 
 /* Class = "UILabel"; text = "BMI Classification"; ObjectID = "u93-hG-ql9"; */
-"u93-hG-ql9.text" = "BMI Classification";
+"u93-hG-ql9.text" = "BMI等级";
 
 /* Class = "UILabel"; text = "BMI"; ObjectID = "yDD-5i-XgI"; */
 "yDD-5i-XgI.text" = "BMI";

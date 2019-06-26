@@ -1,84 +1,84 @@
-/* 
-  Localizable.strings
-  Weight
+/*
+ Localizable.strings
+ Weight
 
-  Created by Jackson Sommerich on 22/6/19.
-  Copyright © 2019 Jackson Sommerich. All rights reserved.
-*/
+ Created by Jackson Sommerich on 22/6/19.
+ Copyright © 2019 Jackson Sommerich. All rights reserved.
+ */
 
 /* Weight label display text */
 "%.1f %@" = "%1$.1f %2$@";
 
 /* Last weight date text for >2 days ago */
-"%i days ago at %@" = "%1$i days ago at %2$@";
+"%i days ago at %@" = "%1$i日之前%2$@";
 
 /* BMI label display text */
 "BMI: %.1f" = "BMI: %.1f";
 
 /* Centimeter long form unit singular */
-"centimeter" = "centimeter";
+"centimeter" = "厘米";
 
 /* Centimeters long form unit plural */
-"centimeters" = "centimeters";
+"centimeters" = "厘米";
 
 /* Feet long form unit plural */
-"feet" = "feet";
+"feet" = "英尺";
 
 /* foot long form unit singular */
-"foot" = "foot";
+"foot" = "英尺";
 
 /* Gram long form unit singular */
-"gram" = "gram";
+"gram" = "克";
 
 /* Grams long form unit plural */
-"grams" = "grams";
+"grams" = "克";
 
 /* Inch long form unit singular */
-"inch" = "inch";
+"inch" = "英寸";
 
 /* Inches long form unit plural */
-"inches" = "inches";
+"inches" = "英寸";
 
 /* Kilogram long form unit singular */
-"kilogram" = "kilogram";
+"kilogram" = "千克";
 
 /* Kilograms long form unit plural */
-"kilograms" = "kilograms";
+"kilograms" = "千克";
 
 /* Meter long form unit singular */
-"meter" = "meter";
+"meter" = "米";
 
 /* Meters long form unit plural */
-"meters" = "meters";
+"meters" = "米";
 
 /* BMI Category: Normal */
-"Normal" = "Normal";
+"Normal" = "正常";
 
 /* BMI Category: Obese */
-"Obese" = "Obese";
+"Obese" = "肥胖";
 
 /* BMI Category: Overweight */
-"Overweight" = "Overweight";
+"Overweight" = "体重过重";
 
 /* Pound long form unit singular */
-"pound" = "pound";
+"pound" = "磅";
 
 /* Pounds long form unit plural */
-"pounds" = "pounds";
+"pounds" = "磅";
 
 /* Previous weight label display text */
-"Previous: %.1f %@" = "Previous: %1$.1f %2$@";
+"Previous: %.1f %@" = "上一次体重: %1$.1f %2$@";
 
 /* Stone long form unit plural
  Stone long form unit singular */
-"stone" = "stone";
+"stone" = "英石";
 
 /* Last weight date text for current day */
-"Today at %@" = "Today at %@";
+"Today at %@" = "今天%@";
 
 /* BMI Category: Underweight */
-"Underweight" = "Underweight";
+"Underweight" = "体重过轻";
 
 /* Last weight date text for yesterday */
-"Yesterday at %@" = "Yesterday at %@";
+"Yesterday at %@" = "昨天%@";
 
