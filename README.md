@@ -1,12 +1,11 @@
 #  Weight
-### A Weight Logger for Apple Watch
+### A Weight Logger for Apple Watch and iPhone
 
 #### Features
-* Logs straight in to HealthKit and nowhere else
-* Logs BMI and Weight in one action
-* Watch Interface modelled on Activity app (should look native)
-* Feature parity between watch app and iOS app
-* Supports imperial and metric measurements
+* Logs weight and BMI effortlessly into the Health app.
+* Fully featured iOS and WatchOS apps
+* Region-based support for imperial and metric units
+* Localized in Chinese (Simplified) and Japanese
 
 ## Screenshots
 ### WatchOS
