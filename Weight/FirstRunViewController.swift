@@ -48,6 +48,7 @@ class FirstRunViewController: UIViewController, SegueTransitionable, UIPickerVie
             heightPicker.selectRow(Int(convertedLargeUnits.value), inComponent: 0, animated: false)
             heightPicker.selectRow(Int(convertedSmallUnits.value), inComponent: 1, animated: false)
             cancelButton.isEnabled = true
+            confirmButton.isEnabled = true
         }
     }
 
